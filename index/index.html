@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playgrounds</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <button class="theme-toggle-float" id="themeToggle" onclick="cycleTheme()">
+    <span id="themeIcon">💻</span>
+    <span id="themeLabel">Системная</span>
+  </button>
+  <div class="container">
+    <header class="hero">
+      <div class="hero-glow"></div>
+      <h1 class="hero-title">
+        <span class="hero-emoji">🚀</span>
+        Playgrounds
+      </h1>
+      <p class="hero-subtitle">Интерактивные площадки для изучения веб-разработки</p>
+    </header>
+
+    <div class="section-title">🌍 Сети</div>
+    <div class="grid">
+      <a href="http://localhost:3201" class="card card-net">
+        <div class="card-icon"><img src="/logos/net.svg" alt="Net" /></div>
+        <div class="card-body">
+          <h2>Net 101</h2>
+          <p>HTTP, REST, WebSocket, кэширование, CORS</p>
+        </div>
+        <div class="card-port">:3201</div>
+        <div class="card-shine"></div>
+      </a>
+    </div>
+
+    <div class="section-title">📝 Основы</div>
+    <div class="grid">
+      <a href="http://localhost:3211" class="card card-html">
+        <div class="card-icon"><img src="/logos/html.svg" alt="HTML" /></div>
+        <div class="card-body">
+          <h2>HTML 101</h2>
+          <p>Семантика, формы, доступность, мультимедиа</p>
+        </div>
+        <div class="card-port">:3211</div>
+        <div class="card-shine"></div>
+      </a>
+
+      <a href="http://localhost:3213" class="card card-css">
+        <div class="card-icon"><img src="/logos/css.svg" alt="CSS" /></div>
+        <div class="card-body">
+          <h2>CSS 101</h2>
+          <p>Flexbox, Grid, анимации, кастом-свойства</p>
+        </div>
+        <div class="card-port">:3213</div>
+        <div class="card-shine"></div>
+      </a>
+
+      <a href="http://localhost:3212" class="card card-js">
+        <div class="card-icon"><img src="/logos/js.svg" alt="JS" /></div>
+        <div class="card-body">
+          <h2>JS 101</h2>
+          <p>Основы JavaScript, замыкания, прототипы, async</p>
+        </div>
+        <div class="card-port">:3212</div>
+        <div class="card-shine"></div>
+      </a>
+    </div>
+
+    <div class="section-title">⚙️ Фреймворки</div>
+    <div class="grid">
+      <a href="http://localhost:3231" class="card card-react">
+        <div class="card-icon"><img src="/logos/react.svg" alt="React" /></div>
+        <div class="card-body">
+          <h2>React 101</h2>
+          <p>Хуки, рендеринг, состояние, паттерны</p>
+          <p class="card-prereq">Преп: JS 101 + HTML/CSS</p>
+        </div>
+        <div class="card-port">:3231</div>
+        <div class="card-shine"></div>
+      </a>
+
+      <a href="http://localhost:3232" class="card card-vue">
+        <div class="card-icon"><img src="/logos/vue.svg" alt="Vue" /></div>
+        <div class="card-body">
+          <h2>Vue 101</h2>
+          <p>Composition API, реактивность, компоненты</p>
+          <p class="card-prereq">Преп: JS 101 + HTML/CSS</p>
+        </div>
+        <div class="card-port">:3232</div>
+        <div class="card-shine"></div>
+      </a>
+    </div>
+
+    <div class="section-title">📱 Мобильная разработка</div>
+    <div class="grid">
+      <a href="http://localhost:3215" class="card card-swift">
+        <div class="card-icon"><img src="/logos/swift.svg" alt="Swift" /></div>
+        <div class="card-body">
+          <h2>Swift 101</h2>
+          <p>Типы, опционалы, протоколы, замыкания, async/await</p>
+        </div>
+        <div class="card-port">:3215</div>
+        <div class="card-shine"></div>
+      </a>
+
+      <a href="http://localhost:3235" class="card card-swiftui">
+        <div class="card-icon"><img src="/logos/swiftui.svg" alt="SwiftUI" /></div>
+        <div class="card-body">
+          <h2>SwiftUI 101</h2>
+          <p>Views, модификаторы, @State, навигация, анимации</p>
+          <p class="card-prereq">Преп: Swift 101</p>
+        </div>
+        <div class="card-port">:3235</div>
+        <div class="card-shine"></div>
+      </a>
+    </div>
+
+    <div class="section-title">🧠 Алгоритмы и паттерны</div>
+    <div class="grid">
+      <a href="http://localhost:3241" class="card card-algo">
+        <div class="card-icon"><img src="/logos/algo.svg" alt="Algo" /></div>
+        <div class="card-body">
+          <h2>Algo 101</h2>
+          <p>Структуры данных, сортировки, графы, деревья</p>
+          <p class="card-prereq">Преп: JS 101 или Swift 101</p>
+        </div>
+        <div class="card-port">:3241</div>
+        <div class="card-shine"></div>
+      </a>
+
+      <a href="http://localhost:3242" class="card card-patterns">
+        <div class="card-icon"><img src="/logos/patterns.svg" alt="Patterns" /></div>
+        <div class="card-body">
+          <h2>Patterns 101</h2>
+          <p>SOLID, GoF-паттерны, MVC/MVP/MVVM, архитектура</p>
+          <p class="card-prereq">Преп: JS 101 + любой фреймворк</p>
+        </div>
+        <div class="card-port">:3242</div>
+        <div class="card-shine"></div>
+      </a>
+    </div>
+
+    <div class="section-title">👔 Управление</div>
+    <div class="grid">
+      <a href="http://localhost:3251" class="card card-teamlead">
+        <div class="card-icon"><img src="/logos/teamlead.svg" alt="TeamLead" /></div>
+        <div class="card-body">
+          <h2>TeamLead 101</h2>
+          <p>Лидерство, делегирование, 1-on-1, конфликты, процессы</p>
+          <p class="card-prereq">Преп: Product 101 / Project 101</p>
+        </div>
+        <div class="card-port">:3251</div>
+        <div class="card-shine"></div>
+      </a>
+      <a href="http://localhost:3252" class="card card-product">
+        <div class="card-icon"><img src="/logos/product.svg" alt="Product" /></div>
+        <div class="card-body">
+          <h2>Product 101</h2>
+          <p>Метрики, AARRR, Unit-экономика, приоритизация, Go-To-Market</p>
+        </div>
+        <div class="card-port">:3252</div>
+        <div class="card-shine"></div>
+      </a>
+      <a href="http://localhost:3253" class="card card-project">
+        <div class="card-icon"><img src="/logos/project.svg" alt="Project" /></div>
+        <div class="card-body">
+          <h2>Project 101</h2>
+          <p>Scrum, Kanban, оценка, риски, WBS, стейкхолдеры</p>
+        </div>
+        <div class="card-port">:3253</div>
+        <div class="card-shine"></div>
+      </a>
+      <a href="http://localhost:3254" class="card card-marketing">
+        <div class="card-icon"><img src="/logos/marketing.svg" alt="Marketing" /></div>
+        <div class="card-body">
+          <h2>Marketing 101</h2>
+          <p>4P, воронка, метрики, A/B-тесты, бренд, юнит-экономика</p>
+        </div>
+        <div class="card-port">:3254</div>
+        <div class="card-shine"></div>
+      </a>
+      <a href="http://localhost:3255" class="card card-qa">
+        <div class="card-icon"><img src="/logos/qa.svg" alt="QA" /></div>
+        <div class="card-body">
+          <h2>QA 101</h2>
+          <p>Тест-дизайн, баг-репорты, API, автоматизация, CI/CD</p>
+        </div>
+        <div class="card-port">:3255</div>
+        <div class="card-shine"></div>
+      </a>
+    </div>
+
+    <footer class="footer">
+      <p>На GitHub Pages Net 101 публикуется как статический клиент. Для живых API-демо нужен внешний backend.</p>
+    </footer>
+  </div>
+
+  <script>
+    function rewritePlaygroundLinks() {
+      const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+      if (isLocal) return
+
+      const appsByPort = {
+        '3201': 'net',
+        '3211': 'html',
+        '3212': 'js',
+        '3213': 'css',
+        '3215': 'swift',
+        '3231': 'react',
+        '3232': 'vue',
+        '3235': 'swiftui',
+        '3241': 'algo',
+        '3242': 'patterns',
+        '3251': 'teamlead',
+        '3252': 'product',
+        '3253': 'project',
+        '3254': 'marketing',
+        '3255': 'qa',
+      }
+
+      document.querySelectorAll('a[href^="http://localhost:"]').forEach(link => {
+        const href = link.getAttribute('href')
+        if (!href) return
+
+        const url = new URL(href)
+        const app = appsByPort[url.port]
+        if (!app) return
+
+        link.setAttribute('href', `./${app}/`)
+
+        if (app === 'net') {
+          link.setAttribute('title', 'Static client only on GitHub Pages; live API demos require external backend.')
+        }
+      })
+    }
+
+    function applyTheme(t) {
+      if (t === 'system') {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light')
+      } else {
+        document.documentElement.setAttribute('data-theme', t)
+      }
+    }
+
+    function updateToggle(t) {
+      const icons = { dark: '🌙', light: '☀️', system: '💻' }
+      const labels = { dark: 'Тёмная', light: 'Светлая', system: 'Системная' }
+      document.getElementById('themeIcon').textContent = icons[t]
+      document.getElementById('themeLabel').textContent = labels[t]
+    }
+
+    let currentTheme = localStorage.getItem('playground-theme') || 'system'
+  rewritePlaygroundLinks()
+    applyTheme(currentTheme)
+    updateToggle(currentTheme)
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (currentTheme === 'system') applyTheme('system')
+    })
+
+    function cycleTheme() {
+      if (currentTheme === 'dark') currentTheme = 'light'
+      else if (currentTheme === 'light') currentTheme = 'system'
+      else currentTheme = 'dark'
+      localStorage.setItem('playground-theme', currentTheme)
+      applyTheme(currentTheme)
+      updateToggle(currentTheme)
+    }
+  </script>
+</body>
+</html>

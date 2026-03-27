@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Vite cache and pre-bundled deps
+.vite
+node_modules/.vite
+
+# TypeScript build artifacts
+*.tsbuildinfo
+
+# Generated vite config outputs (source is vite.config.ts)
+vite.config.js
+vite.config.d.ts
+
+# Logs
+*.log
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.sw?
+*.local
