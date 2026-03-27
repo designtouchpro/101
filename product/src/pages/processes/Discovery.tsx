@@ -22,7 +22,7 @@ const methods: Method[] = [
       'Найдите 10 представителей ЦА',
       'Проведите проблемное интервью (не продавайте!)',
       'Зафиксируйте паттерны',
-      'Решите: pivot или persevere',
+      'Решите: разворот (pivot) или продолжение (persevere)',
     ],
     example: 'Гипотеза: "Разработчики тратят много времени на код-ревью". Интервью показали: проблема не во времени, а в качестве фидбека.',
   },
@@ -32,9 +32,9 @@ const methods: Method[] = [
     when: 'Когда хотите понять мотивацию на глубоком уровне.',
     steps: [
       'Определите Job: "Когда _____, я хочу _____, чтобы _____"',
-      'Выявите forces: Push, Pull, Anxiety, Habit',
+      'Выявите силы: Толчок (Push), Притяжение (Pull), Тревога (Anxiety), Привычка (Habit)',
       'Найдите конкурирующие "найм-решения"',
-      'Определите outcome metrics',
+      'Определите метрики результата (outcome metrics)',
     ],
     example: 'Job: "Когда я еду на работу утром, я хочу что-то съесть одной рукой, чтобы не скучать в пробке" → milkshake побеждает банан.',
   },
@@ -95,7 +95,7 @@ export default function Discovery() {
           <strong>Product Discovery</strong> — это процесс поиска ответов на 4 вопроса: ценно ли это пользователю?
           Можем ли мы это построить? Это жизнеспособно как бизнес? Пользователь сможет разобраться?
           Тереза Торрес в книге «Continuous Discovery Habits» предложила рамку:
-          <strong>Opportunity Solution Tree</strong> — дерево, связывающее оуткам → возможности → решения → эксперименты.
+          <strong>Opportunity Solution Tree</strong> — дерево, связывающее результат (outcome) → возможности → решения → эксперименты.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           Главный риск продуктовой разработки — построить то, <strong>что никому не нужно</strong>. По данным Pendo, 80% фич
@@ -217,19 +217,19 @@ export default function Discovery() {
           <p style={{ marginBottom: 16 }}>Четыре силы, влияющие на решение «переключиться» на новый продукт:</p>
           <div className="matrix" style={{ maxWidth: 450 }}>
             <div className="matrix-quadrant top-left" style={{ background: 'rgba(34, 197, 94, 0.15)' }}>
-              <h4>Push 👈</h4>
+              <h4>Толчок (Push) 👈</h4>
               <p>Что не устраивает в текущем решении</p>
             </div>
             <div className="matrix-quadrant top-right" style={{ background: 'rgba(59, 130, 246, 0.15)' }}>
-              <h4>Pull 🧲</h4>
+              <h4>Притяжение (Pull) 🧲</h4>
               <p>Что привлекает в новом решении</p>
             </div>
             <div className="matrix-quadrant bottom-left" style={{ background: 'rgba(245, 158, 11, 0.15)' }}>
-              <h4>Anxiety 😰</h4>
+              <h4>Тревога (Anxiety) 😰</h4>
               <p>Страхи: «а вдруг не сработает?»</p>
             </div>
             <div className="matrix-quadrant bottom-right" style={{ background: 'rgba(239, 68, 68, 0.15)' }}>
-              <h4>Habit 🔄</h4>
+              <h4>Привычка (Habit) 🔄</h4>
               <p>«Я привык к старому, не хочу менять»</p>
             </div>
           </div>
@@ -268,6 +268,19 @@ export default function Discovery() {
           </div>
         </div>
       )}
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Дизайн-мышление" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Дизайн-мышление — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Бережливый_стартап" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Lean Startup — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

@@ -90,7 +90,7 @@ export default function UnitEconomics() {
       {/* CAC Calculator */}
       <div className="card">
         <h3>📉 Калькулятор CAC</h3>
-        <p style={{ marginBottom: 16 }}><strong>CAC = Marketing Spend / New Customers</strong></p>
+        <p style={{ marginBottom: 16 }}><strong>CAC = Расходы на маркетинг / Новые клиенты (Marketing Spend / New Customers)</strong></p>
 
         <div className="grid-2">
           <div className="slider-container">
@@ -157,10 +157,10 @@ export default function UnitEconomics() {
           <div>
             <h4 style={{ color: 'var(--accent-green)', marginBottom: 8 }}>↑ Увеличить LTV</h4>
             <ul>
-              <li>Повысить <strong>ARPU</strong> (upsell, премиум-тарифы)</li>
-              <li>Увеличить <strong>Lifetime</strong> (retention, habit loops)</li>
+              <li>Повысить <strong>ARPU</strong> (допродажи / upsell, премиум-тарифы)</li>
+              <li>Увеличить <strong>Lifetime</strong> (удержание / retention, петли привычки / habit loops)</li>
               <li>Увеличить <strong>маржу</strong> (оптимизация инфраструктуры)</li>
-              <li>Cross-sell (допродажи)</li>
+              <li>Допродажи смежных продуктов (cross-sell)</li>
             </ul>
           </div>
           <div>
@@ -172,6 +172,16 @@ export default function UnitEconomics() {
               <li>Оптимизация рекламных кампаний</li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Юнит-экономика" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Юнит-экономика — Википедия
+          </a>
         </div>
       </div>
     </div>

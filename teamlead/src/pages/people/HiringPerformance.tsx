@@ -1,17 +1,17 @@
 import { useState } from 'react'
 
 const hiringPipeline = [
-  { stage: 'Профиль', icon: '📝', desc: 'Чёткое описание роли, грейда, must/nice-to-have', tips: ['Must-have ≤ 5 пунктов', 'Nice-to-have — бонус, не фильтр', 'Определи: зачем эта роль? Какую проблему решает?', 'Anti-pattern: «Full-stack senior 3 года, 15 технологий»'] },
-  { stage: 'Sourcing', icon: '🔍', desc: 'Где искать кандидатов', tips: ['Referral program: лучший канал (30-50% наймов)', 'LinkedIn: персональное сообщение > массовая рассылка', 'Комьюнити: конференции, митапы, Telegram', 'Рекрутер: объясни роль за 5 минут, дай чек-лист'] },
-  { stage: 'Скрининг', icon: '📞', desc: '15-30 мин звонок: мотивация, ожидания, красные флаги', tips: ['Почему ищет? Что важно? Зарплатные ожидания?', 'Red flags: негатив о прошлых командах, «мне всё равно»', 'Продай вакансию: команда, стек, задачи, рост', 'No-go: не подходит по базовым критериям → откажи сразу'] },
-  { stage: 'Техническое', icon: '💻', desc: 'Оценка hard skills: задачи, live coding, system design', tips: ['Live coding: задача на 30-45 мин, объясняешь подход', 'System design: open-ended, оценивай мышление', 'Take-home: 2-4 часа максимум, оплачивай', 'Скоринг: 4-5 критериев, шкала 1-4, записывай'] },
-  { stage: 'Культура', icon: '🤝', desc: 'Soft skills, values fit, работа в команде', tips: ['Ситуационные вопросы (STAR): расскажи про конфликт…', 'Познакомь с командой (peer interview)', 'Не «culture fit» (клоны), а «culture add» (разнообразие)', 'Проверь: как даёт фидбек? Как принимает?'] },
-  { stage: 'Оффер', icon: '🎯', desc: 'Быстро, конкурентно, прозрачно', tips: ['Оффер в течение 48ч после финала', 'Звонок тимлида: «Мы хотим тебя в команду, вот почему»', 'Прозрачность: зарплата, ревью, рост, бонусы', 'Counter-offer: обсуди, не давя. Уважай решение'] },
+  { stage: 'Профиль', icon: '📝', desc: 'Чёткое описание роли, грейда, must-have (обязательно) / nice-to-have (желательно)', tips: ['Must-have ≤ 5 пунктов', 'Nice-to-have — бонус, не фильтр', 'Определи: зачем эта роль? Какую проблему решает?', 'Anti-pattern (анти-паттерн): «Full-stack senior 3 года, 15 технологий»'] },
+  { stage: 'Sourcing (поиск)', icon: '🔍', desc: 'Где искать кандидатов', tips: ['Referral program (реферальная программа): лучший канал (30-50% наймов)', 'LinkedIn: персональное сообщение > массовая рассылка', 'Комьюнити: конференции, митапы, Telegram', 'Рекрутер: объясни роль за 5 минут, дай чек-лист'] },
+  { stage: 'Скрининг', icon: '📞', desc: '15-30 мин звонок: мотивация, ожидания, красные флаги (red flags — тревожные сигналы)', tips: ['Почему ищет? Что важно? Зарплатные ожидания?', 'Red flags: негатив о прошлых командах, «мне всё равно»', 'Продай вакансию: команда, стек, задачи, рост', 'No-go: не подходит по базовым критериям → откажи сразу'] },
+  { stage: 'Техническое', icon: '💻', desc: 'Оценка hard skills: задачи, live coding (программирование в реальном времени), system design (проектирование систем)', tips: ['Live coding: задача на 30-45 мин, объясняешь подход', 'System design: open-ended (открытый вопрос), оценивай мышление', 'Take-home (домашнее задание): 2-4 часа максимум, оплачивай', 'Скоринг: 4-5 критериев, шкала 1-4, записывай'] },
+  { stage: 'Культура', icon: '🤝', desc: 'Оценка soft skills, соответствие ценностям, работа в команде', tips: ['Ситуационные вопросы (STAR): расскажи про конфликт…', 'Познакомь с командой — peer interview (собеседование с будущими коллегами)', 'Не «culture fit» (клоны), а «culture add» (дополнение культуры разнообразием)', 'Проверь: как даёт фидбек? Как принимает?'] },
+  { stage: 'Оффер', icon: '🎯', desc: 'Быстро, конкурентно, прозрачно', tips: ['Оффер в течение 48ч после финала', 'Звонок тимлида: «Мы хотим тебя в команду, вот почему»', 'Прозрачность: зарплата, ревью, рост, бонусы', 'Counter-offer (встречное предложение): обсуди, не давя. Уважай решение'] },
 ]
 
 const perfFramework = [
   {
-    name: 'OKR (Objectives & Key Results)',
+    name: 'OKR (Objectives & Key Results — цели и ключевые результаты)',
     desc: 'Цели + измеримые результаты. Квартальный цикл.',
     example: {
       objective: 'Повысить качество кода',
@@ -20,20 +20,20 @@ const perfFramework = [
     when: 'Квартальное планирование, alignment с бизнесом',
   },
   {
-    name: 'IDP (Individual Development Plan)',
+    name: 'IDP (Individual Development Plan — индивидуальный план развития)',
     desc: 'Персональный план развития на 3-6 месяцев.',
     example: {
       objective: 'Рост до Senior',
       keyResults: ['Провести 2 system design review', 'Менторить 1 джуна', 'Выступить на внутреннем митапе'],
     },
-    when: 'Развитие людей, карьерный рост, retention',
+    when: 'Развитие людей, карьерный рост, retention (удержание)',
   },
   {
-    name: 'Performance Review (360)',
-    desc: 'Полуголовая оценка: self + peers + lead + skip-level.',
+    name: 'Performance Review 360 (круговая оценка эффективности)',
+    desc: 'Круговая оценка: self (самооценка) + peers (коллеги) + lead + skip-level (руководитель через уровень).',
     example: {
       objective: 'Оценка за H1',
-      keyResults: ['Self-review: 5 вопросов', 'Peer feedback: 3 коллеги', 'Lead assessment: грейд-матрица', 'Итоговый 1-on-1 с планом'],
+      keyResults: ['Self-review (самооценка): 5 вопросов', 'Peer feedback (отзывы коллег): 3 коллеги', 'Lead assessment (оценка руководителя): грейд-матрица', 'Итоговый 1-on-1 с планом'],
     },
     when: 'Раз в полгода, привязка к зарплатным ревью',
   },
@@ -43,7 +43,7 @@ const underperformanceSteps = [
   { step: 1, title: 'Заметил проблему', action: 'Собери факты: дедлайны, качество, фидбек коллег. Не мнения — данные.', timing: 'Неделя 0' },
   { step: 2, title: 'Приватный разговор', action: 'SBI-фидбек: Ситуация → Поведение → Влияние. «Я заметил, что последние 3 PR возвращались на ревью 2+ раз. Это замедляет команду.»', timing: 'Неделя 1' },
   { step: 3, title: 'Выясни причину', action: 'Может быть: выгорание, личные проблемы, непонимание ожиданий, неподходящие задачи, токсичная среда. Слушай.', timing: 'Неделя 1' },
-  { step: 4, title: 'PIP (план)', action: 'Performance Improvement Plan: 3-5 конкретных целей на 4-8 недель. Еженедельные чек-ины. Письменно.', timing: 'Неделя 2-10' },
+  { step: 4, title: 'PIP (план)', action: 'Performance Improvement Plan (план улучшения эффективности): 3-5 конкретных целей на 4-8 недель. Еженедельные чек-ины. Письменно.', timing: 'Неделя 2-10' },
   { step: 5, title: 'Промежуточная оценка', action: 'Через 4 недели: прогресс есть? Корректируем план. Прогресса нет — готовимся к сложному разговору.', timing: 'Неделя 6' },
   { step: 6, title: 'Решение', action: 'Улучшился → празднуем, продолжаем. Не улучшился → ротация в другую команду или расставание. Честно, с уважением.', timing: 'Неделя 10' },
 ]
@@ -87,14 +87,14 @@ export default function HiringPerformance() {
 
   return (
     <div className="demo-container">
-      <h1>👥 Найм и Performance Management</h1>
+      <h1>👥 Найм и Performance Management (управление эффективностью)</h1>
       <p>Нанимать правильных людей и растить — ключевые обязанности тимлида. Здесь: полный цикл найма, фреймворки оценки, работа с low performance и готовые скрипты.</p>
 
       <div style={{ display: 'flex', gap: 8, margin: '24px 0', flexWrap: 'wrap' }}>
         {([
           ['hiring', '🔍 Найм'],
           ['performance', '📊 Оценка и рост'],
-          ['underperf', '⚠️ Low Performance'],
+          ['underperf', '⚠️ Low Performance (низкая эффективность)'],
           ['scripts', '📝 Скрипты'],
         ] as const).map(([key, label]) => (
           <button
@@ -119,7 +119,7 @@ export default function HiringPerformance() {
       {tab === 'hiring' && (
         <>
           <section className="card">
-            <h2>🔍 Воронка найма</h2>
+            <h2>🔍 Воронка найма (hiring pipeline)</h2>
 
             {/* Pipeline visualizer */}
             <div style={{ display: 'flex', gap: 4, marginBottom: 20, flexWrap: 'wrap' }}>
@@ -169,13 +169,13 @@ export default function HiringPerformance() {
                 </thead>
                 <tbody>
                   {[
-                    ['Time to Hire', 'Дни от заявки до оффера', '25-40 дней (IT)'],
-                    ['Time to Fill', 'Дни от заявки до выхода', '40-60 дней'],
-                    ['Offer Acceptance Rate', '% принятых офферов', '> 80%'],
-                    ['Quality of Hire', 'Perf review через 6 мес', 'Meets expectations +'],
-                    ['Source of Hire', 'Откуда лучшие кандидаты', 'Обычно: referrals'],
-                    ['Interview-to-Offer', 'Конверсия интервью → оффер', '20-30%'],
-                    ['Cost per Hire', 'Все расходы / число наймов', 'Зависит от региона'],
+                    ['Time to Hire (время до найма)', 'Дни от заявки до оффера', '25-40 дней (IT)'],
+                    ['Time to Fill (время до закрытия)', 'Дни от заявки до выхода', '40-60 дней'],
+                    ['Offer Acceptance Rate (процент принятых офферов)', '% принятых офферов', '> 80%'],
+                    ['Quality of Hire (качество найма)', 'Perf review через 6 мес', 'Meets expectations +'],
+                    ['Source of Hire (источник найма)', 'Откуда лучшие кандидаты', 'Обычно: referrals (рекомендации)'],
+                    ['Interview-to-Offer (конверсия)', 'Конверсия интервью → оффер', '20-30%'],
+                    ['Cost per Hire (стоимость найма)', 'Все расходы / число наймов', 'Зависит от региона'],
                   ].map(([m, what, bench]) => (
                     <tr key={m}>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid var(--border)', fontWeight: 600 }}>{m}</td>
@@ -231,11 +231,11 @@ export default function HiringPerformance() {
                 <tbody>
                   {[
                     ['Самостоятельность', 'С помощью', 'Сам в знакомом', 'Сам в неизвестном'],
-                    ['Scope задач', 'Фича / баг', 'Эпик / модуль', 'Система / архитектура'],
+                    ['Scope задач (охват)', 'Фича / баг', 'Эпик / модуль', 'Система / архитектура'],
                     ['Code Review', 'Получает', 'Даёт + получает', 'Формирует стандарты'],
                     ['Менторство', '—', 'Помогает джунам', 'Менторит + развивает'],
                     ['Влияние', 'На свои задачи', 'На команду', 'На организацию'],
-                    ['Oncall / incidents', 'Наблюдает', 'Участвует', 'Владеет процессом'],
+                    ['Oncall / incidents (дежурство / инциденты)', 'Наблюдает', 'Участвует', 'Владеет процессом'],
                   ].map(([criterion, jun, mid, sen]) => (
                     <tr key={criterion}>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid var(--border)', fontWeight: 600 }}>{criterion}</td>
@@ -255,7 +255,7 @@ export default function HiringPerformance() {
       {tab === 'underperf' && (
         <>
           <section className="card">
-            <h2>⚠️ Работа с Low Performance</h2>
+            <h2>⚠️ Работа с Low Performance (низкой эффективностью)</h2>
             <p style={{ marginBottom: 20 }}>Не справляется ≠ плохой человек. Это сигнал: что-то не совпадает. Задача тимлида — разобраться и помочь. Если не получается — честно расстаться.</p>
 
             <div style={{ position: 'relative' }}>
@@ -338,9 +338,19 @@ export default function HiringPerformance() {
       <section className="card">
         <h2>❓ Вопросы на собесе</h2>
         <div className="interview-item"><div className="q">Как вы организуете процесс найма в команду?</div><div className="a">Воронка: профиль роли (≤5 must-have) → sourcing (referrals + LinkedIn + комьюнити) → скрининг 20 мин → техническое (live coding или take-home) → culture add (peer interview) → оффер за 48ч. Метрики: time-to-hire 30 дней, offer acceptance 85%+, quality of hire через 6 мес perf review.</div></div>
-        <div className="interview-item"><div className="q">Как работаете с underperformance?</div><div className="a">Факты, не мнения. SBI-фидбек → выясняю причину (выгорание? неподходящие задачи? непонимание ожиданий?). Если нужно — PIP на 6 недель: конкретные цели, еженедельные чек-ины. Промежуточная оценка на неделе 4. Улучшился → празднуем. Нет → честный разговор о ротации или расставании. Документирую всё.</div></div>
-        <div className="interview-item"><div className="q">Как проводите performance review?</div><div className="a">Раз в полгода: self-review → peer feedback (3 коллеги) → мой assessment по грейд-матрице → итоговый 1-on-1. По результату: IDP на следующий квартал (2-3 цели + шаги). Привязка к зарплатному ревью. Между ревью — continuous feedback на 1-on-1 каждые 2 недели.</div></div>
+        <div className="interview-item"><div className="q">Как работаете с underperformance (низкой эффективностью)?</div><div className="a">Факты, не мнения. SBI-фидбек → выясняю причину (выгорание? неподходящие задачи? непонимание ожиданий?). Если нужно — PIP на 6 недель: конкретные цели, еженедельные чек-ины. Промежуточная оценка на неделе 4. Улучшился → празднуем. Нет → честный разговор о ротации или расставании. Документирую всё.</div></div>
+        <div className="interview-item"><div className="q">Как проводите performance review (оценку эффективности)?</div><div className="a">Раз в полгода: self-review → peer feedback (3 коллеги) → мой assessment по грейд-матрице → итоговый 1-on-1. По результату: IDP на следующий квартал (2-3 цели + шаги). Привязка к зарплатному ревью. Между ревью — continuous feedback (непрерывная обратная связь) на 1-on-1 каждые 2 недели.</div></div>
       </section>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Управление_эффективностью" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Performance Management — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

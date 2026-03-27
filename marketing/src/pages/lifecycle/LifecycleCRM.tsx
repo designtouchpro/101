@@ -8,9 +8,9 @@ const lifecycleStages = [
     icon: '🎣',
     color: '#3b82f6',
     goal: 'Привести нового пользователя',
-    channels: ['Paid Ads', 'SEO', 'Content', 'Referral', 'Partnerships'],
-    metrics: ['CAC', 'CPA', 'Traffic', 'Conversion Rate'],
-    crm: 'Welcome-серия: онбординг → обучение → первый успех',
+    channels: ['Paid Ads (платная реклама)', 'SEO', 'Content (контент)', 'Referral (рекомендации)', 'Partnerships (партнёрства)'],
+    metrics: ['CAC', 'CPA', 'Traffic (трафик)', 'Conversion Rate (конверсия)'],
+    crm: 'Welcome-серия (приветственная цепочка): онбординг → обучение → первый успех',
   },
   {
     key: 'activation',
@@ -19,8 +19,8 @@ const lifecycleStages = [
     icon: '🔑',
     color: '#8b5cf6',
     goal: 'Довести до «Aha moment»',
-    channels: ['Onboarding email', 'In-app guides', 'Support chat'],
-    metrics: ['Activation Rate', 'TTV (Time to Value)', 'Feature adoption'],
+    channels: ['Onboarding email (адаптационное письмо)', 'In-app guides (подсказки в приложении)', 'Support chat (чат поддержки)'],
+    metrics: ['Activation Rate (процент активации)', 'TTV (Time to Value — время до первой ценности)', 'Feature adoption (освоение функций)'],
     crm: 'Trigger-цепочки: если не завершил шаг → напоминание → помощь',
   },
   {
@@ -30,8 +30,8 @@ const lifecycleStages = [
     icon: '🔄',
     color: '#22c55e',
     goal: 'Сделать продукт привычкой',
-    channels: ['Push', 'Email', 'In-app', 'Loyalty programs'],
-    metrics: ['Retention Rate (D1/D7/D30)', 'Churn Rate', 'DAU/MAU', 'Stickiness'],
+    channels: ['Push', 'Email', 'In-app', 'Loyalty programs (программы лояльности)'],
+    metrics: ['Retention Rate (D1/D7/D30)', 'Churn Rate', 'DAU/MAU (ежедневные/ежемесячные активные пользователи)', 'Stickiness (липкость)'],
     crm: 'Регулярные дайджесты, персональные рекомендации, milestone awards',
   },
   {
@@ -41,9 +41,9 @@ const lifecycleStages = [
     icon: '💰',
     color: '#f59e0b',
     goal: 'Увеличить доход с пользователя',
-    channels: ['Upsell email', 'In-app upgrade prompts', 'Account managers'],
-    metrics: ['ARPU', 'LTV', 'MRR/ARR', 'Expansion Revenue'],
-    crm: 'Upsell по триггерам (достиг лимита), cross-sell рекомендации',
+    channels: ['Upsell email (письмо о повышении тарифа)', 'In-app upgrade prompts (предложение апгрейда)', 'Account managers (аккаунт-менеджеры)'],
+    metrics: ['ARPU', 'LTV', 'MRR/ARR (ежемесячная/годовая рек. выручка)', 'Expansion Revenue (доход от расширения)'],
+    crm: 'Upsell (допродажа) по триггерам (достиг лимита), cross-sell (перекрёстная продажа) рекомендации',
   },
   {
     key: 'referral',
@@ -52,8 +52,8 @@ const lifecycleStages = [
     icon: '📢',
     color: '#ec4899',
     goal: 'Превратить клиента в амбассадора',
-    channels: ['Referral program', 'NPS survey → promoters', 'Social sharing'],
-    metrics: ['NPS', 'Referral Rate', 'Viral Coefficient (K-factor)'],
+    channels: ['Referral program (реферальная программа)', 'NPS-опрос → промоутеры', 'Social sharing (репосты)'],
+    metrics: ['NPS (Net Promoter Score — индекс лояльности)', 'Referral Rate (коэффициент рекомендаций)', 'K-factor (коэффициент виральности)'],
     crm: 'Запрос отзыва после позитивного опыта, реферальные бонусы',
   },
   {
@@ -63,19 +63,19 @@ const lifecycleStages = [
     icon: '♻️',
     color: '#ef4444',
     goal: 'Вернуть ушедших пользователей',
-    channels: ['Win-back email', 'Retargeting ads', 'Special offers'],
-    metrics: ['Reactivation Rate', 'Win-back CAC', 'Dormant User %'],
+    channels: ['Win-back email (возвратное письмо)', 'Retargeting ads (ретаргетинг)', 'Special offers (спецпредложения)'],
+    metrics: ['Reactivation Rate (коэффициент реактивации)', 'Win-back CAC (стоимость возврата)', 'Dormant User % (% спящих пользователей)'],
     crm: 'Win-back серия: «Мы скучаем» → спецпредложение → дедлайн → прощание',
   },
 ]
 
 const retentionTactics = [
   { tactic: 'Онбординг', desc: 'Довести до Aha moment за первую сессию. Чек-лист прогресса, интерактивный тур', impact: '🔴 Критичный', when: 'D0-D1' },
-  { tactic: 'Engagement loops', desc: 'Trigger → Action → Reward → Investment (модель Hook). Уведомления, стрики, бейджи', impact: '🔴 Критичный', when: 'D1-D30' },
+  { tactic: 'Engagement loops (петли вовлечения)', desc: 'Trigger → Action → Reward → Investment (модель Hook (модель «Крючок» Нира Эяля)). Уведомления, стрики, бейджи', impact: '🔴 Критичный', when: 'D1-D30' },
   { tactic: 'Персонализация', desc: 'Рекомендации на основе поведения. «Вам может быть интересно», динамический контент', impact: '🟡 Высокий', when: 'D7+' },
-  { tactic: 'Milestone rewards', desc: '«Вы отправили 100 сообщений! Бейдж разблокирован». Gamification прогресса', impact: '🟡 Высокий', when: 'Постоянно' },
+  { tactic: 'Milestone rewards (награды за вехи)', desc: '«Вы отправили 100 сообщений! Бейдж разблокирован». Gamification прогресса', impact: '🟡 Высокий', when: 'Постоянно' },
   { tactic: 'Email дайджесты', desc: 'Еженедельная сводка: что пропустили, новые фичи, персональная статистика', impact: '🟢 Средний', when: 'Еженедельно' },
-  { tactic: 'Exit survey', desc: 'При отмене подписки: узнать причину → предложить решение / пауза вместо отмены', impact: '🟡 Высокий', when: 'При churn' },
+  { tactic: 'Exit survey (опрос при уходе)', desc: 'При отмене подписки: узнать причину → предложить решение / пауза вместо отмены', impact: '🟡 Высокий', when: 'При churn' },
 ]
 
 const cohortData = [
@@ -125,7 +125,7 @@ export default function LifecycleCRM() {
       {tab === 'lifecycle' && (
         <>
           <section className="card">
-            <h2>AARRR — Pirate Metrics</h2>
+            <h2>AARRR (Acquisition, Activation, Retention, Revenue, Referral) — пиратские метрики Дэйва Макклюра</h2>
             <p style={{ marginBottom: 16 }}>
               Модель lifecycle по Dave McClure. Каждый этап имеет свои каналы, метрики
               и CRM-триггеры. Нажмите на этап для деталей.
@@ -259,8 +259,8 @@ export default function LifecycleCRM() {
               {[
                 { name: 'Retention Rate', formula: '(Активные в конце - Новые) / Активные в начале × 100%', example: '(800 - 200) / 1000 = 60%' },
                 { name: 'Churn Rate', formula: 'Потерянные за период / Активные в начале × 100%', example: '50 / 1000 = 5% monthly churn' },
-                { name: 'Stickiness (DAU/MAU)', formula: 'DAU / MAU × 100%', example: '1500 / 10000 = 15% (хорошо: >20%)' },
-                { name: 'Net Revenue Retention', formula: '(MRR начало + Expansion - Churn - Contraction) / MRR начало × 100%', example: '(100K + 20K - 5K - 3K) / 100K = 112% (>100% — рост без новых)' },
+                { name: 'Stickiness — липкость (DAU/MAU)', formula: 'DAU / MAU × 100%', example: '1500 / 10000 = 15% (хорошо: >20%)' },
+                { name: 'Net Revenue Retention (чистое удержание выручки)', formula: '(MRR начало + Expansion (расширение) - Churn - Contraction (сжатие)) / MRR начало × 100%', example: '(100K + 20K - 5K - 3K) / 100K = 112% (>100% — рост без новых)' },
               ].map(f => (
                 <div key={f.name} style={{ padding: 16, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8 }}>
                   <h4 style={{ margin: '0 0 8px' }}>{f.name}</h4>
@@ -286,10 +286,10 @@ export default function LifecycleCRM() {
             <h3>Типы email-кампаний</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 12, marginTop: 12 }}>
               {[
-                { type: 'Trigger (автоматические)', icon: '⚡', examples: ['Welcome-серия', 'Брошенная корзина', 'Milestone', 'Reactivation'], color: '#3b82f6' },
-                { type: 'Transactional', icon: '📄', examples: ['Подтверждение заказа', 'Чек', 'Сброс пароля', 'Изменение подписки'], color: '#22c55e' },
-                { type: 'Promotional', icon: '📢', examples: ['Акции', 'Новый продукт', 'Сезонные', 'Flash sale'], color: '#f59e0b' },
-                { type: 'Content / Newsletter', icon: '📰', examples: ['Еженедельный дайджест', 'Обучающая серия', 'Персональные рекомендации'], color: '#8b5cf6' },
+                { type: 'Trigger (автоматические)', icon: '⚡', examples: ['Welcome-серия (приветственная цепочка)', 'Брошенная корзина', 'Milestone', 'Reactivation'], color: '#3b82f6' },
+                { type: 'Transactional (транзакционные)', icon: '📄', examples: ['Подтверждение заказа', 'Чек', 'Сброс пароля', 'Изменение подписки'], color: '#22c55e' },
+                { type: 'Promotional (промо)', icon: '📢', examples: ['Акции', 'Новый продукт', 'Сезонные', 'Flash sale (молниеносная распродажа)'], color: '#f59e0b' },
+                { type: 'Content / Newsletter (контентные / рассылка)', icon: '📰', examples: ['Еженедельный дайджест', 'Обучающая серия', 'Персональные рекомендации'], color: '#8b5cf6' },
               ].map(c => (
                 <div key={c.type} style={{ padding: 16, background: c.color + '11', border: `1px solid ${c.color}33`, borderRadius: 8 }}>
                   <h4 style={{ margin: '0 0 8px' }}>{c.icon} {c.type}</h4>
@@ -316,7 +316,7 @@ export default function LifecycleCRM() {
                   {[
                     ['Поведенческая', 'Активные, Спящие, Churned, Power users', 'Trigger-кампании, персонализация'],
                     ['По lifecycle', 'Trial, Onboarding, Activated, Loyal, At-risk', 'Разные CRM-цепочки для каждого этапа'],
-                    ['RFM (Recency, Frequency, Monetary)', 'Champions, Loyal, At Risk, Lost', 'Приоритизация усилий, спецпредложения'],
+                    ['RFM (Recency — давность, Frequency — частота, Monetary — сумма покупок)', 'Champions (чемпионы), Loyal (лояльные), At Risk (под угрозой), Lost (потерянные)', 'Приоритизация усилий, спецпредложения'],
                     ['Демографическая', 'Страна, возраст, индустрия (B2B)', 'Локализация, таргетинг контента'],
                     ['По каналу привлечения', 'Organic, Paid, Referral, Direct', 'Атрибуция, оптимизация бюджета'],
                   ].map(([type, segments, use]) => (
@@ -335,12 +335,12 @@ export default function LifecycleCRM() {
             <h2>📊 Метрики email-маркетинга</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12, marginTop: 12 }}>
               {[
-                { metric: 'Open Rate', benchmark: '15-25%', desc: '% открытий от доставленных' },
+                { metric: 'Open Rate (открываемость)', benchmark: '15-25%', desc: '% открытий от доставленных' },
                 { metric: 'CTR', benchmark: '2-5%', desc: '% кликов от доставленных' },
-                { metric: 'CTOR', benchmark: '10-20%', desc: '% кликов от открытий' },
+                { metric: 'CTOR (Click-to-Open Rate — клики / открытия)', benchmark: '10-20%', desc: '% кликов от открытий' },
                 { metric: 'Unsubscribe Rate', benchmark: '< 0.5%', desc: '% отписок от доставленных' },
-                { metric: 'Bounce Rate', benchmark: '< 2%', desc: '% недоставленных (hard + soft)' },
-                { metric: 'Delivery Rate', benchmark: '> 95%', desc: '% успешно доставленных' },
+                { metric: 'Bounce Rate (возвраты)', benchmark: '< 2%', desc: '% недоставленных (hard + soft)' },
+                { metric: 'Delivery Rate (доставляемость)', benchmark: '> 95%', desc: '% успешно доставленных' },
               ].map(m => (
                 <div key={m.metric} style={{ padding: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8, textAlign: 'center' }}>
                   <div style={{ fontWeight: 700, fontSize: '1.1rem' }}>{m.metric}</div>
@@ -439,6 +439,19 @@ export default function LifecycleCRM() {
         <div className="interview-item"><div className="q">Как вы подойдёте к улучшению retention?</div><div className="a">1) Когортный анализ: найти, где именно отваливаются. 2) Если D1 плохой — проблема в онбординге. 3) Если D7-D30 — нет engagement loop. 4) Exit survey для понимания причин. 5) A/B тесты: стрики, дайджесты, push-уведомления. 6) Мониторить: Retention Rate, Churn Rate, DAU/MAU</div></div>
         <div className="interview-item"><div className="q">Объясните когортный анализ</div><div className="a">Группируем пользователей по дате регистрации (когорта). Смотрим, какой процент активен через 1, 7, 30 дней. Сравниваем когорты между собой: если новые когорты имеют лучший retention — значит, продукт и маркетинг улучшаются</div></div>
       </section>
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Управление_взаимоотношениями_с_клиентами" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 CRM — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Net_Promoter_Score" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Net Promoter Score — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

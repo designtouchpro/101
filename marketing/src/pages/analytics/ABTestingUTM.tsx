@@ -70,7 +70,7 @@ export default function ABTestingUTM() {
           вы получаете ответ на основе данных.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          <strong>UTM-метки</strong> (Urchin Tracking Module) — параметры в URL, которые помогают аналитическим системам 
+          <strong>UTM-метки</strong> (Urchin Tracking Module — модуль отслеживания Urchin) — параметры в URL, которые помогают аналитическим системам 
           (Google Analytics, Яндекс.Метрика) определить, откуда пришёл пользователь. Пять стандартных параметров: 
           source (откуда), medium (тип трафика), campaign (название кампании), term (ключевое слово), content (вариант объявления).
           Без UTM вы не отличите трафик из email-рассылки от трафика из Telegram-канала.
@@ -79,7 +79,7 @@ export default function ABTestingUTM() {
           <div className="info-box-content">
             <strong>⚠️ Ключевое правило A/B</strong>: Тестируйте одну переменную за раз. Если вы одновременно 
             меняете заголовок, цвет кнопки и картинку — невозможно понять, что именно повлияло на результат.
-            Для множественных изменений используйте multivariate-тестирование.
+            Для множественных изменений используйте multivariate-тестирование (многовариантное).
           </div>
         </div>
       </div>
@@ -143,7 +143,7 @@ export default function ABTestingUTM() {
             {/* Result */}
             <div className="grid-3" style={{ marginTop: 16 }}>
               <div className="score-display">
-                <div className="score-label">Lift</div>
+                <div className="score-label">Lift (прирост)</div>
                 <div style={{ fontSize: '2rem', fontWeight: 700, color: +getLift() > 0 ? '#22c55e' : '#ef4444' }}>
                   {+getLift() > 0 ? '+' : ''}{getLift()}%
                 </div>
@@ -174,7 +174,7 @@ export default function ABTestingUTM() {
                 { icon: '✅', title: 'Тестируйте одну гипотезу', desc: 'Один тест = одно изменение. Иначе не поймёте, что сработало.' },
                 { icon: '⏱️', title: 'Дождитесь значимости', desc: 'Не останавливайте тест раньше времени. Минимум 1-2 недели, полные циклы.' },
                 { icon: '📊', title: 'Достаточный размер выборки', desc: 'Калькулятор: минимум 1000-5000 посетителей на вариант для CR ~3%.' },
-                { icon: '🎯', title: 'Чёткая метрика', desc: 'Определите primary metric заранее. Не post-hoc анализ.' },
+                { icon: '🎯', title: 'Чёткая метрика', desc: 'Определите primary metric (главную метрику) заранее. Не post-hoc (ретроспективный) анализ.' },
               ].map(tip => (
                 <div key={tip.title} style={{ padding: 12, borderRadius: 8, background: 'var(--bg-secondary)', borderLeft: '3px solid var(--accent-main)' }}>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{tip.icon} {tip.title}</div>
@@ -274,6 +274,19 @@ export default function ABTestingUTM() {
           </div>
         </>
       )}
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/A/B-тестирование" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 A/B-тестирование — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/UTM-метки" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 UTM-метки — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

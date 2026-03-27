@@ -161,7 +161,7 @@ export default function ConflictStyles() {
         <div className="info-box">
           <div className="info-box-icon">🎯</div>
           <div className="info-box-content">
-            <div className="info-box-title">Thomas-Kilmann Instrument (TKI)</div>
+            <div className="info-box-title">Thomas-Kilmann Instrument (TKI) — инструмент Томаса-Килманна</div>
             Это стандартизированный тест из 30 вопросов, используемый в Fortune 500 компаниях.
             Он показывает ваш профиль: какие стили вы используете чаще, а каких избегаете.
           </div>
@@ -320,6 +320,16 @@ export default function ConflictStyles() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Модель_Томаса_—_Килманна" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Модель Томаса-Килманна — Википедия
+          </a>
+        </div>
       </div>
     </div>
   )

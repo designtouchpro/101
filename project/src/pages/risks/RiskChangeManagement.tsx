@@ -4,40 +4,40 @@ const criticalPathSteps = [
   { step: 1, name: 'Список задач', desc: 'Определить все задачи проекта (WBS)' },
   { step: 2, name: 'Зависимости', desc: 'Установить FS/FF/SS/SF связи между задачами' },
   { step: 3, name: 'Оценка длительности', desc: 'Оценить время каждой задачи (PERT / эксперт.)' },
-  { step: 4, name: 'Forward pass', desc: 'Вычислить Early Start и Early Finish (слева направо)' },
-  { step: 5, name: 'Backward pass', desc: 'Вычислить Late Start и Late Finish (справа налево)' },
-  { step: 6, name: 'Float = LS − ES', desc: 'Задачи с Float=0 → Critical Path' },
+  { step: 4, name: 'Forward pass (прямой проход)', desc: 'Вычислить Early Start (ранний старт) и Early Finish (раннее окончание) — слева направо' },
+  { step: 5, name: 'Backward pass (обратный проход)', desc: 'Вычислить Late Start (поздний старт) и Late Finish (позднее окончание) — справа налево' },
+  { step: 6, name: 'Float (запас времени) = LS − ES', desc: 'Задачи с Float=0 → Critical Path (критический путь)' },
 ]
 
 const dependencyTypes = [
-  { type: 'FS (Finish-to-Start)', icon: '→', desc: 'B начинается после A', example: 'Тестирование после разработки', freq: 'Самый частый (~90%)' },
-  { type: 'SS (Start-to-Start)', icon: '⇉', desc: 'B начинается вместе с A', example: 'Документация параллельно разработке', freq: 'Частый' },
-  { type: 'FF (Finish-to-Finish)', icon: '⇇', desc: 'B завершается вместе с A', example: 'UAT завершается с фиксами', freq: 'Редкий' },
-  { type: 'SF (Start-to-Finish)', icon: '↩', desc: 'B завершается после старта A', example: 'Старая система до запуска новой', freq: 'Крайне редкий' },
+  { type: 'FS — Finish-to-Start (окончание–начало)', icon: '→', desc: 'B начинается после A', example: 'Тестирование после разработки', freq: 'Самый частый (~90%)' },
+  { type: 'SS — Start-to-Start (начало–начало)', icon: '⇉', desc: 'B начинается вместе с A', example: 'Документация параллельно разработке', freq: 'Частый' },
+  { type: 'FF — Finish-to-Finish (окончание–окончание)', icon: '⇇', desc: 'B завершается вместе с A', example: 'UAT завершается с фиксами', freq: 'Редкий' },
+  { type: 'SF — Start-to-Finish (начало–окончание)', icon: '↩', desc: 'B завершается после старта A', example: 'Старая система до запуска новой', freq: 'Крайне редкий' },
 ]
 
 const quantRiskData = [
-  { technique: 'EMV (Expected Monetary Value)', formula: 'EMV = P × Impact', when: 'Бюджетные решения, выбор стратегии', example: 'Риск: P=30%, Impact=$100k → EMV = $30k' },
+  { technique: 'EMV (Expected Monetary Value — ожидаемая денежная стоимость)', formula: 'EMV = P × Impact', when: 'Бюджетные решения, выбор стратегии', example: 'Риск: P=30%, Impact=$100k → EMV = $30k' },
   { technique: 'PERT (3-point)', formula: '(O + 4M + P) / 6', when: 'Оценка длительности с неопределённостью', example: 'O=5, M=8, P=17 → (5+32+17)/6 = 9 дней' },
   { technique: 'Monte Carlo', formula: 'Симуляция N раз', when: 'Оценка вероятности сроков/бюджета', example: 'P80 = 90% вер. уложиться в 12 нед.' },
-  { technique: 'Decision Tree', formula: 'Суммируем EMV ветвей', when: 'Выбор между стратегиями', example: 'Build vs Buy: сравниваем суммарный EMV' },
-  { technique: 'Sensitivity (Tornado)', formula: 'Ранжирование по влиянию', when: 'Фокус на самые влиятельные риски', example: 'Задержка API → ±3 нед. > другие риски' },
+  { technique: 'Decision Tree (дерево решений)', formula: 'Суммируем EMV ветвей', when: 'Выбор между стратегиями', example: 'Build vs Buy: сравниваем суммарный EMV' },
+  { technique: 'Sensitivity / Tornado (анализ чувствительности)', formula: 'Ранжирование по влиянию', when: 'Фокус на самые влиятельные риски', example: 'Задержка API → ±3 нед. > другие риски' },
 ]
 
 const changeProcess = [
   { step: 'Инициация', icon: '📝', desc: 'Запрос на изменение (Change Request)', who: 'Любой стейкхолдер', output: 'CR заполнен в шаблоне' },
-  { step: 'Оценка Impact', icon: '🔍', desc: 'Анализ влияния на scope, schedule, cost, quality', who: 'PM + техлид', output: 'Impact assessment' },
-  { step: 'CCB Review', icon: '🏛️', desc: 'Change Control Board рассматривает', who: 'CCB (PM, спонсор, лиды)', output: 'Approved / Rejected / Deferred' },
+  { step: 'Оценка влияния (Impact)', icon: '🔍', desc: 'Анализ влияния на scope (объём), schedule (сроки), cost (стоимость), quality (качество)', who: 'PM + техлид', output: 'Impact assessment (оценка влияния)' },
+  { step: 'Рассмотрение CCB', icon: '🏛️', desc: 'Change Control Board (комитет по управлению изменениями) рассматривает', who: 'CCB (PM, спонсор, лиды)', output: 'Одобрено / Отклонено / Отложено (Approved / Rejected / Deferred)' },
   { step: 'Реализация', icon: '⚙️', desc: 'Внесение изменений, обновление планов', who: 'Команда', output: 'Обновлённые артефакты' },
   { step: 'Валидация', icon: '✅', desc: 'Проверка что изменение работает', who: 'QA + PM', output: 'Подтверждение' },
   { step: 'Закрытие', icon: '📦', desc: 'Обновление реестра, lessons learned', who: 'PM', output: 'CR закрыт' },
 ]
 
 const scopeStrategies = [
-  { scenario: 'Scope creep (ползучее расширение)', signal: 'Новые требования без CR', response: 'Фиксировать scope baseline, все изменения через CR', mindset: 'Каждый «маленький фикс» имеет цену' },
+  { scenario: 'Scope creep (ползучее расширение)', signal: 'Новые требования без CR', response: 'Фиксировать scope baseline (базовый план по объёму), все изменения через CR', mindset: 'Каждый «маленький фикс» имеет цену' },
   { scenario: 'Gold plating (перфекционизм)', signal: 'Команда добавляет незапрашиваемое', response: 'DoD строгий, review scope каждый спринт', mindset: 'Делаем ровно то, что несёт value' },
-  { scenario: 'Ambiguous requirements', signal: 'Разные стейкхолдеры по-разному понимают', response: 'Acceptance criteria, mockups, spike', mindset: 'Чем раньше уточнить — тем дешевле' },
-  { scenario: 'Sponsor changes priority', signal: 'Стратегический разворот', response: 'Пересчитать critical path, re-baseline', mindset: 'Это нормально — адаптируемся, не ломаемся' },
+  { scenario: 'Ambiguous requirements', signal: 'Разные стейкхолдеры по-разному понимают', response: 'Acceptance criteria (критерии приёмки), mockups (макеты), spike (исследование)', mindset: 'Чем раньше уточнить — тем дешевле' },
+  { scenario: 'Sponsor changes priority', signal: 'Стратегический разворот', response: 'Пересчитать critical path (критический путь), re-baseline (обновить базовый план)', mindset: 'Это нормально — адаптируемся, не ломаемся' },
 ]
 
 export default function RiskChangeManagement() {
@@ -105,7 +105,7 @@ export default function RiskChangeManagement() {
           </section>
 
           <section className="card">
-            <h2>📍 Critical Path Method (CPM)</h2>
+            <h2>📍 Critical Path Method / Метод критического пути (CPM)</h2>
             <p style={{ marginBottom: 16, fontSize: '0.85rem', opacity: 0.8 }}>Critical Path — самая длинная цепочка зависимых задач. Задержка на CP = задержка всего проекта.</p>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -124,11 +124,11 @@ export default function RiskChangeManagement() {
               <h4 style={{ margin: '0 0 8px' }}>💡 Fast Tracking vs Crashing</h4>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                 <div>
-                  <div style={{ fontWeight: 600, marginBottom: 4 }}>Fast Tracking</div>
+                  <div style={{ fontWeight: 600, marginBottom: 4 }}>Fast Tracking (быстрый проход)</div>
                   <div style={{ fontSize: '0.85rem' }}>Параллелизация задач с CP. Быстрее, но ↑ риск переделок (rework).</div>
                 </div>
                 <div>
-                  <div style={{ fontWeight: 600, marginBottom: 4 }}>Crashing</div>
+                  <div style={{ fontWeight: 600, marginBottom: 4 }}>Crashing (сжатие)</div>
                   <div style={{ fontSize: '0.85rem' }}>Добавление ресурсов. Дороже, но снижает длительность при минимальном риске.</div>
                 </div>
               </div>
@@ -165,14 +165,14 @@ export default function RiskChangeManagement() {
           </div>
 
           <div style={{ marginTop: 16, padding: 16, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8 }}>
-            <h3 style={{ margin: '0 0 12px' }}>🎯 Risk Response Strategies</h3>
+            <h3 style={{ margin: '0 0 12px' }}>🎯 Risk Response Strategies (стратегии реагирования на риски)</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, textAlign: 'center' }}>
               {[
-                { name: 'Avoid', icon: '🚫', desc: 'Исключить причину' },
-                { name: 'Mitigate', icon: '🛡️', desc: 'Снизить P или Impact' },
-                { name: 'Transfer', icon: '📦', desc: 'Передать (страховка, outsource)' },
-                { name: 'Accept', icon: '✋', desc: 'Принять (contingency plan)' },
-                { name: 'Exploit', icon: '🚀', desc: 'Усилить позитивный риск' },
+                { name: 'Avoid (избежать)', icon: '🚫', desc: 'Исключить причину' },
+                { name: 'Mitigate (смягчить)', icon: '🛡️', desc: 'Снизить P или Impact' },
+                { name: 'Transfer (передать)', icon: '📦', desc: 'Передать (страховка, аутсорс)' },
+                { name: 'Accept (принять)', icon: '✋', desc: 'Принять (план на случай реализации)' },
+                { name: 'Exploit (использовать)', icon: '🚀', desc: 'Усилить позитивный риск' },
               ].map(s => (
                 <div key={s.name} style={{ padding: 12, background: 'var(--bg)', borderRadius: 8 }}>
                   <div style={{ fontSize: '1.5rem', marginBottom: 4 }}>{s.icon}</div>
@@ -188,7 +188,7 @@ export default function RiskChangeManagement() {
       {/* ── Change Management ── */}
       {tab === 'change' && (
         <section className="card">
-          <h2>🔄 Change Control Process</h2>
+          <h2>🔄 Change Control Process (процесс управления изменениями)</h2>
           <p style={{ marginBottom: 16, fontSize: '0.85rem', opacity: 0.8 }}>Структурированный подход к обработке изменений в проекте.</p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -208,7 +208,7 @@ export default function RiskChangeManagement() {
           </div>
 
           <div style={{ marginTop: 16, padding: 16, background: 'var(--card-bg)', border: '2px solid #f59e0b', borderRadius: 8 }}>
-            <h4 style={{ margin: '0 0 8px', color: '#f59e0b' }}>⚠️ Change Request Template</h4>
+            <h4 style={{ margin: '0 0 8px', color: '#f59e0b' }}>⚠️ Change Request Template (шаблон запроса на изменение)</h4>
             <div style={{ fontFamily: 'monospace', fontSize: '0.8rem', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>
 {`CR-ID:  ___
 Дата:   ___
@@ -243,7 +243,7 @@ Approver: ___`}
                   <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--border)' }}>Сценарий</th>
                   <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--border)' }}>Сигнал</th>
                   <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--border)' }}>Реакция</th>
-                  <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--border)' }}>Mindset</th>
+                  <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--border)' }}>Mindset (образ мышления)</th>
                 </tr>
               </thead>
               <tbody>
@@ -260,7 +260,7 @@ Approver: ___`}
           </div>
 
           <div style={{ padding: 16, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8 }}>
-            <h3 style={{ margin: '0 0 12px' }}>🧭 Iron Triangle под давлением</h3>
+            <h3 style={{ margin: '0 0 12px' }}>🧭 Iron Triangle (железный треугольник) под давлением</h3>
             <p style={{ fontSize: '0.85rem', marginBottom: 12 }}>Scope, Time, Cost, Quality — нельзя зафиксировать все 4. При давлении:</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
               {[

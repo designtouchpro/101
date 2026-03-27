@@ -56,7 +56,7 @@ const guildExamples = [
       'Еженедельный митинг (30 мин): что нового в мире фронтенда',
       'Ревью общих UI-компонентов',
       'Выбор общего стека и инструментов',
-      'Lightning talks: каждый показывает что узнал',
+      'Lightning talks (молниеносные доклады): каждый показывает что узнал',
     ],
   },
   {
@@ -73,7 +73,7 @@ const guildExamples = [
     name: 'Architecture Guild',
     icon: '🏗️',
     activities: [
-      'ADR (Architecture Decision Records)',
+      'ADR (Architecture Decision Records — записи архитектурных решений)',
       'Обсуждение кросс-командных интеграций',
       'Tech Radar обновление',
       'Proof of concept для новых технологий',
@@ -110,7 +110,7 @@ export default function GuildsCommunities() {
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           Без кросс-командных структур команды «изобретают велосипед» параллельно, стандарты
-          расходятся, а знания остаются в «силосах». <strong>Communities of Practice</strong> (концепция Этьенна Венгера) —
+          расходятся, а знания остаются в «силосах» (изолированных хранилищах). <strong>Communities of Practice</strong> (концепция Этьенна Венгера) —
           это группы людей, которых объединяет общая практика и желание учиться друг у друга.
         </p>
         <div className="info-box">
@@ -125,7 +125,7 @@ export default function GuildsCommunities() {
 
       {/* Spotify Model */}
       <div className="card">
-        <h3>🎵 Spotify Model</h3>
+        <h3>🎵 Spotify Model (модель Spotify)</h3>
         <p style={{ marginBottom: 16 }}>Модель организации, придуманная в Spotify. Используется как шаблон во многих компаниях.</p>
 
         <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
@@ -259,7 +259,17 @@ export default function GuildsCommunities() {
         <div className="info-box-content">
           <div className="info-box-title">Важно: Spotify Model — не серебряная пуля</div>
           Даже сам Spotify признал, что модель работает не идеально. Не копируйте слепо — адаптируйте под свой контекст.
-          Ключевой принцип: <strong>автономия + alignment</strong>.
+          Ключевой принцип: <strong>автономия + alignment (согласованность)</strong>.
+        </div>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Сообщество_практиков" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Сообщество практиков — Википедия
+          </a>
         </div>
       </div>
     </div>

@@ -47,11 +47,11 @@ function StakeholderSection() {
             <tr><th>Стейкхолдер</th><th>Интерес</th><th>Влияние</th><th>Стратегия</th></tr>
           </thead>
           <tbody>
-            <tr><td>CEO / Founder</td><td>🔴 Высокий</td><td>🔴 Высокое</td><td>Manage closely — регулярные 1:1, aligned vision</td></tr>
-            <tr><td>CTO / VP Engineering</td><td>🔴 Высокий</td><td>🔴 Высокое</td><td>Совместное планирование, tech trade-offs</td></tr>
-            <tr><td>Sales / BD</td><td>🔴 Высокий</td><td>🟡 Среднее</td><td>Keep satisfied — roadmap visibility, win/loss feedback</td></tr>
-            <tr><td>Marketing</td><td>🟡 Средний</td><td>🟡 Среднее</td><td>Keep informed — launch dates, messaging</td></tr>
-            <tr><td>Support / CS</td><td>🟡 Средний</td><td>🟢 Низкое</td><td>Monitor — escalation path, bug triage</td></tr>
+            <tr><td>CEO / Founder</td><td>🔴 Высокий</td><td>🔴 Высокое</td><td>Управлять плотно (Manage closely) — регулярные 1:1, общее видение</td></tr>
+            <tr><td>CTO / VP Engineering</td><td>🔴 Высокий</td><td>🔴 Высокое</td><td>Совместное планирование, технические компромиссы (trade-offs)</td></tr>
+            <tr><td>Sales / BD</td><td>🔴 Высокий</td><td>🟡 Среднее</td><td>Держать довольными (Keep satisfied) — видимость roadmap, обратная связь по сделкам</td></tr>
+            <tr><td>Marketing</td><td>🟡 Средний</td><td>🟡 Среднее</td><td>Держать в курсе (Keep informed) — даты запусков, ключевые сообщения</td></tr>
+            <tr><td>Support / CS</td><td>🟡 Средний</td><td>🟢 Низкое</td><td>Мониторить (Monitor) — путь эскалации, сортировка багов (bug triage)</td></tr>
             <tr><td>Legal / Compliance</td><td>🟢 Переменный</td><td>🔴 Высокое (вето)</td><td>Early involvement для рисковых фич</td></tr>
           </tbody>
         </table>
@@ -80,20 +80,20 @@ function StakeholderSection() {
             <tr><th>Формат</th><th>Частота</th><th>Аудитория</th><th>Содержание</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>1:1</strong></td><td>Еженедельно</td><td>Ключевые стейкхолдеры</td><td>Alignment, блокеры, trade-offs</td></tr>
+            <tr><td><strong>1:1</strong></td><td>Еженедельно</td><td>Ключевые стейкхолдеры</td><td>Согласованность (alignment), блокеры, компромиссы (trade-offs)</td></tr>
             <tr><td><strong>Product Review</strong></td><td>Каждые 2 недели</td><td>Команда + руководство</td><td>Метрики, прогресс, решения</td></tr>
             <tr><td><strong>Roadmap Update</strong></td><td>Ежемесячно</td><td>Широкий круг</td><td>Что изменилось и почему</td></tr>
-            <tr><td><strong>Launch Brief</strong></td><td>За 2 недели до запуска</td><td>Все затронутые</td><td>Что, когда, rollback plan</td></tr>
-            <tr><td><strong>Post-mortem</strong></td><td>После инцидентов</td><td>Команда + стейкхолдеры</td><td>Что случилось, learnings, action items</td></tr>
+            <tr><td><strong>Launch Brief (бриф запуска)</strong></td><td>За 2 недели до запуска</td><td>Все затронутые</td><td>Что, когда, план отката (rollback plan)</td></tr>
+            <tr><td><strong>Post-mortem (разбор инцидента)</strong></td><td>После инцидентов</td><td>Команда + стейкхолдеры</td><td>Что случилось, уроки (learnings), действия (action items)</td></tr>
           </tbody>
         </table>
 
         <h3>Принципы коммуникации</h3>
         <ul>
-          <li><strong>No surprises</strong> — стейкхолдеры узнают о проблемах от вас, не из Slack</li>
-          <li><strong>Disagree and commit</strong> — зафиксировать решение, даже если не все согласны</li>
-          <li><strong>Written &gt; verbal</strong> — решения в документе, не в памяти</li>
-          <li><strong>Bottom line up front</strong> — рекомендация → контекст → данные (не наоборот)</li>
+          <li><strong>No surprises (без сюрпризов)</strong> — стейкхолдеры узнают о проблемах от вас, не из Slack</li>
+          <li><strong>Disagree and commit (не согласен, но принял)</strong> — зафиксировать решение, даже если не все согласны</li>
+          <li><strong>Written &gt; verbal (письменно &gt; устно)</strong> — решения в документе, не в памяти</li>
+          <li><strong>Bottom line up front (главное вперёд)</strong> — рекомендация → контекст → данные (не наоборот)</li>
         </ul>
       </div>
     </>
@@ -114,11 +114,11 @@ function ProductOpsSection() {
             <tr><th>Область</th><th>Что делает Product Ops</th><th>Без Product Ops</th></tr>
           </thead>
           <tbody>
-            <tr><td>Данные</td><td>Единый data pipeline, дашборды, self-serve analytics</td><td>Каждый PM делает свои запросы в аналитику</td></tr>
-            <tr><td>Процессы</td><td>Шаблоны PRD, launch checklist, rituals</td><td>Каждый PM по-своему</td></tr>
-            <tr><td>Инструменты</td><td>Jira/Linear настройка, feature flags, A/B инфраструктура</td><td>Разнобой инструментов</td></tr>
-            <tr><td>Feedback</td><td>Централизованный сбор (Productboard, Intercom, surveys)</td><td>Feedback теряется</td></tr>
-            <tr><td>Customer intel</td><td>Win/loss analysis, NPS trends, churn reasons</td><td>Нет системной работы</td></tr>
+            <tr><td>Данные</td><td>Единый data pipeline, дашборды, самостоятельная аналитика (self-serve)</td><td>Каждый PM делает свои запросы в аналитику</td></tr>
+            <tr><td>Процессы</td><td>Шаблоны PRD, чеклисты запуска, регулярные ритуалы</td><td>Каждый PM по-своему</td></tr>
+            <tr><td>Инструменты</td><td>Jira/Linear настройка, флаги фич (feature flags), A/B инфраструктура</td><td>Разнобой инструментов</td></tr>
+            <tr><td>Feedback (обратная связь)</td><td>Централизованный сбор (Productboard, Intercom, опросы)</td><td>Обратная связь теряется</td></tr>
+            <tr><td>Анализ клиентов (Customer Intel)</td><td>Анализ сделок (win/loss), тренды NPS, причины оттока (churn)</td><td>Нет системной работы</td></tr>
           </tbody>
         </table>
       </div>
@@ -164,7 +164,7 @@ function LaunchSection() {
     <>
       <div className="card">
         <h2>🚀 Launch Management</h2>
-        <h3>Launch Tiers</h3>
+        <h3>Уровни запуска (Launch Tiers)</h3>
         <table className="comparison-table">
           <thead>
             <tr><th>Tier</th><th>Описание</th><th>Примеры</th><th>Кто вовлечён</th></tr>
@@ -199,7 +199,7 @@ function LaunchSection() {
             <tr><th>Фаза</th><th>Задача</th><th>Owner</th><th>Дедлайн</th></tr>
           </thead>
           <tbody>
-            <tr><td rowSpan={3}><strong>Pre-launch (2w)</strong></td><td>Feature freeze + QA sign-off</td><td>Engineering</td><td>T-14</td></tr>
+            <tr><td rowSpan={3}><strong>Pre-launch (2w)</strong></td><td>Заморозка фич (feature freeze) + подпись QA (sign-off)</td><td>Engineering</td><td>T-14</td></tr>
             <tr><td>Внутренний тренинг (Sales, Support)</td><td>Product Ops</td><td>T-10</td></tr>
             <tr><td>Press/blog материалы готовы</td><td>Marketing</td><td>T-7</td></tr>
             <tr><td rowSpan={3}><strong>Launch day</strong></td><td>Feature flag → 100%</td><td>Engineering</td><td>T-0</td></tr>
@@ -219,11 +219,11 @@ function LaunchSection() {
             <tr><th>Тип изменения</th><th>Риск</th><th>Стратегия</th></tr>
           </thead>
           <tbody>
-            <tr><td>Депрекация фичи</td><td>🔴 Высокий</td><td>6mo notice → migration guide → sunset date → forced migration</td></tr>
-            <tr><td>Изменение pricing</td><td>🔴 Высокий</td><td>Grandfather existing → communicate early → phased rollout</td></tr>
+            <tr><td>Депрекация фичи</td><td>🔴 Высокий</td><td>6 мес. уведомление → гайд по миграции → дата заката (sunset date) → принудительный переход</td></tr>
+            <tr><td>Изменение pricing</td><td>🔴 Высокий</td><td>Сохранить условия для старых клиентов (grandfather) → ранняя коммуникация → поэтапный запуск (phased rollout)</td></tr>
             <tr><td>Breaking API change</td><td>🔴 Высокий</td><td>Versioning (v1/v2) → deprecation header → sunset date</td></tr>
-            <tr><td>UI redesign</td><td>🟡 Средний</td><td>Opt-in beta → feedback → gradual rollout → old UI removal</td></tr>
-            <tr><td>Default change</td><td>🟡 Средний</td><td>Only new users → existing users notification → opt-out period</td></tr>
+            <tr><td>UI-редизайн</td><td>🟡 Средний</td><td>Бета по желанию (opt-in) → сбор отзывов → постепенный запуск → удаление старого UI</td></tr>
+            <tr><td>Изменение дефолтов</td><td>🟡 Средний</td><td>Только новые пользователи → уведомление старых → период отказа (opt-out)</td></tr>
           </tbody>
         </table>
       </div>
@@ -244,33 +244,33 @@ function CrossFunctionalSection() {
           <tbody>
             <tr>
               <td><strong>Engineering</strong></td>
-              <td>Контекст «зачем», приоритеты, acceptance criteria</td>
-              <td>Tech constraints, estimates, feasibility</td>
-              <td>Scope creep vs tech debt</td>
+              <td>Контекст «зачем», приоритеты, критерии приёмки (acceptance criteria)</td>
+              <td>Тех. ограничения, оценки, осуществимость (feasibility)</td>
+              <td>Расползание объёма (scope creep) vs техдолг (tech debt)</td>
             </tr>
             <tr>
               <td><strong>Design</strong></td>
-              <td>User problems, constraints, data</td>
-              <td>Solutions, prototypes, user flows</td>
-              <td>Ideal vs MVP, speed vs polish</td>
+              <td>Проблемы пользователей, ограничения, данные</td>
+              <td>Решения, прототипы, пользовательские сценарии (user flows)</td>
+              <td>Идеал vs MVP, скорость vs качество</td>
             </tr>
             <tr>
               <td><strong>Data/Analytics</strong></td>
-              <td>Hypothesis, success metrics, segments</td>
-              <td>Dashboards, experiment results, insights</td>
-              <td>Statistical rigor vs speed</td>
+              <td>Гипотезы, метрики успеха, сегменты</td>
+              <td>Дашборды, результаты экспериментов, инсайты</td>
+              <td>Статистическая строгость vs скорость</td>
             </tr>
             <tr>
               <td><strong>Sales</strong></td>
-              <td>Roadmap visibility, competitive intel</td>
-              <td>Customer pain points, deal blockers</td>
-              <td>One-off requests vs scalable features</td>
+              <td>Видимость roadmap, конкурентная разведка</td>
+              <td>Боли клиентов, блокеры сделок</td>
+              <td>Разовые запросы (one-off) vs масштабируемые фичи</td>
             </tr>
             <tr>
               <td><strong>Marketing</strong></td>
-              <td>Launch dates, positioning, ICP</td>
-              <td>Market feedback, lead quality data</td>
-              <td>Feature-led vs benefit-led messaging</td>
+              <td>Даты запуска, позиционирование, ICP (профиль идеального клиента)</td>
+              <td>Обратная связь с рынка, качество лидов</td>
+              <td>Фича-ориентированные vs ценность-ориентированные сообщения</td>
             </tr>
           </tbody>
         </table>
@@ -283,11 +283,11 @@ function CrossFunctionalSection() {
             <tr><th>Паттерн</th><th>Когда</th><th>Как</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Data-driven decision</strong></td><td>Есть данные, чтобы решить</td><td>A/B тест, метрики, user research → объективный ответ</td></tr>
-            <tr><td><strong>RACI matrix</strong></td><td>Непонятно, кто решает</td><td>Responsible, Accountable, Consulted, Informed</td></tr>
-            <tr><td><strong>Escalation path</strong></td><td>Тупик на уровне команды</td><td>PM → их PM-менеджер → VP → CPO (с рекомендацией)</td></tr>
-            <tr><td><strong>Time-boxed debate</strong></td><td>Нет однозначного ответа</td><td>30 мин, каждая сторона — 10 мин + decision owner решает</td></tr>
-            <tr><td><strong>Reversible vs irreversible</strong></td><td>Паралич выбора</td><td>Reversible → try fast. Irreversible → invest в анализ</td></tr>
+            <tr><td><strong>Решение на данных (Data-driven)</strong></td><td>Есть данные, чтобы решить</td><td>A/B тест, метрики, исследования → объективный ответ</td></tr>
+            <tr><td><strong>RACI-матрица (Responsible, Accountable, Consulted, Informed)</strong></td><td>Непонятно, кто решает</td><td>Ответственный, Подотчётный, Консультируемый, Информируемый</td></tr>
+            <tr><td><strong>Путь эскалации (Escalation path)</strong></td><td>Тупик на уровне команды</td><td>PM → их PM-менеджер → VP → CPO (с рекомендацией)</td></tr>
+            <tr><td><strong>Дебаты с ограничением по времени (Time-boxed debate)</strong></td><td>Нет однозначного ответа</td><td>30 мин, каждая сторона — 10 мин + владелец решения решает</td></tr>
+            <tr><td><strong>Обратимое vs необратимое (Reversible vs Irreversible)</strong></td><td>Паралич выбора</td><td>Обратимое → пробуем быстро. Необратимое → глубокий анализ</td></tr>
           </tbody>
         </table>
       </div>

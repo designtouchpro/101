@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="demo-container">
       <div className="home-hero">
-        <h1>👨‍💼 TeamLead Playground</h1>
+        <h1>👨‍💼 TeamLead Playground — площадка тимлида</h1>
         <p>Интерактивный курс по тимлидству в IT. Лидерство, конфликты, делегирование, 1-on-1 и процессы — с примерами и симуляциями.</p>
       </div>
 
@@ -14,7 +14,7 @@ export default function Home() {
         <Link to="/leadership/styles" className="feature-card">
           <div className="feature-icon">🎭</div>
           <h3>Стили лидерства</h3>
-          <p>Автократ, демократ, servant leader, коуч — когда какой стиль применять и как переключаться</p>
+          <p>Автократ, демократ, servant leader (лидер-слуга), коуч — когда какой стиль применять и как переключаться</p>
         </Link>
 
         <Link to="/leadership/delegation" className="feature-card">
@@ -26,7 +26,7 @@ export default function Home() {
         <Link to="/leadership/maturity" className="feature-card">
           <div className="feature-icon">📈</div>
           <h3>Зрелость команды</h3>
-          <p>Модель Такмана: forming → storming → norming → performing. Симулятор жизни команды</p>
+          <p>Модель Такмана: forming (формирование) → storming (штормы) → norming (нормализация) → performing (производительность). Симулятор жизни команды</p>
         </Link>
 
         <Link to="/one-on-one/guide" className="feature-card">
@@ -38,7 +38,7 @@ export default function Home() {
         <Link to="/one-on-one/feedback" className="feature-card">
           <div className="feature-icon">💬</div>
           <h3>Модели фидбека</h3>
-          <p>SBI, STAR, Radical Candor — практика обратной связи на реальных ситуациях</p>
+          <p>SBI, STAR, Radical Candor (радикальная откровенность) — практика обратной связи на реальных ситуациях</p>
         </Link>
 
         <Link to="/conflicts/styles" className="feature-card">
@@ -56,31 +56,31 @@ export default function Home() {
         <Link to="/decomposition/tasks" className="feature-card">
           <div className="feature-icon">🧩</div>
           <h3>Декомпозиция задач</h3>
-          <p>Как разбивать большие задачи на маленькие. INVEST-критерии, user stories</p>
+          <p>Как разбивать большие задачи на маленькие. INVEST-критерии, user stories (пользовательские истории)</p>
         </Link>
 
         <Link to="/decomposition/estimation" className="feature-card">
           <div className="feature-icon">🃏</div>
           <h3>Оценка задач</h3>
-          <p>Planning Poker, T-shirt sizing, #NoEstimates — симулятор оценки</p>
+          <p>Planning Poker (покер планирования), T-shirt sizing (оценка «размерами»), #NoEstimates (без оценок) — симулятор оценки</p>
         </Link>
 
         <Link to="/processes/guilds" className="feature-card">
           <div className="feature-icon">🏛️</div>
-          <h3>Гильдии и CoP</h3>
-          <p>Spotify-модель: tribes, squads, chapters, guilds. Как организовать обмен знаниями</p>
+          <h3>Гильдии и CoP (сообщества практик)</h3>
+          <p>Spotify-модель: tribes (племена), squads (отряды), chapters (чаптеры), guilds (гильдии). Как организовать обмен знаниями</p>
         </Link>
 
         <Link to="/processes/topologies" className="feature-card">
           <div className="feature-icon">🔷</div>
-          <h3>Team Topologies</h3>
-          <p>Stream-aligned, enabling, complicated subsystem, platform — 4 типа команд</p>
+          <h3>Team Topologies (топологии команд)</h3>
+          <p>Stream-aligned (потоковая), enabling (помогающая), complicated subsystem (сложная подсистема), platform (платформенная) — 4 типа команд</p>
         </Link>
 
         <Link to="/processes/tech-radar" className="feature-card">
           <div className="feature-icon">📡</div>
-          <h3>Tech Radar</h3>
-          <p>Как вести технологический радар: adopt, trial, assess, hold</p>
+          <h3>Tech Radar (технологический радар)</h3>
+          <p>Как вести технологический радар: adopt (внедряем), trial (пробуем), assess (изучаем), hold (замораживаем)</p>
         </Link>
       </div>
 

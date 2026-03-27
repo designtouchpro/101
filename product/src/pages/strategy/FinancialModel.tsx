@@ -55,7 +55,7 @@ export default function FinancialModel() {
           Модель помогает ответить: когда выйдем в прибыль и сколько нужно инвестиций?
         </p>
         <div className="info-box">
-          <strong>🎯 Rule of 40</strong>: Growth Rate + Profit Margin ≥ 40%. Если растём на 100% в год
+          <strong>🎯 Правило 40 (Rule of 40)</strong>: Темп роста (Growth Rate) + маржа прибыли (Profit Margin) ≥ 40%. Если растём на 100% в год
           при margin -60%, это ОК (100-60=40). Если растём на 10%, нужен margin ≥30%.
         </div>
       </div>
@@ -107,14 +107,14 @@ export default function FinancialModel() {
             </div>
             <div>
               <label style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', display: 'block', marginBottom: 4 }}>
-                Fixed Costs $/мес (команда, офис): <strong>${fixedCosts.toLocaleString()}</strong>
+                Постоянные расходы (Fixed Costs) $/мес: <strong>${fixedCosts.toLocaleString()}</strong>
               </label>
               <input type="range" min={1000} max={100000} step={1000} value={fixedCosts}
                 onChange={e => setFixedCosts(+e.target.value)} style={{ width: '100%' }} />
             </div>
             <div>
               <label style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', display: 'block', marginBottom: 4 }}>
-                Variable Costs (% от Revenue): <strong>{variableCostPct}%</strong>
+                Переменные расходы (Variable Costs), % от дохода: <strong>{variableCostPct}%</strong>
               </label>
               <input type="range" min={5} max={60} value={variableCostPct}
                 onChange={e => setVariableCostPct(+e.target.value)} style={{ width: '100%' }} />
@@ -131,8 +131,8 @@ export default function FinancialModel() {
             { label: 'CAC', value: `$${cac}`, ok: true },
             { label: 'LTV/CAC', value: ltvCacRatio.toFixed(1) + 'x', ok: ltvCacRatio >= 3 },
             { label: 'CAC Payback', value: `${paybackMonths} мес`, ok: paybackMonths <= 12 },
-            { label: 'Breakeven', value: breakEvenMonth > 0 ? `Мес ${breakEvenMonth}` : 'Нет', ok: breakEvenMonth > 0 && breakEvenMonth <= 12 },
-            { label: 'Year Revenue', value: `$${(totalRevenue / 1000).toFixed(0)}K`, ok: true },
+            { label: 'Точка безубыточности', value: breakEvenMonth > 0 ? `Мес ${breakEvenMonth}` : 'Нет', ok: breakEvenMonth > 0 && breakEvenMonth <= 12 },
+            { label: 'Годовой доход', value: `$${(totalRevenue / 1000).toFixed(0)}K`, ok: true },
           ].map(m => (
             <div key={m.label} style={{ textAlign: 'center', padding: '12px 8px', borderRadius: 8, background: 'var(--bg-primary)' }}>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{m.label}</div>
@@ -189,13 +189,13 @@ export default function FinancialModel() {
             <thead>
               <tr>
                 <th>Месяц</th>
-                <th>New Paid</th>
-                <th>Churned</th>
-                <th>Total Users</th>
-                <th>Revenue</th>
-                <th>Total Costs</th>
-                <th>Profit</th>
-                <th>Margin</th>
+                <th>Новые платящие</th>
+                <th>Отток</th>
+                <th>Всего юзеров</th>
+                <th>Доход</th>
+                <th>Расходы</th>
+                <th>Прибыль</th>
+                <th>Маржа</th>
               </tr>
             </thead>
             <tbody>
@@ -227,6 +227,16 @@ export default function FinancialModel() {
               </tr>
             </tfoot>
           </table>
+        </div>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Финансовая_модель" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Финансовая модель — Википедия
+          </a>
         </div>
       </div>
     </div>

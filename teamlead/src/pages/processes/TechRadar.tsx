@@ -12,10 +12,10 @@ interface RadarItem {
 }
 
 const rings: Record<Ring, { name: string; color: string; desc: string }> = {
-  adopt: { name: 'Adopt', color: '#22c55e', desc: 'Используем активно. Рекомендуем всем командам.' },
-  trial: { name: 'Trial', color: '#6366f1', desc: 'Пробуем на некритичных проектах. Выглядит перспективно.' },
-  assess: { name: 'Assess', color: '#f59e0b', desc: 'Изучаем. Стоит обратить внимание, но рано принимать решение.' },
-  hold: { name: 'Hold', color: '#ef4444', desc: 'Не используем для новых проектов. Легаси или не оправдало ожиданий.' },
+  adopt: { name: 'Adopt (внедряем)', color: '#22c55e', desc: 'Используем активно. Рекомендуем всем командам.' },
+  trial: { name: 'Trial (пробуем)', color: '#6366f1', desc: 'Пробуем на некритичных проектах. Выглядит перспективно.' },
+  assess: { name: 'Assess (изучаем)', color: '#f59e0b', desc: 'Изучаем. Стоит обратить внимание, но рано принимать решение.' },
+  hold: { name: 'Hold (замораживаем)', color: '#ef4444', desc: 'Не используем для новых проектов. Легаси или не оправдало ожиданий.' },
 }
 
 const quadrants: Record<Quadrant, { name: string; icon: string }> = {
@@ -29,7 +29,7 @@ const sampleItems: RadarItem[] = [
   // Languages
   { name: 'TypeScript', ring: 'adopt', quadrant: 'languages', desc: 'Стандарт для frontend и Node.js проектов' },
   { name: 'React 19', ring: 'adopt', quadrant: 'languages', desc: 'Основной UI-фреймворк' },
-  { name: 'Rust', ring: 'assess', quadrant: 'languages', desc: 'Для performance-critical сервисов', moved: 'new' },
+  { name: 'Rust', ring: 'assess', quadrant: 'languages', desc: 'Для высоконагруженных (performance-critical) сервисов', moved: 'new' },
   { name: 'Vue 3', ring: 'trial', quadrant: 'languages', desc: 'Альтернатива React для некоторых проектов' },
   { name: 'Angular', ring: 'hold', quadrant: 'languages', desc: 'Не стартуем новые проекты на Angular' },
   { name: 'Go', ring: 'trial', quadrant: 'languages', desc: 'Для микросервисов и CLI', moved: 'up' },
@@ -50,11 +50,11 @@ const sampleItems: RadarItem[] = [
   { name: 'AWS', ring: 'adopt', quadrant: 'platforms', desc: 'Основной облачный провайдер' },
 
   // Techniques
-  { name: 'Trunk-based development', ring: 'adopt', quadrant: 'techniques', desc: 'Короткоживущие ветки, частая интеграция' },
-  { name: 'Feature flags', ring: 'adopt', quadrant: 'techniques', desc: 'Деплой != релиз' },
-  { name: 'ADR', ring: 'trial', quadrant: 'techniques', desc: 'Architecture Decision Records', moved: 'up' },
-  { name: 'Micro frontends', ring: 'assess', quadrant: 'techniques', desc: 'Нужно ли нам это?' },
-  { name: 'Gitflow', ring: 'hold', quadrant: 'techniques', desc: 'Слишком сложный branching model', moved: 'down' },
+  { name: 'Trunk-based development', ring: 'adopt', quadrant: 'techniques', desc: 'Короткоживущие ветки, частая интеграция (разработка на основе основной ветки)' },
+  { name: 'Feature flags', ring: 'adopt', quadrant: 'techniques', desc: 'Флаги фич: деплой ≠ релиз' },
+  { name: 'ADR', ring: 'trial', quadrant: 'techniques', desc: 'Architecture Decision Records (записи архитектурных решений)', moved: 'up' },
+  { name: 'Micro frontends', ring: 'assess', quadrant: 'techniques', desc: 'Микрофронтенды — нужно ли нам это?' },
+  { name: 'Gitflow', ring: 'hold', quadrant: 'techniques', desc: 'Слишком сложная модель ветвления (branching model)', moved: 'down' },
 ]
 
 export default function TechRadar() {
@@ -106,7 +106,7 @@ export default function TechRadar() {
         </p>
         <div className="info-box">
           <div className="info-box-content">
-            <strong>💡 Как внедрить</strong>: Соберите Tech leads раз в квартал. Каждый предлагает «блипы» (blips) — технологии с обоснованием кольца.
+            <strong>💡 Как внедрить</strong>: Соберите Tech leads раз в квартал. Каждый предлагает «блипы» (blips — точки на радаре) — технологии с обоснованием кольца.
             Обсудите спорные, зафиксируйте результат. Опубликуйте радар внутри компании (Confluence, Notion, GitHub Pages).
             Обновляйте раз в 3–6 месяцев — технологии двигаются между кольцами, а не добавляются и забываются.
           </div>

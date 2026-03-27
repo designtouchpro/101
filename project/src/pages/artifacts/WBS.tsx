@@ -48,7 +48,7 @@ const rules = [
   { title: 'Правило 100%', desc: 'Сумма работ дочерних элементов = 100% работы родителя. Ничего лишнего, ничего не упущено.' },
   { title: 'Взаимоисключение', desc: 'Элементы одного уровня не должны пересекаться. Нет дублирования работ.' },
   { title: '8/80', desc: 'Рабочий пакет = от 8 до 80 часов работы. Меньше — слишком мелко, больше — надо декомпозировать.' },
-  { title: 'Ориентация на результат', desc: 'WBS описывает ЧТО (deliverables), а не КАК (активности). "Документация API" ✅, "Писать документацию" ❌.' },
+  { title: 'Ориентация на результат', desc: 'WBS описывает ЧТО — deliverables (результаты), а не КАК — activities (активности). "Документация API" ✅, "Писать документацию" ❌.' },
   { title: '3-4 уровня', desc: 'Оптимальная глубина WBS для большинства проектов. Слишком глубоко = бюрократия.' },
 ]
 
@@ -166,14 +166,14 @@ export default function WBS() {
   return (
     <div className="demo-container">
       <div className="demo-header">
-        <h1>🏗️ Work Breakdown Structure</h1>
+        <h1>🏗️ Work Breakdown Structure (Иерархическая структура работ)</h1>
         <p>Декомпозиция проекта на управляемые части. Кликайте на названия для редактирования.</p>
       </div>
 
       <div className="card" style={{ borderLeft: '4px solid var(--accent-main)' }}>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           <strong>Work Breakdown Structure (WBS)</strong> — это иерархическая декомпозиция всего объёма работ проекта, 
-          описанная в PMBOK как один из ключевых инструментов планирования. Вместо того чтобы оценивать проект целиком 
+          описанная в PMBOK (Project Management Body of Knowledge) как один из ключевых инструментов планирования. Вместо того чтобы оценивать проект целиком 
           («сделать приложение за 3 месяца»), WBS разбивает его на пакеты работ (work packages) — элементы, 
           которые можно оценить, назначить ответственного и отследить.
         </p>
@@ -186,8 +186,8 @@ export default function WBS() {
         <div className="info-box">
           <div className="info-box-content">
             <strong>💡 Совет</strong>: Используйте WBS не только для waterfall. В Agile WBS отлично работает 
-            для начальной разбивки эпиков на фичи перед story mapping. Дерево помогает убедиться, что ничего не забыто, 
-            прежде чем переходить к user stories.
+            для начальной разбивки эпиков на фичи перед story mapping (картирование историй). Дерево помогает убедиться, что ничего не забыто, 
+            прежде чем переходить к user stories (пользовательские истории).
           </div>
         </div>
       </div>
@@ -241,6 +241,16 @@ export default function WBS() {
               <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{rule.desc}</div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Структура_разбиения_работ" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 WBS — Википедия
+          </a>
         </div>
       </div>
     </div>

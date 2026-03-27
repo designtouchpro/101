@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom'
 
 const features = [
-  { icon: '🎯', title: 'Marketing Mix (4P/7P)', desc: 'Product, Price, Place, Promotion и расширенные 7P', to: '/fundamentals/marketing-mix' },
+  { icon: '🎯', title: 'Marketing Mix (4P/7P)', desc: 'Продукт, Цена, Место, Продвижение и расширенные 7P', to: '/fundamentals/marketing-mix' },
   { icon: '🔍', title: 'STP-анализ', desc: 'Сегментация, таргетирование, позиционирование', to: '/fundamentals/stp' },
   { icon: '📱', title: 'Каналы продвижения', desc: 'SEO, SMM, Email, контент-маркетинг, PPC', to: '/digital/channels' },
-  { icon: '🔻', title: 'Маркетинговая воронка', desc: 'AIDA, AARRR, Customer Journey Map', to: '/digital/funnel' },
+  { icon: '🔻', title: 'Маркетинговая воронка', desc: 'AIDA, AARRR, карта пути клиента (CJM)', to: '/digital/funnel' },
   { icon: '📊', title: 'Метрики маркетинга', desc: 'CAC, LTV, ROI, ROAS, CR, CTR', to: '/analytics/metrics' },
   { icon: '🧪', title: 'A/B тесты и UTM', desc: 'Настройка экспериментов, UTM-разметка', to: '/analytics/ab-testing' },
-  { icon: '💎', title: 'Бренд-платформа', desc: 'Миссия, ценности, Tone of Voice, айдентика', to: '/brand/platform' },
+  { icon: '💎', title: 'Бренд-платформа', desc: 'Миссия, ценности, тон коммуникации, айдентика', to: '/brand/platform' },
   { icon: '✍️', title: 'Контент-стратегия', desc: 'Типы контента, контент-план, воронка контента', to: '/brand/content' },
-  { icon: '🎯', title: 'Таргетинг и аудитории', desc: 'Look-alike, ретаргетинг, сегменты', to: '/performance/targeting' },
-  { icon: '💰', title: 'Unit-экономика маркетинга', desc: 'CAC/LTV, payback period, когорты', to: '/performance/unit-economics' },
+  { icon: '🎯', title: 'Таргетинг и аудитории', desc: 'Похожие аудитории, ретаргетинг, сегменты', to: '/performance/targeting' },
+  { icon: '💰', title: 'Unit-экономика маркетинга', desc: 'CAC/LTV, срок окупаемости, когорты', to: '/performance/unit-economics' },
 ]
 
 export default function Home() {

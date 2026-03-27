@@ -4,7 +4,7 @@ const investCriteria = [
   { letter: 'I', name: 'Independent', title: 'Независимая', desc: 'Задача не зависит от других. Можно взять и сделать.', bad: 'Задача: «Сделать API» → зависит от базы, которую ещё не развернули', good: 'Задача: «Создать эндпоинт GET /users с mock-данными»' },
   { letter: 'N', name: 'Negotiable', title: 'Обсуждаемая', desc: 'Детали реализации можно обсудить. Не жёсткий контракт.', bad: '«Использовать Redux и создать 5 редьюсеров»', good: '«Реализовать управление состоянием корзины» — как именно — на усмотрение команды' },
   { letter: 'V', name: 'Valuable', title: 'Ценная', desc: 'Каждая задача приносит видимую пользу пользователю или бизнесу.', bad: '«Настроить конфиг webpack»', good: '«Пользователь может видеть историю заказов»' },
-  { letter: 'E', name: 'Estimable', title: 'Оцениваемая', desc: 'Команда может оценить объём работ.', bad: '«Исследовать проблемы производительности» — можно копать вечно', good: '«Профилировать главную страницу и составить список 3 наибольших bottleneck»' },
+  { letter: 'E', name: 'Estimable', title: 'Оцениваемая', desc: 'Команда может оценить объём работ.', bad: '«Исследовать проблемы производительности» — можно копать вечно', good: '«Профилировать главную страницу и составить список 3 наибольших узких мест (bottleneck)»' },
   { letter: 'S', name: 'Small', title: 'Маленькая', desc: 'Вмещается в спринт. Идеально — 1-3 дня.', bad: '«Переписать модуль авторизации» (на 3 недели)', good: '«Добавить валидацию email на форме регистрации» (4 часа)' },
   { letter: 'T', name: 'Testable', title: 'Тестируемая', desc: 'Есть чёткие критерии «сделано».', bad: '«Улучшить UX расчёта» — как проверить?', good: '«При вводе невалидного email показывается красная рамка и текст ошибки»' },
 ]
@@ -29,7 +29,7 @@ const bigTask = {
       color: '#f59e0b',
     },
     {
-      name: 'Уровень 2: User Stories',
+      name: 'Уровень 2: User Stories (пользовательские истории)',
       items: [
         'Добавить товар в корзину',
         'Удалить товар из корзины',
@@ -69,9 +69,9 @@ const decompositionTechniques = [
   { name: 'По workflow', icon: '🔄', desc: 'Разбиваем по шагам пользователя: регистрация → профиль → настройки', example: 'Checkout: корзина → адрес → оплата → подтверждение' },
   { name: 'По CRUD', icon: '📝', desc: 'Create, Read, Update, Delete для каждой сущности', example: 'Товар: добавить, посмотреть, редактировать, удалить' },
   { name: 'По ролям', icon: '👥', desc: 'Разные пользователи — разные истории', example: 'Покупатель видит каталог / Админ управляет товарами' },
-  { name: 'По happy/sad path', icon: '🔀', desc: 'Сначала happy path, потом обработка ошибок', example: '1) Успешная оплата. 2) Карта отклонена. 3) Timeout' },
+  { name: 'По happy/sad path (успешный/ошибочный путь)', icon: '🔀', desc: 'Сначала happy path, потом обработка ошибок', example: '1) Успешная оплата. 2) Карта отклонена. 3) Timeout' },
   { name: 'По слоям', icon: '📚', desc: 'UI → API → Database → Интеграции', example: 'UI формы → API эндпоинт → Миграция БД → Email-сервис' },
-  { name: 'По спайкам', icon: '🔬', desc: 'Сначала spike/исследование, потом реализация', example: 'Spike: выбрать платёжный шлюз (2 дня) → Интеграция (5 дней)' },
+  { name: 'По спайкам', icon: '🔬', desc: 'Сначала spike (исследовательская задача), потом реализация', example: 'Spike: выбрать платёжный шлюз (2 дня) → Интеграция (5 дней)' },
 ]
 
 export default function TaskDecomposition() {
@@ -99,7 +99,7 @@ export default function TaskDecomposition() {
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           Декомпозиция — это <strong>разбиение большой задачи на маленькие, независимые части</strong>.
           Это основа агильной разработки: маленькие задачи проще оценить, проще отревьюить
-          и проще откатить. Критерии <strong>INVEST</strong> (Independent, Negotiable, Valuable, Estimable, Small, Testable)
+          и проще откатить. Критерии <strong>INVEST</strong> (Independent — независимая, Negotiable — обсуждаемая, Valuable — ценная, Estimable — оцениваемая, Small — маленькая, Testable — тестируемая)
           помогают проверить качество декомпозиции.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
@@ -112,7 +112,7 @@ export default function TaskDecomposition() {
           <div className="info-box-content">
             <div className="info-box-title">Правило: 1–3 дня</div>
             Если задачу нельзя сделать за 1–3 дня — она недостаточно декомпозирована. Если нельзя написать
-            чёткий Definition of Done — она недостаточно понятна. Декомпозируйте дальше.
+            чёткий Definition of Done (критерий готовности) — она недостаточно понятна. Декомпозируйте дальше.
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@ export default function TaskDecomposition() {
       {/* INVEST */}
       <div className="card">
         <h3>INVEST — критерии хорошей задачи</h3>
-        <p style={{ marginBottom: 16 }}>Проверяйте каждую user story по этим критериям:</p>
+        <p style={{ marginBottom: 16 }}>Проверяйте каждую user story (пользовательскую историю) по этим критериям:</p>
 
         {investCriteria.map(c => (
           <div key={c.letter} style={{

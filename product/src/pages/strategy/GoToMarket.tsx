@@ -12,17 +12,17 @@ interface Channel {
 const channels: Channel[] = [
   { name: 'Контекстная реклама', type: 'paid', cost: 'high', speed: 'fast', scale: 'high', desc: 'Google Ads, Яндекс.Директ — быстрый старт, но дорого.' },
   { name: 'SEO', type: 'organic', cost: 'low', speed: 'slow', scale: 'high', desc: 'Долгосрочная стратегия. Органический трафик растёт месяцами.' },
-  { name: 'Content Marketing', type: 'organic', cost: 'med', speed: 'slow', scale: 'high', desc: 'Блог, видео, подкасты. Доверие + SEO + лидогенерация.' },
-  { name: 'Product Hunt / HN', type: 'organic', cost: 'low', speed: 'fast', scale: 'low', desc: 'Разовый всплеск внимания. Хорош для early adopters.' },
+  { name: 'Контент-маркетинг (Content Marketing)', type: 'organic', cost: 'med', speed: 'slow', scale: 'high', desc: 'Блог, видео, подкасты. Доверие + SEO + лидогенерация.' },
+  { name: 'Product Hunt / HN', type: 'organic', cost: 'low', speed: 'fast', scale: 'low', desc: 'Разовый всплеск внимания. Хорош для ранних последователей (early adopters).' },
   { name: 'Партнёрская программа', type: 'partner', cost: 'med', speed: 'medium', scale: 'med', desc: 'Реферальная система или affiliate-программа.' },
   { name: 'Таргет в соцсетях', type: 'paid', cost: 'med', speed: 'fast', scale: 'med', desc: 'Facebook, Instagram, TikTok Ads — быстро, но нужен креатив.' },
-  { name: 'Cold Outreach (B2B)', type: 'paid', cost: 'low', speed: 'medium', scale: 'low', desc: 'Email/LinkedIn outreach. Персонально, но не масштабируется.' },
+  { name: 'Холодные контакты (Cold Outreach)', type: 'paid', cost: 'low', speed: 'medium', scale: 'low', desc: 'Email/LinkedIn outreach. Персонально, но не масштабируется.' },
   { name: 'Интеграции / Marketplace', type: 'partner', cost: 'med', speed: 'medium', scale: 'high', desc: 'Присутствие в Slack Marketplace, Shopify App Store и т.д.' },
 ]
 
 const launchTypes = [
   {
-    name: 'Big Bang Launch',
+    name: 'Масштабный запуск (Big Bang Launch)',
     emoji: '💥',
     desc: 'Один мощный запуск с PR, анонсами, событием.',
     pros: ['Максимум внимания', 'Сильный сигнал рынку', 'Momentum'],
@@ -30,23 +30,23 @@ const launchTypes = [
     when: 'Продукт зрелый, бренд сильный, есть бюджет на маркетинг.',
   },
   {
-    name: 'Soft Launch',
+    name: 'Мягкий запуск (Soft Launch)',
     emoji: '🤫',
-    desc: 'Тихий запуск для ограниченной аудитории, сбор фидбека.',
+    desc: 'Тихий запуск для ограниченной аудитории, сбор обратной связи.',
     pros: ['Можно итерировать', 'Низкий риск', 'Реальный фидбек'],
     cons: ['Медленный рост', 'Нет ажиотажа', 'Конкуренты могут обогнать'],
     when: 'MVP, неизвестный рынок, нужна валидация.',
   },
   {
-    name: 'Early Access / Beta',
+    name: 'Ранний доступ (Early Access / Beta)',
     emoji: '🔑',
     desc: 'Закрытый доступ по инвайтам. Создаёт ощущение эксклюзивности.',
-    pros: ['FOMO-эффект', 'Лояльное ядро', 'Управляемая нагрузка'],
-    cons: ['Медленное масштабирование', 'Нужен waitlist-менеджмент'],
+    pros: ['Эффект упущенной выгоды (FOMO)', 'Лояльное ядро', 'Управляемая нагрузка'],
+    cons: ['Медленное масштабирование', 'Нужно управление списком ожидания (waitlist)'],
     when: 'Два-сторонние платформы, SaaS с ограниченным ресурсом.',
   },
   {
-    name: 'Product-Led Growth',
+    name: 'Рост через продукт (Product-Led Growth)',
     emoji: '🔄',
     desc: 'Продукт сам привлекает через freemium, виральность, self-service.',
     pros: ['Низкий CAC', 'Масштабируется', 'Пользователи = адвокаты'],
@@ -81,7 +81,7 @@ export default function GoToMarket() {
     { section: 'Продукт', items: ['MVP готов и протестирован', 'Онбординг настроен', 'Аналитика подключена (Mixpanel/Amplitude)', 'Фидбек-каналы работают'] },
     { section: 'Маркетинг', items: ['Лендинг запущен', 'Позиционирование сформулировано', 'Контент-план на 4 недели', 'Email-список собран'] },
     { section: 'Продажи (B2B)', items: ['Pricing определён', 'Sales deck готов', 'Demo-скрипт написан', 'CRM настроена'] },
-    { section: 'Операции', items: ['Саппорт-процесс настроен', 'SLA определён', 'Мониторинг и алерты', 'Rollback-план есть'] },
+    { section: 'Операции', items: ['Саппорт-процесс настроен', 'SLA (соглашение об уровне сервиса) определён', 'Мониторинг и алерты', 'План отката (rollback) есть'] },
   ]
 
   const totalChecked = Object.values(checklist).filter(Boolean).length
@@ -219,7 +219,7 @@ export default function GoToMarket() {
       {/* Positioning Canvas */}
       {activeTab === 'positioning' && (
         <div className="card">
-          <h3>🎯 Positioning Canvas</h3>
+          <h3>🎯 Канва позиционирования (Positioning Canvas)</h3>
           <div className="info-box" style={{ marginBottom: 16 }}>
             <div className="info-box-icon">💡</div>
             <div className="info-box-content">
@@ -333,6 +333,16 @@ export default function GoToMarket() {
           ))}
         </div>
       )}
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Стратегия_выхода_на_рынок" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Go-to-Market — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

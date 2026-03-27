@@ -227,7 +227,7 @@ export default function RiskMatrix() {
       {/* RAID Log */}
       <div className="card">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-          <h3>📊 RAID Log</h3>
+          <h3>📊 RAID Log (реестр рисков, допущений, проблем и зависимостей)</h3>
           <button className="btn btn-secondary btn-sm" onClick={() => setShowRAID(!showRAID)}>
             {showRAID ? 'Скрыть' : 'Показать'}
           </button>
@@ -253,6 +253,16 @@ export default function RiskMatrix() {
             ))}
           </div>
         )}
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Управление_рисками" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Управление рисками — Википедия
+          </a>
+        </div>
       </div>
     </div>
   )

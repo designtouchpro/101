@@ -15,35 +15,35 @@ const steps: FunnelStep[] = [
   {
     key: 'acquisition', name: 'A — Acquisition', fullName: 'Привлечение',
     color: '#3b82f6', desc: 'Как пользователи узнают о продукте?',
-    metrics: ['Визиты', 'CTR рекламы', 'Organic traffic', 'CPC'],
+    metrics: ['Визиты', 'CTR (кликабельность)', 'Органический трафик', 'CPC (цена за клик)'],
     example: 'Маркетинг запустил рекламу → 10 000 человек зашли на сайт',
     defaultValue: 10000,
   },
   {
     key: 'activation', name: 'A — Activation', fullName: 'Активация',
     color: '#10b981', desc: 'Первый «aha-moment» — пользователь понял ценность.',
-    metrics: ['Sign-up rate', 'Onboarding completion', 'Time to value'],
+    metrics: ['Конверсия в регистрацию', 'Завершение онбординга', 'Время до ценности (Time to Value)'],
     example: 'Из 10 000 зарегистрировались 2 000 (20%)',
     defaultValue: 2000,
   },
   {
     key: 'retention', name: 'R — Retention', fullName: 'Удержание',
     color: '#8b5cf6', desc: 'Возвращаются ли пользователи?',
-    metrics: ['D1/D7/D30 retention', 'DAU/MAU', 'Churn rate'],
+    metrics: ['D1/D7/D30 удержание', 'DAU/MAU (дн./мес. пользователи)', 'Churn rate (отток)'],
     example: 'Через месяц осталось 600 активных (30% retention)',
     defaultValue: 600,
   },
   {
     key: 'revenue', name: 'R — Revenue', fullName: 'Доход',
     color: '#f59e0b', desc: 'Начинают ли пользователи платить?',
-    metrics: ['ARPU', 'MRR', 'Conversion to paid', 'AOV'],
+    metrics: ['ARPU (ср. доход на юзера)', 'MRR (мес. рекуррентный доход)', 'Конверсия в оплату', 'AOV (ср. чек)'],
     example: '120 из 600 оплатили подписку (20%)',
     defaultValue: 120,
   },
   {
     key: 'referral', name: 'R — Referral', fullName: 'Рекомендации',
     color: '#ef4444', desc: 'Рекомендуют ли продукт другим?',
-    metrics: ['NPS', 'Viral coefficient', 'Invite rate', 'K-factor'],
+    metrics: ['NPS (индекс лояльности)', 'Виральный коэффициент', 'Доля приглашений', 'K-фактор (виральность)'],
     example: '30 из 120 пригласили друга (viral coeff = 0.25)',
     defaultValue: 30,
   },
@@ -86,7 +86,7 @@ export default function AARRRFunnel() {
           <div className="info-box-icon">💡</div>
           <div className="info-box-content">
             <div className="info-box-title">Один этап за раз</div>
-            Не пытайтесь улучшать всю воронку сразу. Найдите этап с наибольшим drop-off и сосредоточьтесь на нём.
+            Не пытайтесь улучшать всю воронку сразу. Найдите этап с наибольшими потерями (drop-off) и сосредоточьтесь на нём.
             Улучшить Retention с 20% до 30% часто важнее, чем удвоить Acquisition.
           </div>
         </div>
@@ -211,15 +211,28 @@ export default function AARRRFunnel() {
           <div className="info-box success">
             <div className="info-box-content">
               <div className="info-box-title">Retention ↑</div>
-              Push/email, habit-loops, gamification, улучшение core loop
+              Push/email, петли привычки (habit loops), геймификация, улучшение основного цикла (core loop)
             </div>
           </div>
           <div className="info-box success">
             <div className="info-box-content">
               <div className="info-box-title">Revenue ↑</div>
-              Upsell, paywall-оптимизация, pricing experiments, trial
+              Допродажи (upsell), оптимизация платной стены (paywall), ценовые эксперименты, пробный период (trial)
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Пиратские_метрики" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Пиратские метрики AARRR — Википедия
+          </a>
+          <a href="https://vc.ru/marketing/107601" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 AARRR-воронка: подробный разбор — vc.ru
+          </a>
         </div>
       </div>
     </div>

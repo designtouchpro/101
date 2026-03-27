@@ -20,7 +20,7 @@ const defaultSegments: Segment[] = [
 const positioningAxes = [
   { x: 'Цена', y: 'Функциональность' },
   { x: 'Простота', y: 'Мощность' },
-  { x: 'B2C ← → B2B', y: 'Self-serve ← → Sales-led' },
+  { x: 'B2C ← → B2B', y: 'Self-serve (самообслуживание) ← → Sales-led (через отдел продаж)' },
 ]
 
 const positioningExamples = [
@@ -51,12 +51,12 @@ export default function STP() {
     <div className="demo-container">
       <div className="demo-header">
         <h1>🔍 STP-анализ</h1>
-        <p>Segmentation → Targeting → Positioning. Три шага к правильному позиционированию.</p>
+        <p>Segmentation (сегментация) → Targeting (выбор целевого сегмента) → Positioning (позиционирование). Три шага к правильному позиционированию.</p>
       </div>
 
       <div className="card" style={{ borderLeft: '4px solid var(--accent-main)' }}>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          <strong>STP</strong> (Segmentation, Targeting, Positioning) — фреймворк Филипа Котлера, основа стратегического
+          <strong>STP</strong> (Segmentation (сегментация), Targeting (выбор целевого сегмента), Positioning (позиционирование)) — фреймворк Филипа Котлера, основа стратегического
           маркетинга. Идея: <strong>нельзя продавать всё всем</strong>. Сначала разделите рынок на сегменты,
           потом выберите самые привлекательные, потом сформулируйте, чем вы отличаетесь.
           Компании, которые пытаются быть для всех, часто не нужны никому.
@@ -96,7 +96,7 @@ export default function STP() {
             <div className="info-box">
               <div className="info-box-content" style={{ fontSize: '0.85rem' }}>
                 <strong>Критерии сегментации в IT:</strong> размер компании, индустрия, технологический стек,
-                стадия (стартап vs корпорация), география, бюджет, use case.
+                стадия (стартап vs корпорация), география, бюджет, use case (сценарий использования).
               </div>
             </div>
 
@@ -108,8 +108,8 @@ export default function STP() {
                     <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Размер</th>
                     <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Рост %</th>
                     <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Конкуренция</th>
-                    <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Fit (1-10)</th>
-                    <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Score</th>
+                    <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Соответствие (1-10)</th>
+                    <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Балл</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -260,7 +260,7 @@ export default function STP() {
 
           {/* Positioning statement */}
           <div className="card">
-            <h3>📝 Positioning Statement</h3>
+            <h3>📝 Positioning Statement (заявление о позиционировании)</h3>
             <div style={{ padding: 16, borderRadius: 8, background: 'var(--bg-secondary)', fontSize: '0.9rem', lineHeight: 1.8 }}>
               Для <strong style={{ color: 'var(--accent-main)' }}>[целевой сегмент]</strong>,
               которые <strong style={{ color: 'var(--accent-main)' }}>[потребность/проблема]</strong>,
@@ -278,6 +278,19 @@ export default function STP() {
           </div>
         </>
       )}
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Сегментация_рынка" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Сегментация рынка — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Позиционирование_(маркетинг)" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Позиционирование — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

@@ -85,7 +85,7 @@ export default function UserStoryMapping() {
       <div className="card" style={{ borderLeft: '4px solid var(--accent-main)' }}>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           <strong>User Story Mapping</strong> — методика, предложенная Джеффом Паттоном (Jeff Patton) в 2005 году и описанная в одноимённой книге.
-          Классический flat-бэклог — это список без контекста: непонятно, как истории связаны между собой и какой пользовательский сценарий
+          Классический плоский бэклог (flat backlog) — это список без контекста: непонятно, как истории связаны между собой и какой пользовательский сценарий
           они формируют. Story Map решает эту проблему, размещая истории в двумерном пространстве.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
@@ -97,7 +97,7 @@ export default function UserStoryMapping() {
           <div className="info-box-content">
             <strong>💡 Walking Skeleton</strong>: Первая горизонтальная «полоса» карты — это walking skeleton (ходячий скелет).
             Минимальный сквозной сценарий, который можно показать пользователю и получить обратную связь.
-            Это не MVP целиком — это первый тонкий слой, доказывающий, что архитектура работает end-to-end.
+            Это не MVP целиком — это первый тонкий слой, доказывающий, что архитектура работает от начала до конца (end-to-end).
           </div>
         </div>
       </div>
@@ -252,7 +252,7 @@ export default function UserStoryMapping() {
 
       {/* Summary */}
       <div className="card">
-        <h3>📊 Scope Summary</h3>
+        <h3>📊 Итого по объёму (Scope)</h3>
         <div className="grid-3">
           {Object.entries(priorityLabels).map(([key, label]) => {
             const count = stories.filter(s => s.priority === key).length

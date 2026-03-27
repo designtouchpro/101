@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <div className="page-container">
       <div className="home-hero">
-        <h1>Algo 101</h1>
+        <h1>🧮 Algo 101</h1>
         <p>
           Алгоритмы и структуры данных на TypeScript — 
           всё что спрашивают на собеседованиях

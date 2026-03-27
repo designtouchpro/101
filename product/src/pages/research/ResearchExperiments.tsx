@@ -23,10 +23,10 @@ const researchMethods = [
     when: 'Валидация UI, поиск UX-проблем',
     sample: '5 человек (находят ~85% проблем)',
     duration: '15-30 мин на участника',
-    output: 'Проблемы навигации, task completion rate',
+    output: 'Проблемы навигации, доля выполненных задач (task completion rate)',
     tips: [
       'Сценарий: «Найдите и купите товар до 500₽»',
-      'Think-aloud protocol: проси проговаривать мысли',
+      'Метод «мысли вслух» (think-aloud): проси проговаривать мысли',
       'Не помогай, не подсказывай',
       'Фиксируй: где завис, где ошибся, где эмоция',
     ],
@@ -38,7 +38,7 @@ const researchMethods = [
     when: 'Валидация гипотез на масштабе',
     sample: '100+ респондентов',
     duration: '5-10 мин на заполнение',
-    output: 'Статистика, NPS, CSAT, приоритеты',
+    output: 'Статистика, NPS (индекс лояльности), CSAT (удовлетворённость), приоритеты',
     tips: [
       'Не более 10-15 вопросов',
       'Шкалы: 5 или 7 баллов (не 10)',
@@ -51,14 +51,14 @@ const researchMethods = [
     type: 'Количественный',
     icon: '🧪',
     when: 'Проверка impact на метрику',
-    sample: 'Зависит от MDE и baseline',
+    sample: 'Зависит от MDE (мин. эффекта) и baseline',
     duration: '1-4 недели',
-    output: 'Статзначимость, uplift, p-value',
+    output: 'Статзначимость, прирост (uplift), p-value',
     tips: [
       'Одна переменная за раз',
       'Sample size calculator ДО запуска',
-      'Не подглядывай (peeking problem)',
-      'Определи stopping rule заранее',
+      'Не подглядывай (peeking — подглядывание в результаты)',
+      'Определи правило остановки (stopping rule) заранее',
     ],
   },
   {
@@ -77,13 +77,13 @@ const researchMethods = [
     ],
   },
   {
-    name: 'Fake Door / Painted Door',
+    name: 'Фальшивая дверь (Fake Door / Painted Door)',
     type: 'Validation',
     icon: '🚪',
     when: 'Проверка спроса до разработки',
     sample: '1000+ показов',
     duration: '1-2 недели',
-    output: 'CTR на несуществующую фичу',
+    output: 'CTR (кликабельность) на несуществующую фичу',
     tips: [
       'Кнопка/ссылка на фичу, которой нет',
       'При клике: «Скоро! Хотите узнать первым?»',
@@ -102,9 +102,9 @@ const sampleSizeData = [
 ]
 
 const experimentChecklist = [
-  { phase: 'До запуска', items: ['Гипотеза записана (If… then… because…)', 'Метрика успеха определена', 'Sample size рассчитан', 'Stopping rule зафиксирован', 'Guard-rail метрики определены', 'Рандомизация проверена (AA-тест)'] },
-  { phase: 'Во время', items: ['Не подглядывать в результаты (peeking)', 'Мониторить guard-rails (crashes, revenue)', 'Не менять условия эксперимента', 'Логировать все аномалии'] },
-  { phase: 'После', items: ['Статзначимость достигнута?', 'Проверить сегменты (новые vs старые, mobile vs desktop)', 'Практическая значимость (uplift стоит усилий?)', 'Документировать результат и решение', 'Rollout или отмена'] },
+  { phase: 'До запуска', items: ['Гипотеза записана (If… then… because…)', 'Метрика успеха определена', 'Sample size рассчитан', 'Правило остановки (stopping rule) зафиксирован', 'Защитные метрики (guard-rails) определены', 'Рандомизация проверена (AA-тест)'] },
+  { phase: 'Во время', items: ['Не подглядывать в результаты (peeking)', 'Мониторить защитные метрики (краши, доход)', 'Не менять условия эксперимента', 'Логировать все аномалии'] },
+  { phase: 'После', items: ['Статзначимость достигнута?', 'Проверить сегменты (новые vs старые, mobile vs desktop)', 'Практическая значимость (прирост стоит усилий?)', 'Документировать результат и решение', 'Раскатка (rollout) или отмена'] },
 ]
 
 export default function ResearchExperiments() {
@@ -256,8 +256,8 @@ export default function ResearchExperiments() {
               {[
                 { type: 'A/B (Split)', desc: 'Два варианта, случайное распределение. Стандарт для UI/UX.', pros: 'Простой, понятный', cons: 'Нужен трафик' },
                 { type: 'Multivariate (MVT)', desc: 'Несколько переменных одновременно. Находит лучшую комбинацию.', pros: 'Больше инсайтов', cons: 'Нужно 3-5× больше трафик' },
-                { type: 'Feature Flag (Staged Rollout)', desc: 'Постепенный rollout: 5% → 20% → 50% → 100%.', pros: 'Безопасность, rollback', cons: 'Не чистый эксперимент' },
-                { type: 'Interleaving', desc: 'Результаты A и B перемешаны в одном UI (для поиска/рекомендаций).', pros: '10× чувствительнее A/B', cons: 'Только для ранжирования' },
+                { type: 'Фича-флаг / постепенный запуск (Feature Flag / Staged Rollout)', desc: 'Постепенный rollout: 5% → 20% → 50% → 100%.', pros: 'Безопасность, откат', cons: 'Не чистый эксперимент' },
+                { type: 'Чередование (Interleaving)', desc: 'Результаты A и B перемешаны в одном UI (для поиска/рекомендаций).', pros: '10× чувствительнее A/B', cons: 'Только для ранжирования' },
               ].map(e => (
                 <div key={e.type} style={{ padding: 16, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8 }}>
                   <h4 style={{ margin: '0 0 8px' }}>{e.type}</h4>
@@ -301,12 +301,12 @@ export default function ResearchExperiments() {
                 </thead>
                 <tbody>
                   {[
-                    ['Peeking (подглядывание)', 'Ложно-положительный результат (до 30% ошибок)', 'Определи sample size и жди. Или используй sequential testing'],
+                    ['Peeking (подглядывание)', 'Ложно-положительный результат (до 30% ошибок)', 'Определи sample size и жди. Или используй последовательное тестирование (sequential testing)'],
                     ['Маленькая выборка', 'Результат не воспроизводится', 'Рассчитай sample size ДО запуска. Используй калькулятор'],
-                    ['Несколько метрик', 'Multiple comparisons → false positives', 'Одна primary метрика. Остальные — secondary. Bonferroni correction'],
-                    ['Simpson\'s Paradox', 'Агрегат показывает одно, сегменты — другое', 'Всегда разрезай по сегментам: платформа, страна, новые/старые'],
-                    ['Network effects', 'Группы влияют друг на друга', 'Cluster-based randomization (по регионам/городам)'],
-                    ['Novelty effect', 'Новизна, а не качество', 'Жди 2+ недели, анализируй тренд внутри теста'],
+                    ['Множественные сравнения (Multiple comparisons)', 'Ложные срабатывания (false positives)', 'Одна основная метрика. Остальные — доп. Поправка Бонферрони (Bonferroni correction)'],
+                    ['Парадокс Симпсона (Simpson\'s Paradox)', 'Агрегат показывает одно, сегменты — другое', 'Всегда разрезай по сегментам: платформа, страна, новые/старые'],
+                    ['Сетевые эффекты (Network effects)', 'Группы влияют друг на друга', 'Кластерная рандомизация (по регионам/городам)'],
+                    ['Эффект новизны (Novelty effect)', 'Новизна, а не качество', 'Жди 2+ недели, анализируй тренд внутри теста'],
                   ].map(([err, cons, sol]) => (
                     <tr key={err}>
                       <td style={{ padding: '8px 12px', borderBottom: '1px solid var(--border)', fontWeight: 600 }}>{err}</td>
@@ -369,9 +369,9 @@ export default function ResearchExperiments() {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 12 }}>
               {[
-                { name: 'Fixed Horizon', desc: 'Рассчитай sample size → жди → анализируй. Самый простой. Не подглядывай.', pros: 'Простой, надёжный', cons: 'Может быть долгим' },
-                { name: 'Sequential Testing', desc: 'Анализируй по мере поступления данных с поправкой на multiple looks. (Always Valid Inference)', pros: 'Можно остановить раньше', cons: 'Сложнее считать' },
-                { name: 'Bayesian', desc: 'Вместо p-value считай вероятность того, что B лучше A. Останавливай когда > 95%.', pros: 'Интуитивная интерпретация', cons: 'Нужен prior' },
+                { name: 'Фиксированный горизонт (Fixed Horizon)', desc: 'Рассчитай sample size → жди → анализируй. Самый простой. Не подглядывай.', pros: 'Простой, надёжный', cons: 'Может быть долгим' },
+                { name: 'Последовательное тестирование (Sequential Testing)', desc: 'Анализируй по мере поступления данных с поправкой на множественные проверки (Always Valid Inference).', pros: 'Можно остановить раньше', cons: 'Сложнее считать' },
+                { name: 'Байесовский подход (Bayesian)', desc: 'Вместо p-value считай вероятность того, что B лучше A. Останавливай когда > 95%.', pros: 'Интуитивная интерпретация', cons: 'Нужно априорное распределение (prior)' },
               ].map(s => (
                 <div key={s.name} style={{ padding: 16, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8 }}>
                   <h4 style={{ margin: '0 0 8px' }}>{s.name}</h4>
@@ -394,6 +394,19 @@ export default function ResearchExperiments() {
         <div className="interview-item"><div className="q">Как определить sample size для A/B теста?</div><div className="a">Нужно знать: 1) Baseline CR (текущая конверсия), 2) MDE (минимальный эффект, который хотим поймать), 3) Confidence level (обычно 95%) и Power (80%). При baseline 5% и MDE 20% нужно ~24K на вариант. Использую калькулятор (Evan Miller, Optimizely)</div></div>
         <div className="interview-item"><div className="q">Что такое peeking problem?</div><div className="a">Подглядывание в результаты до набора sample size. Вероятность ложного срабатывания вырастает до 30%. Решение: зафиксировать stopping rule заранее (fixed horizon) или использовать sequential testing с поправкой на multiple looks</div></div>
       </section>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Пользовательское_исследование" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 UX-исследования — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Customer_Development" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Customer Development — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

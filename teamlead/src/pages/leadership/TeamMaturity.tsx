@@ -33,7 +33,7 @@ const stages = [
     color: '#6366f1',
     description: 'Команда выработала общие правила. Люди знают сильные стороны друг друга.',
     signs: ['Конструктивные обсуждения', 'Взаимопомощь', 'Общие шутки и ритуалы', 'Люди берут задачи сами'],
-    leaderActions: ['Перейти к servant leadership', 'Закрепить работающие практики', 'Поддерживать ритуалы', 'Начать делегировать больше'],
+    leaderActions: ['Перейти к servant leadership (лидерству через служение)', 'Закрепить работающие практики', 'Поддерживать ритуалы', 'Начать делегировать больше'],
     risks: ['Самоуспокоение — перестать улучшаться', 'Вернуться в storming при изменениях'],
     metrics: { productivity: 65, trust: 70, conflicts: 30, autonomy: 60 },
   },
@@ -91,7 +91,7 @@ export default function TeamMaturity() {
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           Понимание текущей стадии помогает выбрать <strong>правильный стиль лидерства</strong>:
           на Forming нужен автократ с чётким планом, на Storming — фасилитатор конфликтов,
-          на Norming — коуч, на Performing — servant leader. Если вести себя одинаково на всех стадиях,
+          на Norming — коуч, на Performing — servant leader (лидер-слуга). Если вести себя одинаково на всех стадиях,
           команда либо застрянет, либо регрессирует.
         </p>
         <div className="info-box">
@@ -273,6 +273,16 @@ export default function TeamMaturity() {
             ))}
           </div>
         )}
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Модель_Такмана" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Модель Такмана — Википедия
+          </a>
+        </div>
       </div>
     </div>
   )

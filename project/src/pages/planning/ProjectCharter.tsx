@@ -27,7 +27,7 @@ const charterSections: CharterSection[] = [
     example: 'Входит: редизайн web-интерфейса, новый onboarding, персональные рекомендации. НЕ входит: мобильное приложение, интеграция с LMS.'
   },
   {
-    title: 'Ключевые Milestones',
+    title: 'Ключевые Milestones (вехи)',
     emoji: '🏁',
     hint: 'Основные вехи проекта с датами',
     example: '1) Discovery & Design — 4 недели\n2) MVP разработка — 8 недель\n3) Beta-тест — 2 недели\n4) Launch — 1 неделя'
@@ -36,7 +36,7 @@ const charterSections: CharterSection[] = [
     title: 'Бюджет',
     emoji: '💰',
     hint: 'Общий бюджет, разбивка по категориям',
-    example: 'Общий бюджет: $120,000\n- Команда: $95,000 (5 человек × 3.5 мес)\n- Инфраструктура: $15,000\n- Contingency: $10,000 (10%)'
+    example: 'Общий бюджет: $120,000\n- Команда: $95,000 (5 человек × 3.5 мес)\n- Инфраструктура: $15,000\n- Contingency (резерв на риски): $10,000 (10%)'
   },
   {
     title: 'Команда и роли',
@@ -48,7 +48,7 @@ const charterSections: CharterSection[] = [
     title: 'Риски',
     emoji: '⚠️',
     hint: 'Топ-3 риска с планом митигации',
-    example: '1) Задержка дизайна → буфер 1 неделя\n2) Интеграция с legacy API → spike в Sprint 1\n3) Уход ключевого разработчика → документация, парное программирование'
+    example: '1) Задержка дизайна → буфер 1 неделя\n2) Интеграция с legacy API → spike (исследовательская задача) в Sprint 1\n3) Уход ключевого разработчика → документация, парное программирование'
   },
   {
     title: 'Критерии успеха',
@@ -79,20 +79,20 @@ export default function ProjectCharter() {
   return (
     <div className="demo-container">
       <div className="demo-header">
-        <h1>📜 Project Charter</h1>
-        <p>Устав проекта — документ, формально авторизующий проект и дающий PM полномочия.</p>
+        <h1>📜 Project Charter — Устав проекта</h1>
+        <p>Документ, формально авторизующий проект и дающий PM (Project Manager — менеджер проекта) полномочия.</p>
       </div>
 
       <div className="card" style={{ borderLeft: '4px solid var(--accent-main)' }}>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          <strong>Project Charter</strong> (PMBOK) — одностраничный документ, который отвечает на вопросы:
+          <strong>Project Charter</strong> (PMBOK — Project Management Body of Knowledge, свод знаний по управлению проектами) — одностраничный документ, который отвечает на вопросы:
           зачем делаем, что делаем, кто делает, когда и за сколько.
           Без charter проект — это просто набор задач без контекста.
           Charter подписывает <strong>спонсор</strong> — лицо, выделяющее ресурсы.
         </p>
         <div className="info-box">
-          <strong>💡 Lean Canvas</strong> для стартапов заменяет charter: Problem, Solution, Key Metrics,
-          Unfair Advantage, Channels, Customer Segments, Cost Structure, Revenue Streams.
+          <strong>💡 Lean Canvas</strong> (бережливый холст) для стартапов заменяет charter: Problem (проблема), Solution (решение), Key Metrics (ключевые метрики),
+          Unfair Advantage (нечестное преимущество), Channels (каналы), Customer Segments (сегменты клиентов), Cost Structure (структура затрат), Revenue Streams (потоки дохода).
         </div>
       </div>
 
@@ -209,6 +209,19 @@ export default function ProjectCharter() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Устав_проекта" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Устав проекта — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/PMBOK" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 PMBOK — Википедия
+          </a>
+        </div>
       </div>
     </div>
   )

@@ -17,49 +17,49 @@ const channels: Channel[] = [
   {
     id: 'seo', icon: '🔍', name: 'SEO', type: 'organic', cost: 'low', speed: 'slow', scalability: 'high',
     bestFor: 'Контентные сайты, SaaS, маркетплейсы',
-    metrics: ['Органический трафик', 'Позиции по ключевым словам', 'Domain Authority', 'CTR в поиске'],
-    tips: ['Фокус на long-tail ключевики', 'Техническое SEO: скорость, мобильность', 'Качественный контент > количество', 'Внутренняя перелинковка'],
+    metrics: ['Органический трафик', 'Позиции по ключевым словам', 'Domain Authority (авторитет домена)', 'CTR в поиске'],
+    tips: ['Фокус на long-tail (длиннохвостые) ключевики', 'Техническое SEO: скорость, мобильность', 'Качественный контент > количество', 'Внутренняя перелинковка'],
   },
   {
     id: 'smm', icon: '📱', name: 'SMM', type: 'organic', cost: 'medium', speed: 'medium', scalability: 'medium',
     bestFor: 'B2C, бренды, community-driven продукты',
-    metrics: ['Охват', 'Engagement Rate', 'Подписчики', 'Share of Voice'],
-    tips: ['Регулярный постинг', 'Видео > текст > картинки', 'Вовлекайте аудиторию (опросы, вопросы)', 'Используйте UGC (User Generated Content)'],
+    metrics: ['Охват', 'Engagement Rate (уровень вовлечённости)', 'Подписчики', 'Share of Voice (доля упоминаний)'],
+    tips: ['Регулярный постинг', 'Видео > текст > картинки', 'Вовлекайте аудиторию (опросы, вопросы)', 'Используйте UGC (User Generated Content — контент, созданный пользователями)'],
   },
   {
     id: 'email', icon: '📧', name: 'Email-маркетинг', type: 'owned', cost: 'low', speed: 'fast', scalability: 'high',
     bestFor: 'Любой бизнес с базой подписчиков',
-    metrics: ['Open Rate (15-25%)', 'Click Rate (2-5%)', 'Unsubscribe Rate', 'Revenue per Email'],
+    metrics: ['Open Rate (открываемость, 15-25%)', 'Click Rate (кликабельность, 2-5%)', 'Unsubscribe Rate (отписки)', 'Revenue per Email (доход с письма)'],
     tips: ['Сегментируйте базу', 'Персонализация (имя, поведение)', 'A/B тестируйте темы писем', 'Не спамьте — 1-2 раза в неделю'],
   },
   {
     id: 'content', icon: '✍️', name: 'Контент-маркетинг', type: 'organic', cost: 'medium', speed: 'slow', scalability: 'high',
-    bestFor: 'B2B, SaaS, edtech, expert-led бизнесы',
+    bestFor: 'B2B, SaaS, edtech (образовательные технологии), expert-led (экспертные) бизнесы',
     metrics: ['Трафик на блог', 'Время на странице', 'Конверсия в лида', 'Шеры и бэклинки'],
-    tips: ['Блог + вебинары + подкасты', 'Hub & Spoke модель контента', 'Evergreen контент vs trending', 'Переиспользуйте контент в разных форматах'],
+    tips: ['Блог + вебинары + подкасты', 'Hub & Spoke (модель «ступица и спицы» — центральная тема + подтемы) модель контента', 'Evergreen (вечнозелёный) контент vs trending (трендовый)', 'Переиспользуйте контент в разных форматах'],
   },
   {
     id: 'ppc', icon: '💳', name: 'PPC (контекстная реклама)', type: 'paid', cost: 'high', speed: 'fast', scalability: 'high',
-    bestFor: 'Ready-to-buy аудитория, лидогенерация',
-    metrics: ['CPC', 'CTR', 'Conversion Rate', 'ROAS', 'Quality Score'],
+    bestFor: 'Ready-to-buy (готовая к покупке) аудитория, лидогенерация',
+    metrics: ['CPC', 'CTR', 'Conversion Rate (конверсия)', 'ROAS', 'Quality Score (показатель качества)'],
     tips: ['Начинайте с брендовых запросов', 'Негативные ключевики!', 'A/B тестируйте объявления', 'Ретаргетинг для тёплой аудитории'],
   },
   {
     id: 'social-ads', icon: '🎯', name: 'Таргетированная реклама', type: 'paid', cost: 'high', speed: 'fast', scalability: 'high',
     bestFor: 'B2C, мобильные приложения, масштабирование',
-    metrics: ['CPM', 'CPA', 'ROAS', 'Frequency', 'Reach'],
-    tips: ['Look-alike аудитории', 'Креатив — 80% успеха', 'Тестируйте 5+ креативов', 'Pixel/SDK для отслеживания'],
+    metrics: ['CPM', 'CPA', 'ROAS', 'Frequency (частота)', 'Reach (охват)'],
+    tips: ['Look-alike аудитории', 'Креатив — 80% успеха', 'Тестируйте 5+ креативов', 'Pixel (пиксель отслеживания)/SDK (набор средств разработки) для отслеживания'],
   },
   {
     id: 'pr', icon: '📰', name: 'PR и медиа', type: 'organic', cost: 'medium', speed: 'medium', scalability: 'medium',
     bestFor: 'Запуски, B2B, репутация',
-    metrics: ['Mentions', 'Share of Voice', 'Sentiment', 'Referral traffic'],
+    metrics: ['Mentions (упоминания)', 'Share of Voice (доля упоминаний)', 'Sentiment (тональность)', 'Referral traffic (реферальный трафик)'],
     tips: ['Product Hunt, TechCrunch, Habr', 'Готовьте пресс-кит', 'Экспертные комментарии', 'Кризисный PR-план'],
   },
   {
     id: 'referral', icon: '🤝', name: 'Реферальная программа', type: 'organic', cost: 'low', speed: 'medium', scalability: 'high',
-    bestFor: 'Продукты с WOM-потенциалом (Dropbox, Tesla)',
-    metrics: ['Referral Rate', 'K-factor', 'Viral Coefficient', 'CAC рефералов'],
+    bestFor: 'Продукты с WOM (Word of Mouth — сарафанное радио) потенциалом (Dropbox, Tesla)',
+    metrics: ['Referral Rate (коэффициент рекомендаций)', 'K-factor (коэффициент виральности)', 'Viral Coefficient (вирусный коэффициент)', 'CAC рефералов'],
     tips: ['Двустороннее вознаграждение', 'Простая механика шеринга', 'Обязательно отслеживайте', 'Интеграция в продукт'],
   },
 ]
@@ -86,7 +86,7 @@ export default function DigitalChannels() {
           Каналы делятся на три группы: <strong>Owned</strong> (собственные — сайт, блог, email-рассылка, приложение), <strong>Paid</strong> (платные — контекстная реклама, таргет, спонсорство), <strong>Earned</strong> (заслуженные — PR, UGC, вирусный контент, сарафанное радио).
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          Ключевой принцип — <strong>omnichannel</strong>: каналы должны работать как единая система, а не изолированно. 
+          Ключевой принцип — <strong>omnichannel (омниканальный — единый опыт по всем каналам)</strong>: каналы должны работать как единая система, а не изолированно. 
           Пользователь увидел рекламу в Instagram, зашёл на сайт, получил email, вернулся через ретаргетинг и купил. 
           Без сквозной аналитики вы припишете конверсию последнему каналу и отключите первый — который по факту всё запустил.
           Для каждого канала считайте CAC (стоимость привлечения) и выбирайте микс на основе данных, а не интуиции.
@@ -190,9 +190,9 @@ export default function DigitalChannels() {
             <thead>
               <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
                 <th style={{ textAlign: 'left', padding: 8, fontSize: '0.75rem', color: 'var(--text-muted)' }}>Канал</th>
-                <th style={{ textAlign: 'center', padding: 8, fontSize: '0.75rem', color: 'var(--text-muted)' }}>💰 Cost</th>
-                <th style={{ textAlign: 'center', padding: 8, fontSize: '0.75rem', color: 'var(--text-muted)' }}>⚡ Speed</th>
-                <th style={{ textAlign: 'center', padding: 8, fontSize: '0.75rem', color: 'var(--text-muted)' }}>📈 Scale</th>
+                <th style={{ textAlign: 'center', padding: 8, fontSize: '0.75rem', color: 'var(--text-muted)' }}>💰 Стоимость</th>
+                <th style={{ textAlign: 'center', padding: 8, fontSize: '0.75rem', color: 'var(--text-muted)' }}>⚡ Скорость</th>
+                <th style={{ textAlign: 'center', padding: 8, fontSize: '0.75rem', color: 'var(--text-muted)' }}>📈 Масштаб</th>
               </tr>
             </thead>
             <tbody>
@@ -215,6 +215,22 @@ export default function DigitalChannels() {
               ))}
             </tbody>
           </table>
+        </div>
+      </div>
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Поисковая_оптимизация" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 SEO — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Маркетинг_в_социальных_сетях" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 SMM — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Контекстная_реклама" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Контекстная реклама — Википедия
+          </a>
         </div>
       </div>
     </div>

@@ -28,9 +28,9 @@ const mix4P = [
 ]
 
 const extra3P = [
-  { key: 'people', emoji: '👥', title: 'People (Люди)', desc: 'Кто взаимодействует с клиентом? Поддержка, sales, community.' },
-  { key: 'process', emoji: '⚙️', title: 'Process (Процесс)', desc: 'Как клиент покупает и использует? Onboarding, UX flow.' },
-  { key: 'physical', emoji: '🏢', title: 'Physical Evidence', desc: 'Социальное доказательство: отзывы, кейсы, дизайн, бренд.' },
+  { key: 'people', emoji: '👥', title: 'People — Люди', desc: 'Все, кто взаимодействует с клиентом: служба поддержки, менеджеры по продажам, сообщество пользователей. Их компетентность и отношение напрямую влияют на восприятие продукта.' },
+  { key: 'process', emoji: '⚙️', title: 'Process — Процесс', desc: 'Как клиент покупает и использует продукт: путь от первого контакта до оплаты, адаптация (onboarding), удобство взаимодействия (UX-сценарии).' },
+  { key: 'physical', emoji: '🏢', title: 'Physical Evidence — Физическое подтверждение', desc: 'Осязаемые доказательства качества: отзывы клиентов, кейсы, дизайн интерфейса, оформление бренда. Всё, что помогает клиенту убедиться в надёжности до покупки.' },
 ]
 
 export default function MarketingMix() {
@@ -49,17 +49,26 @@ export default function MarketingMix() {
 
       <div className="card" style={{ borderLeft: '4px solid var(--accent-main)' }}>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          <strong>Marketing Mix</strong> — концепция, предложенная Джеромом Маккарти в 1960 году. Она описывает
+          <strong>Marketing Mix (Маркетинг-микс)</strong> — концепция, предложенная Джеромом Маккарти в 1960 году. Она описывает
           4 ключевых элемента, которые компания может контролировать:
-          <strong>Product</strong> (что продаём), <strong>Price</strong> (за сколько),
-          <strong>Place</strong> (где продаём) и <strong>Promotion</strong> (как продвигаем).
-          Позднее к сервисному бизнесу добавили ещё 3P: People, Process, Physical Evidence → 7P.
+          <strong>Product</strong> — продукт (что продаём), <strong>Price</strong> — цена (за сколько),
+          <strong>Place</strong> — место/каналы сбыта (где и как продаём), <strong>Promotion</strong> — продвижение (как рассказываем о продукте).
+        </p>
+        <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
+          Позднее для сферы услуг и сервисного бизнеса модель расширили до <strong>7P</strong>, добавив:
+          <strong>People</strong> — люди (персонал, взаимодействующий с клиентом),{' '}
+          <strong>Process</strong> — процесс (как выстроено обслуживание и путь клиента),{' '}
+          <strong>Physical Evidence</strong> — физическое подтверждение (осязаемые доказательства качества: отзывы, дизайн, оформление).
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           В digital-мире 4P эволюционировали в <strong>4C</strong> (Роберт Лотерборн, 1990):
-          Customer value → Cost → Convenience → Communication. Суть — смотреть
-          глазами клиента, а не продавца. Но традиционные 4P остаются фундаментом любого
-          маркетингового плана.
+          <strong>Customer value</strong> — ценность для клиента (вместо Product), <strong>Cost</strong> — расходы клиента (вместо Price),
+          <strong>Convenience</strong> — удобство приобретения (вместо Place), <strong>Communication</strong> — коммуникация (вместо Promotion).
+          Суть — смотреть глазами клиента, а не продавца. Но традиционные 4P остаются фундаментом любого маркетингового плана.
+        </p>
+        <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
+          📚 Подробнее:{' '}
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3-%D0%BC%D0%B8%D0%BA%D1%81" target="_blank" rel="noopener noreferrer">Маркетинг-микс — Википедия</a>
         </p>
         <div className="info-box">
           <div className="info-box-icon">💡</div>
@@ -162,6 +171,22 @@ export default function MarketingMix() {
             ))}
           </div>
         )}
+      </div>
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Маркетинг-микс" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Маркетинг-микс — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Комплекс_маркетинга" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Комплекс маркетинга (4P) — Википедия
+          </a>
+          <a href="https://www.unisender.com/ru/glossary/chto-takoe-4p-marketing/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Что такое 4P в маркетинге — UniSender
+          </a>
+        </div>
       </div>
     </div>
   )

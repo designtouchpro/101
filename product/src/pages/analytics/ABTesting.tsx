@@ -37,15 +37,15 @@ export default function ABTesting() {
     { title: 'Множественные сравнения', desc: 'Тестировать 10 вариантов и радоваться одному «победителю». Поправка Бонферрони!', icon: '🎰' },
     { title: 'Слишком маленькая выборка', desc: 'Нужно минимум ~1000 конверсий на вариант для надёжного результата.', icon: '🔬' },
     { title: 'Неслижнные сегменты', desc: 'Рандомизация должна быть по userId, а не по сессии. Иначе один юзер — в обоих вариантах.', icon: '🔀' },
-    { title: 'Novelty Effect', desc: 'Новый дизайн нравится, потому что он новый. Подождите 2-3 недели.', icon: '✨' },
-    { title: 'Survivorship Bias', desc: 'Анализируете только тех, кто дошёл до конца? А сколько отвалилось на первом шаге?', icon: '🏆' },
+    { title: 'Эффект новизны (Novelty Effect)', desc: 'Новый дизайн нравится, потому что он новый. Подождите 2-3 недели.', icon: '✨' },
+    { title: 'Ошибка выжившего (Survivorship Bias)', desc: 'Анализируете только тех, кто дошёл до конца? А сколько отвалилось на первом шаге?', icon: '🏆' },
   ]
 
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({})
   const [showQuizResult, setShowQuizResult] = useState(false)
   const quiz = [
     { q: 'Показатель p-value = 0.03. Что это значит?', options: ['Вариант B лучше на 3%', '3% вероятность, что разница случайна', 'Конверсия выросла на 3%', 'Нужно ещё 3% данных'], correct: 1 },
-    { q: 'Минимальный размер теста зависит от:', options: ['Только от трафика', 'Базовой конверсии и MDE', 'Количества вариантов', 'Времени суток'], correct: 1 },
+    { q: 'Минимальный размер теста зависит от:', options: ['Только от трафика', 'Базовой конверсии и MDE (мин. обнаружимого эффекта)', 'Количества вариантов', 'Времени суток'], correct: 1 },
     { q: 'Что НЕ является антипаттерном?', options: ['Остановить тест досрочно', 'Рандомизация по userId', 'Тестировать 20 гипотез разом', 'Не учитывать novelty effect'], correct: 1 },
   ]
 
@@ -84,7 +84,7 @@ export default function ABTesting() {
             <input type="range" min={0.5} max={30} step={0.5} value={baseConversion} onChange={e => setBaseConversion(+e.target.value)} />
           </div>
           <div className="slider-container">
-            <label>Ожидаемый uplift: <strong>+{uplift}%</strong> (B = {variantConversion.toFixed(1)}%)</label>
+            <label>Ожидаемый прирост (uplift): <strong>+{uplift}%</strong> (B = {variantConversion.toFixed(1)}%)</label>
             <input type="range" min={1} max={100} value={uplift} onChange={e => setUplift(+e.target.value)} />
           </div>
         </div>
@@ -185,6 +185,16 @@ export default function ABTesting() {
             <div className="score-label">правильных ответов</div>
           </div>
         )}
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/A/B-тестирование" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 A/B-тестирование — Википедия
+          </a>
+        </div>
       </div>
     </div>
   )

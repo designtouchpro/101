@@ -58,14 +58,14 @@ export default function BudgetEstimation() {
 
       <div className="card" style={{ borderLeft: '4px solid var(--accent-main)' }}>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          <strong>Bottom-up estimation</strong> — самый точный метод бюджетирования: собираем стоимость каждого
-          ресурса (команда, инфраструктура, лицензии) и суммируем. Сверху добавляем <strong>contingency reserve</strong> —
-          запас на известные риски. Для проектов с высокой неопределённостью используют <strong>management reserve</strong> —
+          <strong>Bottom-up estimation</strong> (оценка снизу вверх) — самый точный метод бюджетирования: собираем стоимость каждого
+          ресурса (команда, инфраструктура, лицензии) и суммируем. Сверху добавляем <strong>contingency reserve</strong> (резерв на непредвиденные обстоятельства) —
+          запас на известные риски. Для проектов с высокой неопределённостью используют <strong>management reserve</strong> (управленческий резерв) —
           дополнительный буфер, который контролирует спонсор.
         </p>
         <div className="info-box">
-          <strong>📌 Правило</strong>: Бюджет = BAC (Budget at Completion) = сумма всех плановых затрат + contingency.
-          EAC (Estimate at Completion) пересчитывается по мере выполнения проекта.
+          <strong>📌 Правило</strong>: Бюджет = BAC (Budget at Completion — бюджет по завершении) = сумма всех плановых затрат + contingency.
+          EAC (Estimate at Completion — прогноз итоговой стоимости) пересчитывается по мере выполнения проекта.
         </div>
       </div>
 
@@ -152,7 +152,7 @@ export default function BudgetEstimation() {
 
         <div>
           <label style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 8, display: 'block' }}>
-            Contingency Reserve (% от бюджета)
+            Contingency Reserve / Резерв на риски (% от бюджета)
           </label>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {contingencyLevels.map(c => (
@@ -181,7 +181,7 @@ export default function BudgetEstimation() {
             <div style={{ fontSize: '1.3rem', fontWeight: 700 }}>${monthlyInfra.toLocaleString()}</div>
           </div>
           <div>
-            <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Subtotal ({months} мес.)</div>
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Subtotal / Промежуточный итог ({months} мес.)</div>
             <div style={{ fontSize: '1.3rem', fontWeight: 700 }}>${subtotal.toLocaleString()}</div>
           </div>
           <div>

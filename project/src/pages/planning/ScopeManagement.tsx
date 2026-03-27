@@ -61,7 +61,7 @@ export default function ScopeManagement() {
         </p>
         <div className="info-box">
           <strong>🛡️ Scope Creep</strong> — неконтролируемое расширение scope без пересмотра сроков и бюджета.
-          Бороться: Change Request процесс, impact analysis для каждого нового требования.
+          Бороться: Change Request (запрос на изменение) процесс, impact analysis (анализ влияния) для каждого нового требования.
         </div>
       </div>
 
@@ -115,7 +115,7 @@ export default function ScopeManagement() {
               <th>Фича</th>
               <th>Effort (SP)</th>
               <th>Value</th>
-              <th>ROI</th>
+              <th>ROI (окупаемость)</th>
               <th>Приоритет</th>
             </tr>
           </thead>
@@ -192,6 +192,16 @@ export default function ScopeManagement() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Управление_содержанием_проекта" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Управление содержанием проекта — Википедия
+          </a>
+        </div>
       </div>
     </div>
   )

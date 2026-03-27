@@ -20,10 +20,10 @@ const defaultStakeholders: Stakeholder[] = [
 ]
 
 const getQuadrant = (power: number, interest: number) => {
-  if (power > 5 && interest > 5) return { label: 'Manage Closely', color: '#ef4444', strategy: 'Активно управляйте. Регулярные встречи, полное вовлечение.' }
-  if (power > 5 && interest <= 5) return { label: 'Keep Satisfied', color: '#f59e0b', strategy: 'Держите довольными. Информируйте, но не перегружайте.' }
-  if (power <= 5 && interest > 5) return { label: 'Keep Informed', color: '#3b82f6', strategy: 'Держите в курсе. Регулярные обновления, демо.' }
-  return { label: 'Monitor', color: '#6b7280', strategy: 'Мониторьте. Минимум усилий, периодические апдейты.' }
+  if (power > 5 && interest > 5) return { label: 'Manage Closely (тесное управление)', color: '#ef4444', strategy: 'Активно управляйте. Регулярные встречи, полное вовлечение.' }
+  if (power > 5 && interest <= 5) return { label: 'Keep Satisfied (держать довольным)', color: '#f59e0b', strategy: 'Держите довольными. Информируйте, но не перегружайте.' }
+  if (power <= 5 && interest > 5) return { label: 'Keep Informed (информировать)', color: '#3b82f6', strategy: 'Держите в курсе. Регулярные обновления, демо.' }
+  return { label: 'Monitor (мониторить)', color: '#6b7280', strategy: 'Мониторьте. Минимум усилий, периодические апдейты.' }
 }
 
 const raciRoles = ['R', 'A', 'C', 'I'] as const
@@ -193,8 +193,8 @@ export default function StakeholderMap() {
               <thead>
                 <tr style={{ borderBottom: '2px solid var(--border-color)' }}>
                   <th style={{ textAlign: 'left', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Имя</th>
-                  <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Power</th>
-                  <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Interest</th>
+                  <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Power (влияние)</th>
+                  <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Interest (интерес)</th>
                   <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Квадрант</th>
                   <th style={{ textAlign: 'left', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Стратегия</th>
                 </tr>
@@ -294,6 +294,16 @@ export default function StakeholderMap() {
           </table>
         </div>
       )}
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Заинтересованная_сторона" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Стейкхолдеры — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

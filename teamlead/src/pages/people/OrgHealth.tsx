@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
 const safetyLevels = [
-  { level: 1, name: 'Inclusion Safety', icon: '🤝', desc: 'Чувство принадлежности к команде. Принятие без условий.', signs: ['Новички быстро интегрируются', 'Все вовлечены в обсуждения', 'Нет «своих» и «чужих»'], antiPatterns: ['Закрытые кружки', 'Игнорирование новичков', 'Сарказм при ошибках'] },
-  { level: 2, name: 'Learner Safety', icon: '📚', desc: 'Безопасно задавать вопросы, экспериментировать, ошибаться.', signs: ['Вопросы приветствуются', 'Ошибки = обучение', 'Менторство по умолчанию'], antiPatterns: ['«Это очевидно»', 'Осуждение за незнание', 'Наказание за эксперименты'] },
-  { level: 3, name: 'Contributor Safety', icon: '🛠️', desc: 'Безопасно вносить вклад: предлагать идеи, участвовать в решениях.', signs: ['Идеи рассматриваются по существу', 'Автономия в зоне компетенций', 'Обратная связь двусторонняя'], antiPatterns: ['Микроменеджмент', 'Игнорирование предложений', 'Решения только «сверху»'] },
-  { level: 4, name: 'Challenger Safety', icon: '🔥', desc: 'Безопасно оспаривать статус-кво, предлагать радикальные изменения.', signs: ['Несогласие не = конфликт', 'Критика процессов приветствуется', 'Red team практики'], antiPatterns: ['«Здесь так принято»', 'Подавление инакомыслия', 'Токсичный консенсус'] },
+  { level: 1, name: 'Inclusion Safety (безопасность принадлежности)', icon: '🤝', desc: 'Чувство принадлежности к команде. Принятие без условий.', signs: ['Новички быстро интегрируются', 'Все вовлечены в обсуждения', 'Нет «своих» и «чужих»'], antiPatterns: ['Закрытые кружки', 'Игнорирование новичков', 'Сарказм при ошибках'] },
+  { level: 2, name: 'Learner Safety (безопасность обучения)', icon: '📚', desc: 'Безопасно задавать вопросы, экспериментировать, ошибаться.', signs: ['Вопросы приветствуются', 'Ошибки = обучение', 'Менторство по умолчанию'], antiPatterns: ['«Это очевидно»', 'Осуждение за незнание', 'Наказание за эксперименты'] },
+  { level: 3, name: 'Contributor Safety (безопасность вклада)', icon: '🛠️', desc: 'Безопасно вносить вклад: предлагать идеи, участвовать в решениях.', signs: ['Идеи рассматриваются по существу', 'Автономия в зоне компетенций', 'Обратная связь двусторонняя'], antiPatterns: ['Микроменеджмент', 'Игнорирование предложений', 'Решения только «сверху»'] },
+  { level: 4, name: 'Challenger Safety (безопасность вызова)', icon: '🔥', desc: 'Безопасно оспаривать статус-кво, предлагать радикальные изменения.', signs: ['Несогласие не = конфликт', 'Критика процессов приветствуется', 'Red team (команда критиков) практики'], antiPatterns: ['«Здесь так принято»', 'Подавление инакомыслия', 'Токсичный консенсус'] },
 ]
 
 const burnoutSignals = [
@@ -15,7 +15,7 @@ const burnoutSignals = [
 ]
 
 const onboardingPhases = [
-  { phase: 'Preboarding (до выхода)', duration: '1–2 нед', items: ['Доступы и оборудование', 'Welcome letter', 'Buddy назначен', 'Онбординг-план готов'] },
+  { phase: 'Preboarding (до выхода)', duration: '1–2 нед', items: ['Доступы и оборудование', 'Welcome letter (приветственное письмо)', 'Buddy (напарник-наставник) назначен', 'Онбординг-план готов'] },
   { phase: '1-я неделя', duration: '5 дней', items: ['Знакомство с командой', 'Обзор продукта/кодовой базы', 'Первая простая задача', 'Установка окружения'] },
   { phase: '30 дней', duration: '1 мес', items: ['3–5 закрытых задач', 'Code review партнёрский', 'Понимание процессов CI/CD', '1-on-1 с лидом: фидбек'] },
   { phase: '60 дней', duration: '2 мес', items: ['Самостоятельные фичи', 'Участие в планировании', 'Менторство от senior', 'Промежуточный фидбек'] },
@@ -32,10 +32,10 @@ const retentionDrivers = [
 
 const scalingPains = [
   { size: '3–5', challenge: 'Формирование культуры', symptoms: 'Нет процессов, всё на коммуникации', solution: 'Зафиксировать рабочие соглашения, определить ценности' },
-  { size: '6–10', challenge: 'Первые процессы', symptoms: 'Хаос в задачах, дублирование работы', solution: 'Kanban/Scrum, code ownership, документация' },
+  { size: '6–10', challenge: 'Первые процессы', symptoms: 'Хаос в задачах, дублирование работы', solution: 'Kanban/Scrum, code ownership (владение кодом), документация' },
   { size: '11–20', challenge: 'Сплит команд', symptoms: 'Тяжёлые стендапы, медленные решения', solution: 'Разделение на 2–3 команды, Team Topologies' },
   { size: '20–50', challenge: 'Координация', symptoms: 'Блокеры между командами, расплывчатые зоны', solution: 'Platform team, API contracts, Architecture Decision Records' },
-  { size: '50+', challenge: 'Масштаб лидерства', symptoms: 'Один лид не тянет, культура размывается', solution: 'Engineering Managers, chapters, inner-source' },
+  { size: '50+', challenge: 'Масштаб лидерства', symptoms: 'Один лид не тянет, культура размывается', solution: 'Engineering Managers, chapters, inner-source (внутренний open-source)' },
 ]
 
 export default function OrgHealth() {
@@ -106,7 +106,7 @@ export default function OrgHealth() {
                 { method: 'Анонимные опросы', freq: 'Ежеквартально', tool: 'Google Forms / Culture Amp' },
                 { method: 'Ретроспективы', freq: 'Каждый спринт', tool: 'Miro / FunRetro' },
                 { method: '1-on-1 вопросы', freq: 'Еженедельно', tool: 'Прямой разговор' },
-                { method: 'eNPS (Employee NPS)', freq: 'Раз в полгода', tool: 'Officevibe / Peakon' },
+                { method: 'eNPS (Employee NPS — индекс лояльности)', freq: 'Раз в полгода', tool: 'Officevibe / Peakon' },
               ].map(m => (
                 <div key={m.method} style={{ padding: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8 }}>
                   <div style={{ fontWeight: 600, marginBottom: 4 }}>{m.method}</div>
@@ -169,7 +169,7 @@ export default function OrgHealth() {
       {tab === 'onboard' && (
         <section className="card">
           <h2>🚀 Структурированный онбординг</h2>
-          <p style={{ marginBottom: 16, fontSize: '0.85rem', opacity: 0.8 }}>Хороший онбординг снижает время до продуктивности на 50% и повышает retention в первый год.</p>
+          <p style={{ marginBottom: 16, fontSize: '0.85rem', opacity: 0.8 }}>Хороший онбординг снижает время до продуктивности на 50% и повышает retention (удержание) в первый год.</p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {onboardingPhases.map((phase, i) => (
@@ -196,7 +196,7 @@ export default function OrgHealth() {
       {tab === 'retain' && (
         <section className="card">
           <h2>🧲 Драйверы удержания</h2>
-          <p style={{ marginBottom: 16, fontSize: '0.85rem', opacity: 0.8 }}>Основано на Self-Determination Theory (Deci & Ryan) + Drive (Daniel Pink).</p>
+          <p style={{ marginBottom: 16, fontSize: '0.85rem', opacity: 0.8 }}>Основано на Self-Determination Theory (теории самодетерминации, Deci & Ryan) + Drive (Daniel Pink).</p>
 
           {retentionDrivers.map(d => (
             <div key={d.driver} style={{ padding: 16, marginBottom: 12, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8 }}>
@@ -254,8 +254,8 @@ export default function OrgHealth() {
               {[
                 { title: 'Автономные команды', desc: 'Каждая команда может доставлять value независимо' },
                 { title: 'Явные интерфейсы', desc: 'API contracts между командами вместо устных договорённостей' },
-                { title: 'Культура через людей', desc: 'Нанимайте за culture add, не fit' },
-                { title: 'Документируйте решения', desc: 'ADR, Playbooks, Runbooks — tribal knowledge не масштабируется' },
+                { title: 'Культура через людей', desc: 'Нанимайте за culture add (дополнение культуры), не culture fit (клонирование)' },
+                { title: 'Документируйте решения', desc: 'ADR, Playbooks (сценарии), Runbooks (инструкции по инцидентам) — tribal knowledge (устные знания) не масштабируется' },
               ].map(p => (
                 <div key={p.title} style={{ padding: 12, background: 'var(--bg)', borderRadius: 8 }}>
                   <div style={{ fontWeight: 600, marginBottom: 4 }}>{p.title}</div>
@@ -270,10 +270,20 @@ export default function OrgHealth() {
       {/* ── Interview ── */}
       <section className="card">
         <h2>❓ Вопросы на собесе</h2>
-        <div className="interview-item"><div className="q">Как вы создаёте психологическую безопасность в команде?</div><div className="a">Через 4 уровня: inclusion → learner → contributor → challenger safety. На практике: моделирую уязвимость (признаю свои ошибки), защищаю от blame culture, использую ретро и анонимные опросы для замера. Ключевой маркер — люди не боятся говорить «я не знаю».</div></div>
+        <div className="interview-item"><div className="q">Как вы создаёте психологическую безопасность в команде?</div><div className="a">Через 4 уровня: inclusion → learner → contributor → challenger safety. На практике: моделирую уязвимость (признаю свои ошибки), защищаю от blame culture (культуры обвинений), использую ретро и анонимные опросы для замера. Ключевой маркер — люди не боятся говорить «я не знаю».</div></div>
         <div className="interview-item"><div className="q">Как вы предотвращаете выгорание?</div><div className="a">Устойчивый темп, ограничение переработок, автономия, разнообразие задач. Отслеживаю ранние сигналы: снижение инициативы, раздражительность, падение качества. При подозрении — 1-on-1, проговариваем нагрузку, при необходимости перераспределяю и даю отдых.</div></div>
         <div className="interview-item"><div className="q">Как должен выглядеть онбординг разработчика?</div><div className="a">Preboarding (доступы, buddy), 1 неделя (знакомство, простая задача), 30 дней (самост. задачи, процессы), 60 дней (фичи, планирование), 90 дней (полная автономия, decision об ИС). Ключевое — buddy + чёткий план + регулярный фидбек.</div></div>
       </section>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Психологическая_безопасность" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Психологическая безопасность — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

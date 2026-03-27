@@ -11,7 +11,7 @@ const raciExample = [
 
 const raidItems = {
   R: {
-    title: '⚠️ Risks',
+    title: '⚠️ Risks (Риски)',
     desc: 'Что может пойти не так',
     columns: ['Риск', 'Вероятность', 'Влияние', 'Митигация'],
     rows: [
@@ -21,7 +21,7 @@ const raidItems = {
     ],
   },
   A: {
-    title: '🎯 Assumptions',
+    title: '🎯 Assumptions (Допущения)',
     desc: 'Что считаем правдой (но не проверили)',
     columns: ['Допущение', 'Если ложно', 'Как проверить'],
     rows: [
@@ -31,7 +31,7 @@ const raidItems = {
     ],
   },
   I: {
-    title: '❗ Issues',
+    title: '❗ Issues (Проблемы)',
     desc: 'Уже случилось, нужно решать',
     columns: ['Проблема', 'Приоритет', 'Владелец', 'Действие'],
     rows: [
@@ -41,7 +41,7 @@ const raidItems = {
     ],
   },
   D: {
-    title: '🔗 Dependencies',
+    title: '🔗 Dependencies (Зависимости)',
     desc: 'Что от кого зависим',
     columns: ['Зависимость', 'От кого', 'Дедлайн', 'Статус'],
     rows: [
@@ -85,7 +85,7 @@ export default function ExecutionControl() {
           ['raid', '📋 RAID-лог'],
           ['escalation', '🚨 Эскалация'],
           ['status', '📊 Статус-отчёт'],
-          ['followthrough', '🔄 Follow-through'],
+          ['followthrough', '🔄 Follow-through (доведение до результата)'],
         ] as const).map(([key, label]) => (
           <button
             key={key}
@@ -261,7 +261,7 @@ export default function ExecutionControl() {
             </div>
 
             <div style={{ marginTop: 20, padding: '12px 16px', background: 'var(--card-bg)', borderLeft: '3px solid #f59e0b', borderRadius: 4, fontSize: '0.85rem' }}>
-              <strong>Анти-паттерн:</strong> «Heroics culture» — тимлид берёт на себя всё и не эскалирует. Результат: выгорание + поздний сигнал наверх.
+              <strong>Анти-паттерн:</strong> «Heroics culture» (культура героизма) — тимлид берёт на себя всё и не эскалирует. Результат: выгорание + поздний сигнал наверх.
             </div>
           </section>
 
@@ -309,7 +309,7 @@ export default function ExecutionControl() {
               ))}
             </div>
 
-            <h3>RAG-статус (светофор)</h3>
+            <h3>RAG-статус — Red/Amber/Green (светофор)</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
               {[
                 { color: '🟢 Green', desc: 'Всё по плану. Рисков нет или управляемы.' },
@@ -330,7 +330,7 @@ export default function ExecutionControl() {
       {tab === 'followthrough' && (
         <>
           <section className="card">
-            <h2>🔄 Project Follow-Through</h2>
+            <h2>🔄 Project Follow-Through (контроль исполнения проекта)</h2>
             <p style={{ marginBottom: 16 }}>Контроль — не микроменеджмент. Это системные практики, которые гарантируют, что работа движется к результату.</p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
@@ -353,11 +353,11 @@ export default function ExecutionControl() {
                 },
                 {
                   title: '📈 Milestone Check',
-                  items: ['На каждый milestone: scope vs план', 'EVM: CPI и SPI (Earned Value)', 'Решение: продолжаем / корректируем / эскалируем', 'Lessons learned для следующего этапа'],
+                  items: ['На каждый milestone: scope vs план', 'EVM (управление освоенным объёмом): CPI (индекс стоимости) и SPI (индекс сроков)', 'Решение: продолжаем / корректируем / эскалируем', 'Lessons learned для следующего этапа'],
                 },
                 {
                   title: '🏁 Project Closure',
-                  items: ['Финальный отчёт: план vs факт', 'Передача знаний (runbook, документация)', 'Ретроспектива проекта (не спринта)', 'Celebration: отметить достижения команды'],
+                  items: ['Финальный отчёт: план vs факт', 'Передача знаний (runbook — руководство по эксплуатации, документация)', 'Ретроспектива проекта (не спринта)', 'Celebration: отметить достижения команды'],
                 },
               ].map(block => (
                 <div key={block.title} style={{ padding: 16, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8 }}>
@@ -374,7 +374,7 @@ export default function ExecutionControl() {
             <h2>📋 Контрольный цикл PM</h2>
             <div style={{ padding: 20, background: 'var(--card-bg)', borderRadius: 8, border: '1px solid var(--border)' }}>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 8, flexWrap: 'wrap', fontSize: '0.9rem' }}>
-                {['Plan', '→', 'Execute', '→', 'Monitor', '→', 'Control', '→', 'Report', '→', 'Adapt'].map((step, i) => (
+                {['Plan (Планируй)', '→', 'Execute (Выполняй)', '→', 'Monitor (Отслеживай)', '→', 'Control (Управляй)', '→', 'Report (Отчитывайся)', '→', 'Adapt (Адаптируйся)'].map((step, i) => (
                   <span key={i} style={{
                     padding: step === '→' ? '8px 4px' : '8px 16px',
                     background: step === '→' ? 'transparent' : 'var(--accent)',

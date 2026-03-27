@@ -1,19 +1,19 @@
 import { useState } from 'react'
 
 const funnelSteps = [
-  { key: 'awareness', label: 'Awareness (Осведомлённость)', icon: '👁️', color: '#3b82f6', width: 100, defaultUsers: 10000, desc: 'Люди узнают о вас: реклама, SEO, PR, соцсети.', kpis: ['Охват', 'Показы', 'Трафик', 'Brand Awareness'] },
+  { key: 'awareness', label: 'Awareness (Осведомлённость)', icon: '👁️', color: '#3b82f6', width: 100, defaultUsers: 10000, desc: 'Люди узнают о вас: реклама, SEO, PR, соцсети.', kpis: ['Охват', 'Показы', 'Трафик', 'Brand Awareness (узнаваемость бренда)'] },
   { key: 'interest', label: 'Interest (Интерес)', icon: '🤔', color: '#8b5cf6', width: 82, defaultUsers: 3000, desc: 'Изучают продукт: читают блог, смотрят демо.', kpis: ['Время на сайте', 'Просмотры страниц', 'Подписки на рассылку'] },
-  { key: 'consideration', label: 'Consideration (Рассмотрение)', icon: '🔍', color: '#a855f7', width: 64, defaultUsers: 800, desc: 'Сравнивают с конкурентами, читают отзывы, пробуют trial.', kpis: ['Регистрации', 'Trial активации', 'Запросы демо'] },
-  { key: 'intent', label: 'Intent (Намерение)', icon: '🎯', color: '#d946ef', width: 48, defaultUsers: 200, desc: 'Добавляют в корзину, запрашивают КП, начинают оплату.', kpis: ['Add-to-cart', 'Запросы цены', 'Начатые оплаты'] },
-  { key: 'purchase', label: 'Purchase (Покупка)', icon: '💳', color: '#ec4899', width: 34, defaultUsers: 80, desc: 'Совершают первую покупку или подписку.', kpis: ['Оплаты', 'Revenue', 'AOV', 'CAC'] },
-  { key: 'loyalty', label: 'Loyalty (Лояльность)', icon: '❤️', color: '#f43f5e', width: 22, defaultUsers: 30, desc: 'Повторные покупки, удержание, рекомендации.', kpis: ['Retention Rate', 'NPS', 'LTV', 'Referrals'] },
+  { key: 'consideration', label: 'Consideration (Рассмотрение)', icon: '🔍', color: '#a855f7', width: 64, defaultUsers: 800, desc: 'Сравнивают с конкурентами, читают отзывы, пробуют trial.', kpis: ['Регистрации', 'Trial-активации (пробного периода)', 'Запросы демо'] },
+  { key: 'intent', label: 'Intent (Намерение)', icon: '🎯', color: '#d946ef', width: 48, defaultUsers: 200, desc: 'Добавляют в корзину, запрашивают КП, начинают оплату.', kpis: ['Add-to-cart (добавления в корзину)', 'Запросы цены', 'Начатые оплаты'] },
+  { key: 'purchase', label: 'Purchase (Покупка)', icon: '💳', color: '#ec4899', width: 34, defaultUsers: 80, desc: 'Совершают первую покупку или подписку.', kpis: ['Оплаты', 'Revenue (выручка)', 'AOV (Average Order Value — средний чек)', 'CAC'] },
+  { key: 'loyalty', label: 'Loyalty (Лояльность)', icon: '❤️', color: '#f43f5e', width: 22, defaultUsers: 30, desc: 'Повторные покупки, удержание, рекомендации.', kpis: ['Retention Rate (удержание)', 'NPS (Net Promoter Score — индекс лояльности)', 'LTV', 'Referrals (рекомендации)'] },
 ]
 
 const aidaModel = [
-  { letter: 'A', name: 'Attention', desc: 'Привлечь внимание — яркий заголовок, визуал, боль', color: '#ef4444' },
-  { letter: 'I', name: 'Interest', desc: 'Вызвать интерес — покажите, что понимаете проблему', color: '#f59e0b' },
-  { letter: 'D', name: 'Desire', desc: 'Создать желание — выгоды, социальные доказательства', color: '#22c55e' },
-  { letter: 'A', name: 'Action', desc: 'Призыв к действию — CTA, скидка, дедлайн', color: '#3b82f6' },
+  { letter: 'A', name: 'Attention (внимание)', desc: 'Привлечь внимание — яркий заголовок, визуал, боль', color: '#ef4444' },
+  { letter: 'I', name: 'Interest (интерес)', desc: 'Вызвать интерес — покажите, что понимаете проблему', color: '#f59e0b' },
+  { letter: 'D', name: 'Desire (желание)', desc: 'Создать желание — выгоды, социальные доказательства', color: '#22c55e' },
+  { letter: 'A', name: 'Action (действие)', desc: 'Призыв к действию — CTA, скидка, дедлайн', color: '#3b82f6' },
 ]
 
 export default function MarketingFunnel() {
@@ -52,7 +52,7 @@ export default function MarketingFunnel() {
           <strong>Маркетинговая воронка</strong> — это модель пути клиента от первого контакта до покупки.
           Концепция появилась в 1898 году, когда Элмо Льюис описал модель <strong>AIDA</strong>:
           Attention → Interest → Desire → Action.
-          Сегодня воронку расширили: после Action идут <strong>Loyalty</strong> и <strong>Advocacy</strong>.
+          Сегодня воронку расширили: после Action идут <strong>Loyalty</strong> и <strong>Advocacy (адвокатство бренда)</strong>.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           Почему это важно? Воронка показывает, <strong>где вы теряете людей</strong>. Без воронки маркетолог
@@ -147,7 +147,7 @@ export default function MarketingFunnel() {
                   <th style={{ textAlign: 'left', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Этап</th>
                   <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Пользователи</th>
                   <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Конверсия</th>
-                  <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Drop-off</th>
+                  <th style={{ textAlign: 'center', padding: 8, fontSize: '0.8rem', color: 'var(--text-muted)' }}>Drop-off (потери)</th>
                 </tr>
               </thead>
               <tbody>
@@ -218,6 +218,19 @@ export default function MarketingFunnel() {
           </div>
         </div>
       )}
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/AIDA_(маркетинг)" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Модель AIDA — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Воронка_продаж" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Воронка продаж — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

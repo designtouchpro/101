@@ -12,7 +12,7 @@ const teamTypes = [
       'Кросс-функциональная',
       'Полный цикл: разработка → тестирование → деплой → мониторинг',
       'Минимум зависимостей от других команд',
-      'You build it, you run it',
+      'You build it, you run it (сделал — отвечаешь за работу)',
     ],
     example: 'Команда «Checkout» — владеет всем, что связано с оформлением заказа',
     percentage: '60-80%',
@@ -57,7 +57,7 @@ const teamTypes = [
     color: '#a855f7',
     desc: 'Строит внутреннюю платформу, которая ускоряет stream-aligned команды. Self-service.',
     characteristics: [
-      'Предоставляет self-service сервисы',
+      'Предоставляет self-service (самообслуживание) сервисы',
       'CI/CD, инфраструктура, шаблоны',
       'Относится к stream-aligned как к клиентам',
       'Чем меньше обращений — тем лучше платформа',
@@ -69,7 +69,7 @@ const teamTypes = [
 
 const interactions = [
   {
-    name: 'Collaboration',
+    name: 'Collaboration (совместная работа)',
     icon: '🤝',
     desc: 'Две команды тесно работают вместе. Высокая коммуникация.',
     when: 'Запуск нового продукта, интеграция сложных систем',
@@ -77,7 +77,7 @@ const interactions = [
     color: '#22c55e',
   },
   {
-    name: 'X-as-a-Service',
+    name: 'X-as-a-Service (сервис по запросу)',
     icon: '🔌',
     desc: 'Одна команда предоставляет сервис. Минимум коммуникации.',
     when: 'Стабильный API, платформа, инфраструктура',
@@ -85,7 +85,7 @@ const interactions = [
     color: '#6366f1',
   },
   {
-    name: 'Facilitating',
+    name: 'Facilitating (обучение/помощь)',
     icon: '🧑‍🏫',
     desc: 'Enabling команда помогает stream-aligned команде. Менторинг.',
     when: 'Обучение новым практикам, миграция',
@@ -96,9 +96,9 @@ const interactions = [
 
 const antiPatterns = [
   { name: 'Всё через платформу', icon: '🚧', desc: 'Платформа становится узким местом. Каждый запрос проходит через одну команду.' },
-  { name: 'Enabling навсегда', icon: '♾️', desc: 'Помогающая команда не уходит. Становится зависимостью вместо обучения.' },
-  { name: 'Fake stream-aligned', icon: '🎭', desc: 'Команда называется stream-aligned, но зависит от 5 других команд для каждого деплоя.' },
-  { name: "Conway's Revenge", icon: '📐', desc: 'Архитектура копирует орг-структуру, а не наоборот. Нужен Reverse Conway.' },
+  { name: 'Enabling навсегда (помогающая команда не уходит)', icon: '♾️', desc: 'Помогающая команда не уходит. Становится зависимостью вместо обучения.' },
+  { name: 'Fake stream-aligned (мнимая потоковая)', icon: '🎭', desc: 'Команда называется stream-aligned, но зависит от 5 других команд для каждого деплоя.' },
+  { name: "Conway's Revenge (месть Конуэя)", icon: '📐', desc: 'Архитектура копирует орг-структуру, а не наоборот. Нужен Reverse Conway (обратный манёвр Конуэя).' },
 ]
 
 const quiz = [
@@ -162,7 +162,7 @@ export default function TeamTopologies() {
           <br />
           Закон Конуэя: система копирует коммуникационную структуру организации.
           <br />
-          Team Topologies предлагает использовать это <strong>осознанно</strong> — Reverse Conway Maneuver.
+          Reverse Conway Maneuver (обратный манёвр Конуэя).
         </p>
       </div>
 
@@ -339,6 +339,16 @@ export default function TeamTopologies() {
             <div className="score-label">правильных ответов</div>
           </div>
         )}
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://teamtopologies.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Team Topologies — официальный сайт
+          </a>
+        </div>
       </div>
     </div>
   )

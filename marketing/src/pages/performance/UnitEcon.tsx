@@ -341,10 +341,10 @@ export default function UnitEcon() {
           <h4 style={{ marginBottom: 12, fontSize: '1rem' }}>🛠️ Как снижать Churn Rate</h4>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 12 }}>
             {[
-              { icon: '🎓', title: 'Onboarding', items: ['Welcome-серия писем', 'Интерактивные туториалы', 'Time-to-value < 5 минут', 'Персональный чекин на 7й день'] },
-              { icon: '📊', title: 'Мониторинг здоровья', items: ['Health Score для каждого клиента', 'Триггеры на падение активности', 'NPS/CSAT опросы', 'Exit survey при уходе'] },
-              { icon: '💬', title: 'Engagement', items: ['Push/email при бездействии', 'Персональные рекомендации', 'Комьюнити и вебинары', 'Фича-анонсы'] },
-              { icon: '🔒', title: 'Retention-механики', items: ['Годовая подписка со скидкой', 'Switching costs (данные, интеграции)', 'Программа лояльности', 'Win-back кампании'] },
+              { icon: '🎓', title: 'Onboarding (адаптация)', items: ['Welcome-серия писем', 'Интерактивные туториалы', 'Time-to-value < 5 минут', 'Персональный чекин на 7й день'] },
+              { icon: '📊', title: 'Мониторинг здоровья', items: ['Health Score (оценка здоровья клиента) для каждого клиента', 'Триггеры на падение активности', 'NPS (индекс лояльности) / CSAT (удовлетворённость) опросы', 'Exit survey (опрос при уходе) при уходе'] },
+              { icon: '💬', title: 'Engagement (вовлечение)', items: ['Push/email при бездействии', 'Персональные рекомендации', 'Комьюнити и вебинары', 'Фича-анонсы'] },
+              { icon: '🔒', title: 'Retention-механики', items: ['Годовая подписка со скидкой', 'Switching costs (издержки переключения) (данные, интеграции)', 'Программа лояльности', 'Win-back (возвратные) кампании'] },
             ].map(cat => (
               <div key={cat.title} style={{
                 padding: 16, background: 'var(--bg-secondary)', borderRadius: 10,
@@ -483,7 +483,7 @@ export default function UnitEcon() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 16 }}>
           {[
             { label: 'Цена подписки (мес), ₽', value: price, setter: setPrice },
-            { label: 'Себестоимость (COGS), ₽/мес', value: cogs, setter: setCogs },
+            { label: 'Себестоимость (COGS — Cost of Goods Sold — себестоимость), ₽/мес', value: cogs, setter: setCogs },
             { label: 'Рекламный бюджет, ₽', value: adSpend, setter: setAdSpend },
             { label: 'Новых пользователей', value: newUsers, setter: setNewUsers },
           ].map(field => (
@@ -756,7 +756,7 @@ export default function UnitEcon() {
             },
             {
               icon: '🔒', title: 'Снизить Churn', desc: 'Retention, onboarding, engagement', impact: 'Длиннее Lifetime → выше LTV', color: '#ef4444',
-              tips: ['Улучшить первый опыт (FTUE)', 'Health Score + триггеры', 'Exit survey для причин оттока'],
+              tips: ['Улучшить первый опыт (FTUE — First Time User Experience — первый опыт пользователя)', 'Health Score + триггеры', 'Exit survey для причин оттока'],
             },
           ].map(lever => (
             <div key={lever.title} style={{
@@ -783,15 +783,15 @@ export default function UnitEcon() {
           {[
             { name: 'CAC', formula: 'Marketing Spend / New Customers', desc: 'Стоимость привлечения клиента' },
             { name: 'ARPU', formula: 'Total Revenue / Total Users', desc: 'Средний доход на пользователя' },
-            { name: 'Gross Margin', formula: '(Revenue − COGS) / Revenue', desc: 'Валовая маржинальность' },
+            { name: 'Gross Margin (валовая маржа)', formula: '(Revenue − COGS) / Revenue', desc: 'Валовая маржинальность' },
             { name: 'Churn Rate', formula: 'Churned / Start Customers', desc: 'Коэффициент оттока' },
             { name: 'Avg Lifetime', formula: '1 / Churn Rate', desc: 'Средний срок жизни клиента' },
             { name: 'LTV', formula: 'ARPU × Margin × Lifetime', desc: 'Пожизненная ценность' },
             { name: 'LTV/CAC', formula: 'LTV / CAC (target ≥ 3x)', desc: 'Здоровье бизнес-модели' },
             { name: 'Payback', formula: 'CAC / (ARPU × Margin)', desc: 'Срок окупаемости' },
             { name: 'MRR', formula: 'Σ (Users × Monthly Price)', desc: 'Ежемесячная рекуррентная выручка' },
-            { name: 'Net Rev Churn', formula: '(Lost − Expansion) / MRR', desc: 'Чистый отток выручки' },
-            { name: 'Quick Ratio', formula: '(New + Expansion) / (Churn + Contr)', desc: 'Эффект. роста SaaS' },
+            { name: 'Net Rev Churn (чистый отток выручки)', formula: '(Lost − Expansion) / MRR', desc: 'Чистый отток выручки' },
+            { name: 'Quick Ratio (коэффициент роста SaaS)', formula: '(New + Expansion) / (Churn + Contr)', desc: 'Эффект. роста SaaS' },
           ].map(f => (
             <div key={f.name} style={{
               padding: '12px 16px', borderRadius: 10, background: 'var(--bg-secondary)',
@@ -814,12 +814,12 @@ export default function UnitEcon() {
             {
               title: '🟢 Netflix', tag: 'Consumer Subscription',
               metrics: 'ARPU $15.50 | Churn ~2.5%/мес | Lifetime ~40 мес | LTV ~$620',
-              insight: 'Низкий churn за счёт оригинального контента и привычки. Инвестиции в контент — это инвестиции в retention.',
+              insight: 'Низкий churn за счёт оригинального контента и привычки. Инвестиции в контент — это инвестиции в retention. Engagement loops (петли вовлечения) — модель Hook (модель «Крючок» Нира Эяля).',
             },
             {
               title: '🔵 Slack', tag: 'Enterprise SaaS',
               metrics: 'ARPU $12/user | Churn <1%/мес | Net Revenue Retention 130%',
-              insight: 'Отрицательный чистый churn! Команды расширяются и переходят на дорогие тарифы. Switching costs огромны.',
+              insight: 'Отрицательный чистый churn! Команды расширяются и переходят на дорогие тарифы. Switching costs (издержки переключения) огромны.',
             },
             {
               title: '🟡 Фитнес-приложение', tag: 'Mobile App',
@@ -889,6 +889,16 @@ export default function UnitEcon() {
               <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.a}</div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Юнит-экономика" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Юнит-экономика — Википедия
+          </a>
         </div>
       </div>
     </div>

@@ -19,20 +19,20 @@ const defaultSegments: Segment[] = [
 ]
 
 const channelMatch = [
-  { channel: 'Google Ads', best: ['Intent-based', 'B2B', 'High intent'], cpc: '30-150 ₽', cr: '2-5%' },
+  { channel: 'Google Ads', best: ['Intent-based (по намерению)', 'B2B', 'High intent (высокая готовность к покупке)'], cpc: '30-150 ₽', cr: '2-5%' },
   { channel: 'VK Ads', best: ['B2C', 'Широкая аудитория', 'RU'], cpc: '5-30 ₽', cr: '0.5-2%' },
   { channel: 'Telegram Ads', best: ['IT', 'B2B', 'Нишевые'], cpc: '2-5 €', cr: '1-3%' },
-  { channel: 'YouTube Ads', best: ['Видео', 'Awareness', 'B2C'], cpc: '1-5 ₽', cr: '0.5-1.5%' },
-  { channel: 'Retargeting', best: ['Возврат', 'Cart abandon', 'BOFU'], cpc: '10-50 ₽', cr: '3-8%' },
+  { channel: 'YouTube Ads', best: ['Видео', 'Awareness (осведомлённость)', 'B2C'], cpc: '1-5 ₽', cr: '0.5-1.5%' },
+  { channel: 'Retargeting', best: ['Возврат', 'Cart abandon (брошенная корзина)', 'BOFU (Bottom of Funnel — низ воронки)'], cpc: '10-50 ₽', cr: '3-8%' },
 ]
 
 const retargetingStrategies = [
-  { name: 'Site visitors', desc: 'Были на сайте, но не конвертировались', window: '7-30 дней', priority: 5 },
-  { name: 'Cart abandoners', desc: 'Начали оформление, бросили', window: '1-7 дней', priority: 5 },
-  { name: 'Feature page visitors', desc: 'Смотрели конкретную фичу', window: '14-30 дней', priority: 4 },
-  { name: 'Blog readers', desc: 'Читали 3+ статей', window: '30-60 дней', priority: 3 },
-  { name: 'Trial expired', desc: 'Триал закончился, не купили', window: '1-14 дней', priority: 5 },
-  { name: 'Inactive users', desc: 'Не заходили 30+ дней', window: '30-90 дней', priority: 3 },
+  { name: 'Site visitors (посетители сайта)', desc: 'Были на сайте, но не конвертировались', window: '7-30 дней', priority: 5 },
+  { name: 'Cart abandoners (бросившие корзину)', desc: 'Начали оформление, бросили', window: '1-7 дней', priority: 5 },
+  { name: 'Feature page visitors (посетители страниц функций)', desc: 'Смотрели конкретную фичу', window: '14-30 дней', priority: 4 },
+  { name: 'Blog readers (читатели блога)', desc: 'Читали 3+ статей', window: '30-60 дней', priority: 3 },
+  { name: 'Trial expired (истёкший триал)', desc: 'Триал закончился, не купили', window: '1-14 дней', priority: 5 },
+  { name: 'Inactive users (неактивные пользователи)', desc: 'Не заходили 30+ дней', window: '30-90 дней', priority: 3 },
 ]
 
 export default function Targeting() {
@@ -64,7 +64,7 @@ export default function Targeting() {
           <strong>Ретаргетинг</strong> (ремаркетинг) — показ рекламы людям, которые уже взаимодействовали с вашим продуктом: 
           зашли на сайт, добавили товар в корзину, открыли приложение. Конверсия ретаргетинга обычно в 3-5 раз выше 
           обычной рекламы, потому что аудитория уже знакома с брендом. Но важно не «преследовать» — 
-          ограничивайте частоту показов (frequency cap) и исключайте тех, кто уже купил.
+          ограничивайте частоту показов (frequency cap — ограничение частоты показов) и исключайте тех, кто уже купил.
         </p>
         <div className="info-box">
           <div className="info-box-content">

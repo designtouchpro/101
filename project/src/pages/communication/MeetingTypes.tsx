@@ -13,7 +13,7 @@ interface Meeting {
 
 const meetings: Meeting[] = [
   {
-    name: 'Daily Standup',
+    name: 'Daily Standup (ежедневка)',
     icon: '🌅',
     duration: '15 мин',
     frequency: 'Ежедневно',
@@ -33,7 +33,7 @@ const meetings: Meeting[] = [
     ],
   },
   {
-    name: 'Sprint Planning',
+    name: 'Sprint Planning (планирование спринта)',
     icon: '📋',
     duration: '2-4 часа',
     frequency: 'Начало спринта',
@@ -42,8 +42,8 @@ const meetings: Meeting[] = [
       'PO представляет цель спринта',
       'Обсуждение и уточнение задач',
       'Оценка Story Points',
-      'Формирование Sprint Backlog',
-      'Определение Definition of Done',
+      'Формирование Sprint Backlog (бэклога спринта)',
+      'Определение Definition of Done (критериев готовности)',
     ],
     antipatterns: [
       'Нет подготовленного бэклога',
@@ -59,7 +59,7 @@ const meetings: Meeting[] = [
     ],
   },
   {
-    name: 'Sprint Review / Demo',
+    name: 'Sprint Review / Demo (обзор спринта)',
     icon: '🎬',
     duration: '1-2 часа',
     frequency: 'Конец спринта',
@@ -84,7 +84,7 @@ const meetings: Meeting[] = [
     ],
   },
   {
-    name: 'Retrospective',
+    name: 'Retrospective (ретроспектива)',
     icon: '🔄',
     duration: '1-1.5 часа',
     frequency: 'Конец спринта',
@@ -108,14 +108,14 @@ const meetings: Meeting[] = [
     ],
   },
   {
-    name: 'Backlog Refinement',
+    name: 'Backlog Refinement (уточнение бэклога)',
     icon: '✂️',
     duration: '1 час',
     frequency: '1-2 раза в неделю',
     participants: ['PO', 'Команда (часть)'],
     agenda: [
       'Просмотр верхних элементов бэклога',
-      'Уточнение Acceptance Criteria',
+      'Уточнение Acceptance Criteria (критериев приёмки)',
       'Декомпозиция эпиков',
       'Оценка (Story Points)',
       'Выявление зависимостей',
@@ -129,11 +129,11 @@ const meetings: Meeting[] = [
       'Работать на 2-3 спринта вперёд',
       '5-10% времени спринта',
       'PO приходит подготовленным',
-      'Готовность = DoR выполнен',
+      'Готовность = DoR (Definition of Ready) выполнен',
     ],
   },
   {
-    name: 'One-on-One',
+    name: 'One-on-One (встреча один на один)',
     icon: '🤝',
     duration: '30-60 мин',
     frequency: '1 раз в 1-2 недели',

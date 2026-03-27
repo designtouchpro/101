@@ -38,7 +38,7 @@ const radicalCandorQuadrants: Record<QuadrantId, {
 const feedbackModels = [
   {
     name: 'SBI',
-    fullName: 'Situation → Behavior → Impact',
+    fullName: 'Situation (Ситуация) → Behavior (Поведение) → Impact (Влияние)',
     icon: '🎯',
     steps: [
       { label: 'Situation', desc: 'Когда и где', example: 'На вчерашнем ревью PR #142...' },
@@ -48,7 +48,7 @@ const feedbackModels = [
   },
   {
     name: 'STAR',
-    fullName: 'Situation → Task → Action → Result',
+    fullName: 'Situation (Ситуация) → Task (Задача) → Action (Действие) → Result (Результат)',
     icon: '⭐',
     steps: [
       { label: 'Situation', desc: 'Контекст', example: 'У нас был деплой в пятницу вечером.' },
@@ -59,7 +59,7 @@ const feedbackModels = [
   },
   {
     name: 'BOFF',
-    fullName: 'Behaviour → Outcome → Feelings → Future',
+    fullName: 'Behaviour (Поведение) → Outcome (Последствие) → Feelings (Чувства) → Future (Будущее)',
     icon: '🔄',
     steps: [
       { label: 'Behaviour', desc: 'Поведение', example: 'Ты опоздал на 3 дейли подряд.' },
@@ -102,8 +102,8 @@ export default function FeedbackModels() {
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           Обратная связь — <strong>главный инструмент развития команды</strong>. Исследования Gallup показывают:
           сотрудники, регулярно получающие качественный фидбек, на 3.6x более вовлечены. Ким Скотт в книге
-          «Radical Candor» предложила модель из двух осей: <strong>Care Personally</strong> (искренняя забота о человеке) и
-          <strong>Challenge Directly</strong> (честность в оценке работы). Только их комбинация даёт продуктивный фидбек.
+          «Radical Candor» предложила модель из двух осей: <strong>Care Personally (искренняя забота о человеке)</strong> и
+          <strong>Challenge Directly (прямота в оценке работы)</strong>. Только их комбинация даёт продуктивный фидбек.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           Без структуры фидбек превращается в размытое «нормально» или обидное «всё плохо». Модели SBI, STAR и BOFF
@@ -122,7 +122,7 @@ export default function FeedbackModels() {
 
       {/* Radical Candor Matrix */}
       <div className="card">
-        <h3>Radical Candor — матрица Ким Скотт</h3>
+        <h3>Radical Candor (радикальная откровенность) — матрица Ким Скотт</h3>
         <p style={{ marginBottom: 8 }}>Два измерения: <strong>Забота лично</strong> (Care Personally) и <strong>Прямота</strong> (Challenge Directly).</p>
 
         <div className="matrix">
@@ -312,6 +312,16 @@ export default function FeedbackModels() {
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Обратная_связь" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Обратная связь — Википедия
+          </a>
         </div>
       </div>
     </div>

@@ -90,10 +90,10 @@ export default function Velocity() {
 
         <div style={{ display: 'flex', gap: 12, fontSize: '0.8rem', marginBottom: 16 }}>
           <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-            <span style={{ width: 12, height: 12, background: 'rgba(59,130,246,0.3)', borderRadius: 2 }} /> Committed
+            <span style={{ width: 12, height: 12, background: 'rgba(59,130,246,0.3)', borderRadius: 2 }} /> Committed (запланировано)
           </span>
           <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-            <span style={{ width: 12, height: 12, background: '#22c55e', borderRadius: 2 }} /> Completed
+            <span style={{ width: 12, height: 12, background: '#22c55e', borderRadius: 2 }} /> Completed (выполнено)
           </span>
         </div>
 
@@ -137,7 +137,7 @@ export default function Velocity() {
           </div>
           <div className="score-display" style={{ flex: 1, minWidth: 120 }}>
             <div className="score-number">{stats.commitmentRate}%</div>
-            <div className="score-label">Commitment Rate</div>
+            <div className="score-label">Commitment Rate (процент выполнения)</div>
           </div>
           <div className="score-display" style={{ flex: 1, minWidth: 120 }}>
             <div className="score-number">{stats.min}–{stats.max}</div>
@@ -148,7 +148,7 @@ export default function Velocity() {
 
       {/* Capacity Calculator */}
       <div className="card">
-        <h3>🧮 Capacity Planning</h3>
+        <h3>🧮 Capacity Planning (планирование ёмкости)</h3>
         <p style={{ marginBottom: 16 }}>Capacity = Люди × Дни × Focus Factor</p>
         <div className="grid-3">
           <div className="slider-container">
@@ -160,7 +160,7 @@ export default function Velocity() {
             <input type="range" min={2} max={12} value={teamSize} onChange={e => setTeamSize(+e.target.value)} />
           </div>
           <div className="slider-container">
-            <label>Focus Factor: <strong>{focusFactor}%</strong></label>
+            <label>Focus Factor (фактор фокусировки): <strong>{focusFactor}%</strong></label>
             <input type="range" min={30} max={100} step={5} value={focusFactor} onChange={e => setFocusFactor(+e.target.value)} />
           </div>
         </div>
@@ -182,7 +182,7 @@ export default function Velocity() {
       <div className="card">
         <h3>🔮 Прогноз релиза</h3>
         <div className="slider-container">
-          <label>Оставшийся Backlog: <strong>{remainingSP} SP</strong></label>
+          <label>Оставшийся Backlog (бэклог): <strong>{remainingSP} SP</strong></label>
           <input type="range" min={10} max={500} step={10} value={remainingSP} onChange={e => setRemainingSP(+e.target.value)} />
         </div>
 

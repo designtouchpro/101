@@ -7,14 +7,14 @@ const contentTypes = [
   { type: 'Email-рассылки', icon: '📧', goal: 'Удержание', freq: '1-2 / нед', effort: 2, funnel: 'BOFU', examples: ['Дайджесты', 'Onboarding', 'Промо'] },
   { type: 'Соцсети', icon: '📱', goal: 'Охват + HR', freq: 'ежедневно', effort: 2, funnel: 'TOFU', examples: ['Посты', 'Stories', 'Мемы'] },
   { type: 'Подкасты', icon: '🎙️', goal: 'Лояльность', freq: '1-2 / мес', effort: 4, funnel: 'MOFU', examples: ['Интервью', 'Обзоры', 'Новости'] },
-  { type: 'White Papers', icon: '📄', goal: 'Lead gen', freq: '1 / квартал', effort: 5, funnel: 'MOFU', examples: ['Исследования', 'Отчёты'] },
+  { type: 'White Papers', icon: '📄', goal: 'Lead gen (генерация лидов)', freq: '1 / квартал', effort: 5, funnel: 'MOFU', examples: ['Исследования', 'Отчёты'] },
   { type: 'Вебинары', icon: '🖥️', goal: 'Прогрев', freq: '1-2 / мес', effort: 4, funnel: 'BOFU', examples: ['Демо', 'Q&A', 'Мастер-классы'] },
 ]
 
 const funnelStages = [
-  { stage: 'TOFU', label: 'Top of Funnel', color: '#f97316', desc: 'Привлечение внимания', types: ['Блог', 'Видео', 'Соцсети', 'SEO'] },
-  { stage: 'MOFU', label: 'Middle of Funnel', color: '#eab308', desc: 'Подогрев интереса', types: ['Кейсы', 'Вебинары', 'Email', 'White Papers'] },
-  { stage: 'BOFU', label: 'Bottom of Funnel', color: '#22c55e', desc: 'Конвертация', types: ['Демо', 'Free trial', 'Консультация', 'Промо'] },
+  { stage: 'TOFU', label: 'Top of Funnel (верх воронки)', color: '#f97316', desc: 'Привлечение внимания', types: ['Блог', 'Видео', 'Соцсети', 'SEO'] },
+  { stage: 'MOFU', label: 'Middle of Funnel (середина воронки)', color: '#eab308', desc: 'Подогрев интереса', types: ['Кейсы', 'Вебинары', 'Email', 'White Papers'] },
+  { stage: 'BOFU', label: 'Bottom of Funnel (низ воронки)', color: '#22c55e', desc: 'Конвертация', types: ['Демо', 'Free trial', 'Консультация', 'Промо'] },
 ]
 
 const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт']
@@ -196,7 +196,7 @@ export default function ContentStrategy() {
         <div className="grid-3">
           {[
             { pillar: 'Продукт', icon: '💡', share: '30%', topics: ['Обновления', 'Фичи', 'Roadmap', 'Туториалы'] },
-            { pillar: 'Экспертиза', icon: '🧠', share: '25%', topics: ['Гайды', 'Best practices', 'Тренды'] },
+            { pillar: 'Экспертиза', icon: '🧠', share: '25%', topics: ['Гайды', 'Best practices (лучшие практики)', 'Тренды'] },
             { pillar: 'Кейсы', icon: '🏆', share: '20%', topics: ['Истории клиентов', 'ROI', 'До/После'] },
             { pillar: 'Культура', icon: '🎪', share: '15%', topics: ['Команда', 'Ценности', 'За кулисами'] },
             { pillar: 'Юмор', icon: '😄', share: '10%', topics: ['Мемы', 'Ситуативка', 'Тренды'] },
@@ -212,6 +212,16 @@ export default function ContentStrategy() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Контент-маркетинг" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Контент-маркетинг — Википедия
+          </a>
         </div>
       </div>
     </div>

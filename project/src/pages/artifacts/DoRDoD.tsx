@@ -7,18 +7,18 @@ interface CheckItem {
 }
 
 const defaultDoR: CheckItem[] = [
-  { id: 1, text: 'User Story написана в формате "Как <роль>, я хочу <действие>, чтобы <ценность>"', checked: false },
-  { id: 2, text: 'Acceptance Criteria определены и понятны команде', checked: false },
+  { id: 1, text: 'User Story (пользовательская история) написана в формате "Как <роль>, я хочу <действие>, чтобы <ценность>"', checked: false },
+  { id: 2, text: 'Acceptance Criteria (критерии приёмки) определены и понятны команде', checked: false },
   { id: 3, text: 'Story оценена в Story Points', checked: false },
   { id: 4, text: 'Зависимости выявлены и разрешены (или запланированы)', checked: false },
   { id: 5, text: 'Макеты/дизайн готовы (если нужны)', checked: false },
   { id: 6, text: 'Story помещается в один спринт', checked: false },
-  { id: 7, text: 'Технические вопросы сняты (spike завершён)', checked: false },
+  { id: 7, text: 'Технические вопросы сняты (spike — исследовательская задача — завершён)', checked: false },
 ]
 
 const defaultDoD: CheckItem[] = [
   { id: 1, text: 'Код написан и проходит все unit-тесты', checked: false },
-  { id: 2, text: 'Code review пройден (минимум 1 approve)', checked: false },
+  { id: 2, text: 'Code review (ревью кода) пройден (минимум 1 approve)', checked: false },
   { id: 3, text: 'Все Acceptance Criteria выполнены', checked: false },
   { id: 4, text: 'Нет критических и высоких багов', checked: false },
   { id: 5, text: 'Документация обновлена', checked: false },
@@ -151,7 +151,7 @@ export default function DoRDoD() {
   return (
     <div className="demo-container">
       <div className="demo-header">
-        <h1>📋 Definition of Ready & Done</h1>
+        <h1>📋 Definition of Ready & Done (Критерии готовности и завершения)</h1>
         <p>Чек-листы качества: когда задача готова к работе и когда она считается завершённой.</p>
       </div>
 
@@ -198,7 +198,7 @@ export default function DoRDoD() {
           <div className="card">
             <h3>📝 Acceptance Criteria (Критерии приёмки)</h3>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 16 }}>
-              AC определяют, что именно должна делать история. Формат: <strong>GIVEN / WHEN / THEN</strong>.
+              AC определяют, что именно должна делать история. Формат: <strong>GIVEN (дано) / WHEN (когда) / THEN (тогда)</strong>.
             </p>
 
             <div className="info-box" style={{ marginBottom: 16 }}>

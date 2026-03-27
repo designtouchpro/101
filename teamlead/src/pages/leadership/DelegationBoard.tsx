@@ -93,20 +93,20 @@ export default function DelegationBoard() {
       <div className="card" style={{ borderLeft: '4px solid var(--accent-main)' }}>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           Делегирование — не «скинуть задачу», а <strong>передать ответственность с нужным уровнем автономии</strong>.
-          Юрген Аппело в книге «Management 3.0» предложил модель из 7 уровней: от «Я решаю и сообщаю» (Tell)
-          до «Полностью делегирую» (Delegate). Ключевая идея — уровень делегирования должен соответствовать
+          Юрген Аппело в книге «Management 3.0» предложил модель из 7 уровней: от «Я решаю и сообщаю» (Tell — говорю)
+          до «Полностью делегирую» (Delegate — делегирую). Ключевая идея — уровень делегирования должен соответствовать
           <strong>компетенции человека</strong> и <strong>цене ошибки</strong>.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
           Распространённая ошибка — бинарное делегирование: либо микроменеджмент, либо «разберись сам».
-          Delegation Poker помогает найти баланс и <strong>прозрачно договориться</strong> с сотрудником об уровне автономии.
-          Это особенно важно при росте команды: тимлид, который не делегирует, становится бутылочным горлышком.
+          Delegation Poker (покер делегирования) помогает найти баланс и <strong>прозрачно договориться</strong> с сотрудником об уровне автономии.
+          Это особенно важно при росте команды: тимлид, который не делегирует, становится бутылочным горлышком (bottleneck).
         </p>
         <div className="info-box">
           <div className="info-box-icon">🎲</div>
           <div className="info-box-content">
             <div className="info-box-title">Delegation Poker на практике</div>
-            Обсудите с сотрудником уровень делегирования для каждой зоны ответственности. Зафиксируйте на Delegation Board.
+            Обсудите с сотрудником уровень делегирования для каждой зоны ответственности. Зафиксируйте на Delegation Board (доске делегирования).
             Пересматривайте каждые 1-2 месяца по мере роста компетенций.
           </div>
         </div>
@@ -230,6 +230,16 @@ export default function DelegationBoard() {
           </div>
         </div>
       )}
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Делегирование_полномочий" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Делегирование полномочий — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

@@ -27,8 +27,8 @@ const styles = [
   },
   {
     id: 'servant',
-    name: 'Servant Leader',
-    icon: '🤲',
+    name: 'Servant Leader (лидер-слуга)',
+    icon: '🤲',  
     color: '#22c55e',
     motto: '«Чем я могу помочь?»',
     desc: 'Лидер убирает препятствия и создаёт условия для продуктивности команды.',
@@ -60,7 +60,7 @@ const scenarios = [
   {
     text: 'Команда уже полгода работает на проекте. Нужно решить: мигрировать на новый фреймворк или остаться на текущем.',
     correct: 'democratic',
-    explanation: 'Стратегическое решение, у всех есть экспертиза. Обсуждение даст лучшее решение и buy-in от команды.'
+    explanation: 'Стратегическое решение, у всех есть экспертиза. Обсуждение даст лучшее решение и buy-in (поддержку) от команды.'
   },
   {
     text: 'Сильный мидл хочет стать сеньором. Он взял сложную задачу, но застрял на проектировании.',
@@ -239,6 +239,19 @@ export default function LeadershipStyles() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Ситуационное_лидерство" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Ситуационное лидерство — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Лидерство-слуга" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Servant Leadership — Википедия
+          </a>
+        </div>
       </div>
     </div>
   )

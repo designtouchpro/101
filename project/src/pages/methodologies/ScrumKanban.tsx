@@ -19,11 +19,11 @@ const initialTasks: Task[] = [
 ]
 
 const columns = [
-  { key: 'backlog' as const, label: 'Backlog', color: '#666' },
-  { key: 'todo' as const, label: 'To Do', color: '#3b82f6' },
-  { key: 'progress' as const, label: 'In Progress', color: '#f59e0b' },
-  { key: 'review' as const, label: 'Review', color: '#a855f7' },
-  { key: 'done' as const, label: 'Done', color: '#22c55e' },
+  { key: 'backlog' as const, label: 'Backlog (бэклог)', color: '#666' },
+  { key: 'todo' as const, label: 'To Do (к выполнению)', color: '#3b82f6' },
+  { key: 'progress' as const, label: 'In Progress (в работе)', color: '#f59e0b' },
+  { key: 'review' as const, label: 'Review (проверка)', color: '#a855f7' },
+  { key: 'done' as const, label: 'Done (готово)', color: '#22c55e' },
 ]
 
 type Tab = 'compare' | 'board' | 'quiz'
@@ -87,8 +87,8 @@ export default function ScrumKanban() {
 
       <div className="card" style={{ borderLeft: '4px solid var(--accent-main)' }}>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          <strong>Scrum</strong> — итеративный фреймворк с фиксированными ролями (Product Owner, Scrum Master, Dev Team), 
-          событиями (Sprint, Planning, Daily, Review, Retro) и артефактами (Product Backlog, Sprint Backlog, Increment). 
+          <strong>Scrum</strong> — итеративный фреймворк с фиксированными ролями (Product Owner — владелец продукта, Scrum Master — скрам-мастер, Dev Team — команда разработки), 
+          событиями (Sprint — спринт, Planning — планирование, Daily — ежедневка, Review — обзор, Retro — ретроспектива) и артефактами (Product Backlog — бэклог продукта, Sprint Backlog — бэклог спринта, Increment — инкремент). 
           Придуман Кеном Швабером и Джеффом Сазерлендом в начале 1990-х. Scrum хорош, когда требования меняются, 
           но нужна предсказуемость через спринты.
         </p>
@@ -131,11 +131,11 @@ export default function ScrumKanban() {
                 {[
                   ['Итерации', 'Фиксированные спринты (1-4 нед.)', 'Непрерывный поток'],
                   ['Роли', 'PO, Scrum Master, Dev Team', 'Нет обязательных ролей'],
-                  ['Планирование', 'Sprint Planning каждый спринт', 'По мере необходимости'],
-                  ['Метрика', 'Velocity (SP/спринт)', 'Lead Time, Cycle Time'],
+                  ['Планирование', 'Sprint Planning (планирование спринта) каждый спринт', 'По мере необходимости'],
+                  ['Метрика', 'Velocity — скорость (SP/спринт)', 'Lead Time (время выполнения), Cycle Time (время цикла)'],
                   ['Изменения', 'Нежелательны внутри спринта', 'В любой момент'],
                   ['Доска', 'Обнуляется каждый спринт', 'Постоянная, задачи текут'],
-                  ['WIP лимит', 'Неявный (Sprint Backlog)', 'Явный (per column)'],
+                  ['WIP лимит', 'Неявный (Sprint Backlog — бэклог спринта)', 'Явный (для каждой колонки)'],
                   ['Церемонии', 'Daily, Planning, Review, Retro', 'Только Daily (опционально)'],
                 ].map(([aspect, scrum, kanban]) => (
                   <tr key={aspect} style={{ borderBottom: '1px solid var(--border-color)' }}>
@@ -272,6 +272,22 @@ export default function ScrumKanban() {
           })}
         </div>
       )}
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Scrum" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Scrum — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Канбан" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Канбан — Википедия
+          </a>
+          <a href="https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Russian.pdf" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Руководство по Scrum 2020 (PDF, рус.)
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

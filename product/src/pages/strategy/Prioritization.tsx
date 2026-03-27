@@ -118,7 +118,7 @@ export default function Prioritization() {
           <div className="info-box-content">
             <strong>⚠️ Антипаттерн</strong>: Не оценивайте фичи в одиночку. Приоритизация — командное упражнение.
             Product менеджер отвечает за Reach и Value, инженеры — за Effort, дизайнеры — за Confidence в UX-решениях.
-            Совместная оценка повышает buy-in и точность.
+            Совместная оценка повышает вовлечённость (buy-in) и точность.
           </div>
         </div>
       </div>
@@ -174,7 +174,7 @@ export default function Prioritization() {
               {framework === 'value-effort' && (
                 <>
                   <div className="info-box-title">Value / Effort = Impact ÷ Effort</div>
-                  Самый простой метод. Ищем <strong>Quick Wins</strong> — высокая ценность, малые усилия.
+                  Самый простой метод. Ищем <strong>быстрые победы (Quick Wins)</strong> — высокая ценность, малые усилия.
                   Если Impact/Effort {'>'} 1, скорее всего стоит делать.
                 </>
               )}
@@ -213,9 +213,9 @@ export default function Prioritization() {
                     <td style={{ padding: 4, textAlign: 'center' }}>
                       <select value={f.impact} onChange={e => updateFeature(f.id, 'impact', +e.target.value)}
                         style={{ padding: 4, borderRadius: 6, border: '1px solid var(--border-color)', background: 'var(--bg-main)', color: 'var(--text-main)', fontSize: '0.85rem' }}>
-                        <option value={1}>1 — Low</option>
-                        <option value={2}>2 — Med</option>
-                        <option value={3}>3 — High</option>
+                        <option value={1}>1 — Низкий</option>
+                        <option value={2}>2 — Средний</option>
+                        <option value={3}>3 — Высокий</option>
                       </select>
                     </td>
                     <td style={{ padding: 4, textAlign: 'center' }}>
@@ -337,10 +337,10 @@ export default function Prioritization() {
           <h3>📊 Матрица 2×2</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2, maxWidth: 500 }}>
             {[
-              { label: '🚀 Quick Wins', desc: 'Высокая ценность, малые усилия', bg: '#10b98120', border: '#10b981', items: features.filter(f => f.impact >= 2 && f.effort <= 2) },
+              { label: '🚀 Быстрые победы (Quick Wins)', desc: 'Высокая ценность, малые усилия', bg: '#10b98120', border: '#10b981', items: features.filter(f => f.impact >= 2 && f.effort <= 2) },
               { label: '📅 Стратегические', desc: 'Высокая ценность, большие усилия', bg: '#3b82f620', border: '#3b82f6', items: features.filter(f => f.impact >= 2 && f.effort > 2) },
-              { label: '🤷 Fill-ins', desc: 'Низкая ценность, малые усилия', bg: '#f59e0b20', border: '#f59e0b', items: features.filter(f => f.impact < 2 && f.effort <= 2) },
-              { label: '❌ Avoid', desc: 'Низкая ценность, большие усилия', bg: '#ef444420', border: '#ef4444', items: features.filter(f => f.impact < 2 && f.effort > 2) },
+              { label: '🤷 Заполняющие задачи (Fill-ins)', desc: 'Низкая ценность, малые усилия', bg: '#f59e0b20', border: '#f59e0b', items: features.filter(f => f.impact < 2 && f.effort <= 2) },
+              { label: '❌ Избегать (Avoid)', desc: 'Низкая ценность, большие усилия', bg: '#ef444420', border: '#ef4444', items: features.filter(f => f.impact < 2 && f.effort > 2) },
             ].map(q => (
               <div key={q.label} style={{ padding: 16, background: q.bg, borderRadius: 8, border: `1px solid ${q.border}40`, minHeight: 100 }}>
                 <div style={{ fontWeight: 700, fontSize: '0.9rem', marginBottom: 4 }}>{q.label}</div>
@@ -360,7 +360,7 @@ export default function Prioritization() {
           {[
             { tip: 'Не полагайтесь на один фреймворк', detail: 'RICE хорош для числовых оценок, MoSCoW — для быстрых стейкхолдер-сессий. Комбинируйте.' },
             { tip: 'Confidence — главный враг', detail: 'Люди завышают уверенность. Если нет данных, ставьте Confidence ≤ 50%.' },
-            { tip: 'Effort считайте командой', detail: 'Не позволяйте одному человеку оценивать — собирайте planning poker или T-shirt sizing.' },
+            { tip: 'Effort считайте командой', detail: 'Не позволяйте одному человеку оценивать — собирайте покер планирования (Planning Poker) или оценку размерами (T-shirt sizing).' },
             { tip: 'Пересматривайте раз в квартал', detail: 'Контекст меняется: конкуренты, рынок, стратегия. Приоритеты — не монолит.' },
           ].map(t => (
             <div key={t.tip} style={{ padding: 12, borderRadius: 8, background: 'var(--bg-main)', border: '1px solid var(--border-color)' }}>
@@ -368,6 +368,16 @@ export default function Prioritization() {
               <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{t.detail}</div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Метод_MoSCoW" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Метод MoSCoW — Википедия
+          </a>
         </div>
       </div>
     </div>

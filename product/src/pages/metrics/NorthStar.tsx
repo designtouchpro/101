@@ -20,7 +20,7 @@ const criteria = [
   { icon: '📏', name: 'Измеримость', desc: 'Метрику можно посчитать однозначно' },
   { icon: '🎯', name: 'Отражает ценность', desc: 'Рост метрики = больше ценности для пользователя' },
   { icon: '📈', name: 'Ведёт к росту', desc: 'Улучшение NSM ведёт к росту бизнеса' },
-  { icon: '🔧', name: 'Actionable', desc: 'Команды могут влиять на эту метрику' },
+  { icon: '🔧', name: 'Actionable (применимая)', desc: 'Команды могут влиять на эту метрику' },
   { icon: '🌳', name: 'Декомпозируется', desc: 'Можно разбить на input-метрики' },
 ]
 
@@ -125,7 +125,7 @@ export default function NorthStar() {
           </label>
           <input
             className="input"
-            placeholder="e.g. Weekly active projects, Messages sent per day..."
+            placeholder="Пр.: Активные проекты в неделю, Отправленные сообщения в день..."
             value={userNsm}
             onChange={e => setUserNsm(e.target.value)}
           />
@@ -171,6 +171,16 @@ export default function NorthStar() {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://gopractice.ru/north-star-metric/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 North Star Metric — GoPractice
+          </a>
+        </div>
       </div>
     </div>
   )

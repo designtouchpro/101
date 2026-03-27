@@ -86,7 +86,7 @@ export default function CohortAnalysis() {
 
       {/* Cohort Table */}
       <div className="card" style={{ overflowX: 'auto' }}>
-        <h3>📋 Retention Table</h3>
+        <h3>📋 Таблица удержания (Retention Table)</h3>
         <p style={{ marginBottom: 12, fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
           Кликните на ячейку для подробностей. Цвет отражает процент retention.
         </p>
@@ -212,6 +212,16 @@ export default function CohortAnalysis() {
               ))}
             </tbody>
           </table>
+        </div>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Когортный_анализ" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Когортный анализ — Википедия
+          </a>
         </div>
       </div>
     </div>

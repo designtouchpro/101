@@ -5,33 +5,33 @@ type Tab = 'attribution' | 'incrementality' | 'martech' | 'mistakes'
 const attributionModels: {
   name: string; how: string; pros: string; cons: string; when: string
 }[] = [
-  { name: 'Last Click', how: '100% конверсии → последнему касанию', pros: 'Простота, легко внедрить', cons: 'Игнорирует верх воронки', when: 'Быстрые воронки (e-commerce, impulse)' },
-  { name: 'First Click', how: '100% конверсии → первому касанию', pros: 'Показывает discovery-каналы', cons: 'Игнорирует nurturing', when: 'Awareness-кампании, brand' },
-  { name: 'Linear', how: 'Равномерно по всем точкам', pros: 'Справедливый обзор', cons: 'Все касания «одинаково важны»', when: 'Длинные воронки, B2B' },
-  { name: 'Time Decay', how: 'Больший вес → ближе к конверсии', pros: 'Учитывает recency', cons: 'Недооценивает awareness', when: 'Когда ключевые касания ближе к покупке' },
-  { name: 'Position-Based (U)', how: '40% first + 40% last + 20% mid', pros: 'Баланс discovery и close', cons: 'Средние тоже важны', when: 'Стандарт для среднего бизнеса' },
-  { name: 'Data-Driven', how: 'ML-модель на исторических данных', pros: 'Самая точная', cons: 'Нужно много данных (1000+ конверсий)', when: 'Зрелый маркетинг с объёмом' },
+  { name: 'Last Click (последний клик)', how: '100% конверсии → последнему касанию', pros: 'Простота, легко внедрить', cons: 'Игнорирует верх воронки', when: 'Быстрые воронки (e-commerce, impulse)' },
+  { name: 'First Click (первый клик)', how: '100% конверсии → первому касанию', pros: 'Показывает discovery-каналы (каналы первого знакомства)', cons: 'Игнорирует nurturing (прогрев лидов)', when: 'Awareness-кампании, brand' },
+  { name: 'Linear (линейная)', how: 'Равномерно по всем точкам', pros: 'Справедливый обзор', cons: 'Все касания «одинаково важны»', when: 'Длинные воронки, B2B' },
+  { name: 'Time Decay (с учётом давности)', how: 'Больший вес → ближе к конверсии', pros: 'Учитывает recency (давность касания)', cons: 'Недооценивает awareness', when: 'Когда ключевые касания ближе к покупке' },
+  { name: 'Position-Based / U (по позиции)', how: '40% first + 40% last + 20% mid', pros: 'Баланс discovery и close', cons: 'Средние тоже важны', when: 'Стандарт для среднего бизнеса' },
+  { name: 'Data-Driven (на основе данных)', how: 'ML-модель на исторических данных', pros: 'Самая точная', cons: 'Нужно много данных (1000+ конверсий)', when: 'Зрелый маркетинг с объёмом' },
 ]
 
 const martechLayers: {
   layer: string; tools: string; purpose: string; dataType: string
 }[] = [
-  { layer: 'Collection', tools: 'GA4, Segment, Amplitude, Snowplow', purpose: 'Сбор событий и данных', dataType: 'Events, page views, clicks' },
-  { layer: 'Storage', tools: 'BigQuery, Snowflake, Redshift, ClickHouse', purpose: 'Хранение и обработка', dataType: 'Raw & processed events' },
-  { layer: 'Activation', tools: 'Braze, Customer.io, Mailchimp, OneSignal', purpose: 'Коммуникация с пользователем', dataType: 'Profiles, segments, campaigns' },
-  { layer: 'Analytics', tools: 'Looker, Metabase, Tableau, Mode', purpose: 'Визуализация и отчёты', dataType: 'Dashboards, reports' },
-  { layer: 'Attribution', tools: 'AppsFlyer, Adjust, GA4, Rockerbox', purpose: 'Связь касаний с конверсиями', dataType: 'Touch points, journeys' },
-  { layer: 'Orchestration', tools: 'CDP (Segment, mParticle), ETL (Fivetran)', purpose: 'Интеграция и маршрутизация данных', dataType: 'Unified profiles, syncs' },
+  { layer: 'Collection (сбор)', tools: 'GA4, Segment, Amplitude, Snowplow', purpose: 'Сбор событий и данных', dataType: 'События, просмотры страниц, клики' },
+  { layer: 'Storage (хранение)', tools: 'BigQuery, Snowflake, Redshift, ClickHouse', purpose: 'Хранение и обработка', dataType: 'Сырые и обработанные события' },
+  { layer: 'Activation (активация)', tools: 'Braze, Customer.io, Mailchimp, OneSignal', purpose: 'Коммуникация с пользователем', dataType: 'Профили, сегменты, кампании' },
+  { layer: 'Analytics (аналитика)', tools: 'Looker, Metabase, Tableau, Mode', purpose: 'Визуализация и отчёты', dataType: 'Дашборды, отчёты' },
+  { layer: 'Attribution (атрибуция)', tools: 'AppsFlyer, Adjust, GA4, Rockerbox', purpose: 'Связь касаний с конверсиями', dataType: 'Точки касания, пути пользователей' },
+  { layer: 'Orchestration (оркестрация)', tools: 'CDP (Segment, mParticle), ETL (Fivetran)', purpose: 'Интеграция и маршрутизация данных', dataType: 'Единые профили, синхронизации' },
 ]
 
 const hygienePractices: {
   practice: string; problem: string; solution: string
 }[] = [
   { practice: 'UTM-конвенции', problem: 'utm_source=facebook vs Facebook vs fb', solution: 'Единый naming: lowercase, шаблоны в Google Sheet, валидация URL builder' },
-  { practice: 'Дедупликация', problem: 'Один пользователь = 3 профиля (email + phone + cookie)', solution: 'Identity resolution: детерминистический (email match) + вероятностный (device graph)' },
-  { practice: 'Consent & Privacy', problem: 'Потеря данных из-за iOS ATT, GDPR', solution: 'Server-side tracking, first-party data strategy, consent management (OneTrust)' },
-  { practice: 'Event quality', problem: 'Дубли событий, пустые поля, рассинхрон', solution: 'Schema validation (Snowplow Iglu, Segment Protocols), QA-pipeline' },
-  { practice: 'Lookback window', problem: 'Конверсия через 90 дней — кому приписать?', solution: 'Стандарт: 30 дней для most, 7 дней для view-through, 90 для B2B' },
+  { practice: 'Дедупликация', problem: 'Один пользователь = 3 профиля (email + phone + cookie)', solution: 'Identity resolution (объединение профилей): детерминистический (email match) + вероятностный (device graph)' },
+  { practice: 'Consent & Privacy (согласие и конфиденциальность)', problem: 'Потеря данных из-за iOS ATT (App Tracking Transparency — прозрачность отслеживания), GDPR', solution: 'Server-side tracking (серверное отслеживание), first-party data (данные первой стороны) strategy, consent management (управление согласиями, OneTrust)' },
+  { practice: 'Event quality (качество событий)', problem: 'Дубли событий, пустые поля, рассинхрон', solution: 'Schema validation (валидация схемы; Snowplow Iglu, Segment Protocols), QA-pipeline' },
+  { practice: 'Lookback window (окно ретроспективного анализа)', problem: 'Конверсия через 90 дней — кому приписать?', solution: 'Стандарт: 30 дней для most, 7 дней для view-through (просмотр без клика), 90 для B2B' },
 ]
 
 const mistakes: {
@@ -40,11 +40,11 @@ const mistakes: {
   { mistake: 'Только Last Click', why: 'Верх воронки выглядит бесполезным → срезают бюджеты → падает pipeline', fix: 'Position-Based как минимум, Data-Driven если хватает данных', severity: '🔴' },
   { mistake: 'Нет incrementality-тестов', why: 'Атрибуция показывает корреляцию, а не causation', fix: 'Geo-lift или holdout-тесты для крупных каналов раз в квартал', severity: '🔴' },
   { mistake: 'Грязные UTM', why: 'Невозможно агрегировать данные, отчёты врут', fix: 'Единый naming guide + UTM builder + автоматическая валидация', severity: '🟡' },
-  { mistake: 'Доверие pixel-based в мире iOS 14+', why: 'ATT opt-in ~25% → потеря 75% данных', fix: 'Server-side Conversion API (Meta CAPI, Google EC), modeled conversions', severity: '🔴' },
-  { mistake: 'Нет единого источника правды', why: 'GA говорит одно, Facebook другое, CRM третье', fix: 'Warehouse-centric attribution: всё в BigQuery/Snowflake, один SQL-pipeline', severity: '🟡' },
-  { mistake: 'Считают только online-касания', why: 'Offline (OOH, podcasts, WOM) не учтены → их «ROI = 0»', fix: 'Marketing mix modeling (MMM) для канального микса, brand lift studies', severity: '🟡' },
+  { mistake: 'Доверие pixel-based (на основе пикселя) в мире iOS 14+', why: 'ATT (App Tracking Transparency — прозрачность отслеживания) opt-in ~25% → потеря 75% данных', fix: 'Server-side Conversion API (Meta CAPI (Conversion API — API конверсий), Google EC), modeled conversions (смоделированные конверсии)', severity: '🔴' },
+  { mistake: 'Нет единого источника правды', why: 'GA говорит одно, Facebook другое, CRM третье', fix: 'Warehouse-centric (на базе хранилища данных) attribution: всё в BigQuery/Snowflake, один SQL-pipeline', severity: '🟡' },
+  { mistake: 'Считают только online-касания', why: 'Offline (OOH, podcasts, WOM) не учтены → их «ROI = 0»', fix: 'Marketing mix modeling / MMM (моделирование маркетинг-микса) для канального микса, brand lift studies (исследования влияния на бренд)', severity: '🟡' },
   { mistake: 'Смешивают корреляцию и каузальность', why: '«Retargeting ROI = 10x» — но они и так бы купили', fix: 'Holdout-группы: показываем рекламу 90%, не показываем 10%, сравниваем', severity: '🔴' },
-  { mistake: 'Нет view-through attribution', why: 'Impression без клика тоже влияет, особенно video/display', fix: 'View-through window 1-7 дней, отдельный отчёт, не смешивать с click-through', severity: '🟡' },
+  { mistake: 'Нет view-through (просмотр без клика) attribution', why: 'Impression без клика тоже влияет, особенно video/display', fix: 'View-through window 1-7 дней, отдельный отчёт, не смешивать с click-through', severity: '🟡' },
 ]
 
 export default function AttributionMartech() {
@@ -83,7 +83,7 @@ export default function AttributionMartech() {
       {tab === 'attribution' && (
         <>
           <section className="card">
-            <h2>🔀 Multi-Touch Attribution (MTA)</h2>
+            <h2>🔀 Multi-Touch Attribution / MTA (мультиканальная атрибуция)</h2>
             <p>
               Пользователь видит рекламу в Instagram → читает статью в блоге → кликает по email →
               покупает. Кому приписать конверсию? MTA отвечает на этот вопрос.
@@ -184,11 +184,11 @@ export default function AttributionMartech() {
                 </thead>
                 <tbody>
                   {[
-                    { name: 'Holdout Test', how: 'Случайная часть аудитории не видит рекламу', accuracy: '⭐⭐⭐', complexity: '⭐⭐', when: 'Retargeting, email, push' },
-                    { name: 'Geo-Lift Test', how: 'Один регион — test, другой — control', accuracy: '⭐⭐⭐', complexity: '⭐⭐⭐', when: 'TV, OOH, brand campaigns' },
-                    { name: 'Ghost Ads', how: 'Фиксируем, где показали бы рекламу, но не показываем', accuracy: '⭐⭐', complexity: '⭐⭐⭐', when: 'Display, programmatic' },
-                    { name: 'PSA/Placebo', how: 'Control видит PSA-рекламу вместо бренда', accuracy: '⭐⭐⭐', complexity: '⭐⭐', when: 'Facebook/Meta Conversion Lift' },
-                    { name: 'Marketing Mix Modeling', how: 'Регрессия по историческим данным + внешние факторы', accuracy: '⭐⭐', complexity: '⭐⭐⭐', when: 'Стратегическое планирование, offline+online' },
+                    { name: 'Holdout Test (тест с контрольной группой)', how: 'Случайная часть аудитории не видит рекламу', accuracy: '⭐⭐⭐', complexity: '⭐⭐', when: 'Retargeting, email, push' },
+                    { name: 'Geo-Lift Test (гео-тест)', how: 'Один регион — test, другой — control', accuracy: '⭐⭐⭐', complexity: '⭐⭐⭐', when: 'TV, OOH, brand campaigns' },
+                    { name: 'Ghost Ads (фантомная реклама)', how: 'Фиксируем, где показали бы рекламу, но не показываем', accuracy: '⭐⭐', complexity: '⭐⭐⭐', when: 'Display, programmatic' },
+                    { name: 'PSA/Placebo (реклама-плацебо)', how: 'Control видит PSA-рекламу вместо бренда', accuracy: '⭐⭐⭐', complexity: '⭐⭐', when: 'Facebook/Meta Conversion Lift' },
+                    { name: 'Marketing Mix Modeling / MMM (моделирование маркетинг-микса)', how: 'Регрессия по историческим данным + внешние факторы', accuracy: '⭐⭐', complexity: '⭐⭐⭐', when: 'Стратегическое планирование, offline+online' },
                   ].map(m => (
                     <tr key={m.name} style={{ borderBottom: '1px solid var(--border)' }}>
                       <td style={{ padding: 8 }}><strong>{m.name}</strong></td>
@@ -291,7 +291,7 @@ export default function AttributionMartech() {
                 { label: 'Sources', items: 'Web (GA4) · App (AppsFlyer) · CRM (HubSpot) · Ads (Meta/Google)', color: '#007AFF' },
                 { label: 'Collection', items: 'Segment / Snowplow / GTM Server', color: '#5856D6' },
                 { label: 'Warehouse', items: 'BigQuery / Snowflake / ClickHouse', color: '#34C759' },
-                { label: 'Transformation', items: 'dbt · SQL models · reverse ETL', color: '#FF9500' },
+                { label: 'Transformation', items: 'dbt · SQL models · reverse ETL (обратная загрузка данных)', color: '#FF9500' },
                 { label: 'Activation', items: 'Braze · Customer.io · Audiences → Ads', color: '#FF3B30' },
               ].map((layer, i) => (
                 <div key={i} style={{
@@ -304,7 +304,7 @@ export default function AttributionMartech() {
               ))}
             </div>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginTop: 8 }}>
-              Тренд: Composable CDP — warehouse как центр, reverse ETL для активации (Census, Hightouch)
+              Тренд: Composable CDP (модульная платформа данных клиентов) — warehouse как центр, reverse ETL (обратная загрузка данных) для активации (Census, Hightouch)
             </p>
           </section>
         </>
@@ -335,12 +335,12 @@ export default function AttributionMartech() {
             <div style={{ lineHeight: 2 }}>
               {[
                 'Единый UTM naming guide + автоматическая валидация',
-                'Server-side tracking для Meta CAPI и Google EC',
+                'Server-side tracking (серверное отслеживание) для Meta CAPI и Google EC',
                 'Минимум Position-Based атрибуция (не Last Click)',
                 'Incrementality-тест для каналов с бюджетом > 10%',
                 'Warehouse как единый источник правды',
-                'Consent management для GDPR/iOS ATT',
-                'Lookback windows документированы и согласованы',
+                'Consent management (управление согласиями) для GDPR/iOS ATT',
+                'Lookback windows (окна ретроспективного анализа) документированы и согласованы',
                 'MMM для стратегических решений раз в полгода',
               ].map((item, i) => (
                 <div key={i}>☑️ {item}</div>
@@ -349,6 +349,16 @@ export default function AttributionMartech() {
           </section>
         </>
       )}
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Атрибуция_(маркетинг)" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Атрибуция — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

@@ -24,8 +24,8 @@ const platformSections = [
     key: 'values', icon: '💎', title: 'Ценности',
     desc: 'Принципы, по которым вы принимаете решения.',
     examples: [
-      { company: 'GitLab', text: 'Transparency, Collaboration, Results, Efficiency, Iteration' },
-      { company: 'Stripe', text: 'Users first, Move with urgency, Think rigorously' },
+      { company: 'GitLab', text: 'Transparency, Collaboration, Results, Efficiency, Iteration (Прозрачность, Сотрудничество, Результаты, Эффективность, Итеративность)' },
+      { company: 'Stripe', text: 'Users first, Move with urgency, Think rigorously (Сначала пользователи, Действуй срочно, Думай строго)' },
     ],
     template: '1. [Ценность] — [что значит]\n2. [Ценность] — [что значит]\n3. [Ценность] — [что значит]',
   },
@@ -63,7 +63,7 @@ export default function BrandPlatform() {
     <div className="demo-container">
       <div className="demo-header">
         <h1>💎 Бренд-платформа</h1>
-        <p>Миссия, видение, ценности и Tone of Voice — фундамент бренда.</p>
+        <p>Миссия, видение, ценности и Tone of Voice (тон коммуникации бренда) — фундамент бренда.</p>
       </div>
 
       <div className="card" style={{ borderLeft: '4px solid var(--accent-main)' }}>
@@ -200,6 +200,19 @@ export default function BrandPlatform() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Бренд" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Бренд — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Фирменный_стиль" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Фирменный стиль — Википедия
+          </a>
         </div>
       </div>
     </div>

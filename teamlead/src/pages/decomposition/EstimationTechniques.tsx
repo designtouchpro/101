@@ -3,17 +3,17 @@ import { useState } from 'react'
 const techniques = [
   {
     id: 'planning-poker',
-    name: 'Planning Poker',
+    name: 'Planning Poker (покер планирования)',
     icon: '🃏',
     desc: 'Каждый показывает карту с оценкой одновременно. Обсуждаем расхождения.',
     scale: ['0', '½', '1', '2', '3', '5', '8', '13', '20', '40', '100', '?', '☕'],
     pros: ['Учитывает мнение каждого', 'Выявляет неочевидные риски', 'Анкоринг минимизирован (одновременное голосование)'],
     cons: ['Долго для большого бэклога', 'Нужна практика'],
-    bestFor: 'Спринт-планирование, оценка user stories',
+    bestFor: 'Спринт-планирование, оценка user stories (пользовательских историй)',
   },
   {
     id: 'tshirt',
-    name: 'T-shirt sizing',
+    name: 'T-shirt sizing (оценка «размерами»)',
     icon: '👕',
     scale: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
     desc: 'Грубая оценка размерами футболок. Быстро и понятно.',
@@ -23,7 +23,7 @@ const techniques = [
   },
   {
     id: 'bucket',
-    name: 'Bucket System',
+    name: 'Bucket System (система корзин)',
     icon: '🪣',
     scale: ['1', '2', '3', '5', '8', '13'],
     desc: 'Раскладываем задачи по «корзинам» (бакетам) по размеру. Быстро.',
@@ -33,10 +33,10 @@ const techniques = [
   },
   {
     id: 'no-estimates',
-    name: '#NoEstimates',
+    name: '#NoEstimates (без оценок)',
     icon: '🚫',
     scale: ['Задача', 'Задача', 'Задача'],
-    desc: 'Не оцениваем вообще. Считаем throughput — сколько задач в неделю.',
+    desc: 'Не оцениваем вообще. Считаем throughput (пропускную способность) — сколько задач в неделю.',
     pros: ['Нет споров об оценках', 'Фокус на потоке', 'Мотивирует декомпозировать мелко'],
     cons: ['Нужны одинаково маленькие задачи', 'Не подходит для фиксированных дедлайнов', 'Сложно продать бизнесу'],
     bestFor: 'Зрелые команды с хорошей декомпозицией',
@@ -52,7 +52,7 @@ const pokerTasks: PokerTask[] = [
   { name: 'Добавить кнопку «Избранное»', descriptions: 'Иконка сердечка на карточке товара. При клике сохраняет в localStorage.' },
   { name: 'Интеграция с платёжным шлюзом', descriptions: 'Подключить Stripe. Обработка платежей, webhook для статусов, обработка ошибок.' },
   { name: 'Рефакторинг API auth', descriptions: 'Перейти с JWT в cookies на httpOnly. Обновить все эндпоинты, тесты.' },
-  { name: 'Фикс бага: дубли заказов', descriptions: 'Иногда при двойном клике создаётся два заказа. Добавить idempotency key.' },
+  { name: 'Фикс бага: дубли заказов', descriptions: 'Иногда при двойном клике создаётся два заказа. Добавить idempotency key (ключ идемпотентности).' },
   { name: 'Страница 404', descriptions: 'Создать красивую страницу 404 с навигацией обратно.' },
 ]
 
@@ -120,8 +120,8 @@ export default function EstimationTechniques() {
           индивидуальные оценки ненадёжными.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          Групповые методы (Planning Poker, Wall Estimation) снижают эффект искажений через
-          <strong>коллективный разум</strong>. Относительные оценки (стори-пойнты) точнее абсолютных (часов),
+          Групповые методы (Planning Poker, Wall Estimation — настенная оценка) снижают эффект искажений через
+          <strong>коллективный разум</strong>. Относительные оценки (стори-пойнты, story points — баллы сложности) точнее абсолютных (часов),
           потому что люди лучше сравнивают, чем предсказывают абсолютные величины.
         </p>
         <div className="info-box">
@@ -222,7 +222,7 @@ export default function EstimationTechniques() {
         {/* Cards */}
         {!revealed[currentTaskIdx] && (
           <>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 8 }}>Ваша оценка (story points):</p>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 8 }}>Ваша оценка (story points — баллы сложности):</p>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
               {pokerCards.map(card => (
                 <div
@@ -343,10 +343,10 @@ export default function EstimationTechniques() {
           <div>
             <h4 style={{ color: 'var(--accent-red)', marginBottom: 8 }}>❌ Не делайте</h4>
             <ul>
-              <li>Не позволяйте лиду <strong>голосовать первым</strong></li>
-              <li>Не переводите SP в <strong>часы</strong></li>
+              <li>Не позволяйте лиду <strong>голосовать первым</strong> (эффект якоря)</li>
+              <li>Не переводите story points в <strong>часы</strong></li>
               <li>Не наказывайте за <strong>неточные</strong> оценки</li>
-              <li>Не используйте velocity для <strong>сравнения</strong> команд</li>
+              <li>Не используйте velocity (скорость команды) для <strong>сравнения</strong> команд</li>
               <li>Не тратьте час на <strong>один тикет</strong></li>
             </ul>
           </div>

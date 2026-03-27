@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
 const pricingModels = [
-  { model: 'Freemium', icon: '🎁', desc: 'Бесплатный базовый продукт + платные premium-фичи', examples: 'Spotify, Notion, Slack', stage: 'Growth', pros: ['Низкий барьер входа', 'Вирусное распространение', 'Большой TAM'], cons: ['Высокие затраты на free users', 'Сложно найти paywall баланс', 'Конверсия 2-5%'] },
-  { model: 'Subscription', icon: '🔄', desc: 'Регулярный платёж (monthly/annual) за доступ', examples: 'Netflix, SaaS, AWS', stage: 'Scale', pros: ['Предсказуемый revenue', 'Высокий LTV', 'Retention-focused'], cons: ['Сhurn pressure', 'Нужна постоянная value', 'Subscription fatigue'] },
-  { model: 'Usage-based', icon: '📊', desc: 'Плата за потребление (API calls, storage, messages)', examples: 'Twilio, Snowflake, AWS Lambda', stage: 'Scale', pros: ['Справедливое ценообразование', 'Растёт с клиентом', 'Низкий порог входа'], cons: ['Непредсказуемый revenue', 'Сложный billing', 'Клиент оптимизирует usage'] },
+  { model: 'Freemium', icon: '🎁', desc: 'Бесплатный базовый продукт + платные premium-фичи', examples: 'Spotify, Notion, Slack', stage: 'Growth', pros: ['Низкий барьер входа', 'Вирусное распространение', 'Большой TAM'], cons: ['Высокие затраты на бесплатных юзеров', 'Сложно найти баланс платной стены (paywall)', 'Конверсия 2-5%'] },
+  { model: 'Subscription', icon: '🔄', desc: 'Регулярный платёж (monthly/annual) за доступ', examples: 'Netflix, SaaS, AWS', stage: 'Scale', pros: ['Предсказуемый доход', 'Высокий LTV', 'Фокус на удержании (retention)'], cons: ['Давление оттока (churn pressure)', 'Нужна постоянная ценность', 'Усталость от подписок (subscription fatigue)'] },
+  { model: 'Usage-based', icon: '📊', desc: 'Плата за потребление (API calls, storage, messages)', examples: 'Twilio, Snowflake, AWS Lambda', stage: 'Scale', pros: ['Справедливое ценообразование', 'Растёт с клиентом', 'Низкий порог входа'], cons: ['Непредсказуемый доход', 'Сложный биллинг (система счетов)', 'Клиент оптимизирует потребление'] },
   { model: 'One-time purchase', icon: '💳', desc: 'Разовая покупка лицензии/продукта', examples: 'Sketch (ранее), игры, курсы', stage: 'Early', pros: ['Простота', 'Мгновенный revenue', 'Нет churn'], cons: ['Нет recurring revenue', 'Нужен постоянный поток новых клиентов', 'Сложно предсказать'] },
-  { model: 'Marketplace / Commission', icon: '🏪', desc: 'Комиссия с транзакций между участниками', examples: 'Uber, Airbnb, App Store', stage: 'Scale', pros: ['Масштабируется с GMV', 'Сетевой эффект', 'Нет inventory'], cons: ['Chicken-and-egg холодный старт', 'Disintermediation risk', 'Нужен trust & safety'] },
+  { model: 'Marketplace / Commission', icon: '🏪', desc: 'Комиссия с транзакций между участниками', examples: 'Uber, Airbnb, App Store', stage: 'Scale', pros: ['Масштабируется с GMV', 'Сетевой эффект', 'Нет склада (inventory)'], cons: ['Проблема курицы и яйца, холодный старт', 'Риск обхода платформы (disintermediation)', 'Нужны доверие и безопасность (trust & safety)'] },
   { model: 'Ad-supported', icon: '📺', desc: 'Бесплатный продукт, монетизация через рекламу', examples: 'Google, Facebook, TikTok', stage: 'Scale', pros: ['Бесплатно для пользователя', 'Огромный TAM', 'Данные как asset'], cons: ['Нужен огромный трафик', 'Privacy concerns', 'UX страдает'] },
 ]
 
 const packagingTiers = [
   { tier: 'Free / Starter', purpose: 'Привлечение, демо value prop', features: 'Core features, ограничения по usage/seats', conversion: 'Top of funnel' },
   { tier: 'Pro / Growth', purpose: 'Основной revenue driver', features: 'Полный функционал, больше лимитов, приоритет', conversion: 'Самый популярный (80% revenue)' },
-  { tier: 'Enterprise', purpose: 'Крупные клиенты, ACV $50k+', features: 'SSO, audit log, SLA, dedicated support, custom', conversion: 'Sales-led, длинный цикл' },
+  { tier: 'Enterprise', purpose: 'Крупные клиенты, ACV (годовой чек) $50k+', features: 'SSO (единый вход), журнал аудита, SLA, выделенная поддержка, кастомизация', conversion: 'Продажи через менеджеров (sales-led), длинный цикл' },
 ]
 
 const packagingLevers = [
@@ -31,12 +31,12 @@ const stageModel = [
 ]
 
 const pricingMistakes = [
-  { mistake: 'Pricing too low', icon: '📉', impact: 'Leaving money on table, signals low value', fix: 'Willingness-to-pay research (Van Westendorp)' },
-  { mistake: 'Too many tiers', icon: '🤯', impact: 'Decision paralysis, support complexity', fix: '3 тарифа оптимально (Good-Better-Best)' },
-  { mistake: 'Free tier too generous', icon: '🎁', impact: 'Нет мотивации платить, высокие costs', fix: 'Limit по самой ценной метрике (seats, volume)' },
-  { mistake: 'Cost-plus pricing', icon: '🧮', impact: 'Не учитывает perceived value', fix: 'Value-based pricing: сколько клиент готов платить' },
-  { mistake: 'No annual option', icon: '📅', impact: 'Higher churn, less cash upfront', fix: 'Annual = 2 месяца бесплатно (-17%)' },
-  { mistake: 'Hidden pricing page', icon: '👻', impact: 'Lost leads, trust issues', fix: 'Прозрачное ценообразование на сайте' },
+  { mistake: 'Заниженная цена (Pricing too low)', icon: '📉', impact: 'Недополученный доход, сигнал низкой ценности', fix: 'Исследование готовности платить (Van Westendorp)' },
+  { mistake: 'Слишком много тарифов (Too many tiers)', icon: '🤯', impact: 'Паралич выбора, сложность поддержки', fix: '3 тарифа оптимально (Good-Better-Best)' },
+  { mistake: 'Щедрый бесплатный тариф (Free tier too generous)', icon: '🎁', impact: 'Нет мотивации платить, высокие расходы', fix: 'Ограничить по самой ценной метрике (seats, volume)' },
+  { mistake: 'Цена от затрат (Cost-plus pricing)', icon: '🧮', impact: 'Не учитывает воспринимаемую ценность', fix: 'Ценообразование от ценности (value-based): сколько клиент готов платить' },
+  { mistake: 'Нет годового тарифа (No annual option)', icon: '📅', impact: 'Высокий отток, меньше наличных вперёд', fix: 'Годовой = 2 месяца бесплатно (-17%)' },
+  { mistake: 'Скрытые цены (Hidden pricing page)', icon: '👻', impact: 'Потеря лидов, проблемы с доверием', fix: 'Прозрачное ценообразование на сайте' },
 ]
 
 export default function PricingStrategy() {
@@ -156,7 +156,7 @@ export default function PricingStrategy() {
                   <tr>
                     <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--border)' }}>Рычаг</th>
                     <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--border)' }}>Описание</th>
-                    <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--border)' }}>Best for</th>
+                    <th style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--border)' }}>Подходит для</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -204,13 +204,13 @@ export default function PricingStrategy() {
           </div>
 
           <div style={{ marginTop: 16, padding: 16, background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 8 }}>
-            <h3 style={{ margin: '0 0 12px' }}>🔁 Expansion Revenue Flywheel</h3>
+            <h3 style={{ margin: '0 0 12px' }}>🔁 Маховик расширения дохода (Expansion Revenue Flywheel)</h3>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 12, flexWrap: 'wrap', textAlign: 'center' }}>
-              {['Acquire', '→', 'Activate', '→', 'Monetize', '→', 'Expand', '→', 'Advocate', '↩'].map((s, i) => (
+              {['Привлечь', '→', 'Активировать', '→', 'Монетизировать', '→', 'Расширить', '→', 'Адвокат бренда', '↩'].map((s, i) => (
                 <div key={i} style={{ padding: s.length > 2 ? '10px 16px' : '10px 4px', borderRadius: s.length > 2 ? 8 : 0, background: s.length > 2 ? 'var(--accent)' : 'transparent', color: s.length > 2 ? '#fff' : 'var(--text)', fontWeight: s.length > 2 ? 600 : 400, fontSize: s.length > 2 ? '0.85rem' : '1rem' }}>{s}</div>
               ))}
             </div>
-            <p style={{ textAlign: 'center', marginTop: 12, fontSize: '0.85rem', opacity: 0.8 }}>Net Dollar Retention {'>'} 100% = рост даже без новых клиентов</p>
+            <p style={{ textAlign: 'center', marginTop: 12, fontSize: '0.85rem', opacity: 0.8 }}>Чистое удержание дохода (Net Dollar Retention) {'>'} 100% = рост даже без новых клиентов</p>
           </div>
         </section>
       )}
@@ -238,6 +238,19 @@ export default function PricingStrategy() {
         <div className="interview-item"><div className="q">Как определить правильную цену?</div><div className="a">Van Westendorp (4 вопроса about willingness-to-pay), Gabor-Granger (прямая проверка ценовых точек), conjoint analysis (trade-off фичи vs цена). Плюс: competitive benchmarking, unit economics (LTV:CAC ≥ 3:1). Iterate, не гадайте.</div></div>
         <div className="interview-item"><div className="q">Freemium vs free trial — что выбрать?</div><div className="a">Freemium: продукт с сетевым эффектом, широкий TAM, viral loop (Slack, Notion). Free trial: продукт с быстрым aha-moment, сложный для бесплатного (14-30 дней). Hybrid: free tier + trial premium features. Главное — быстрый путь до value.</div></div>
       </section>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Ценообразование" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Ценообразование — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Фримиум" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Фримиум — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

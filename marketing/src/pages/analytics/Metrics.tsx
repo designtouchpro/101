@@ -13,42 +13,42 @@ interface MetricDef {
 
 const metrics: MetricDef[] = [
   {
-    key: 'cac', name: 'CAC', fullName: 'Customer Acquisition Cost', icon: '💰',
+    key: 'cac', name: 'CAC', fullName: 'Customer Acquisition Cost — стоимость привлечения клиента', icon: '💰',
     formula: 'CAC = Затраты на маркетинг и продажи / Количество новых клиентов',
     description: 'Сколько стоит привлечение одного клиента. Включает рекламу, зарплаты маркетологов, инструменты.',
     goodRange: 'Зависит от LTV. Правило: LTV/CAC > 3',
     example: { values: { spend: 100000, customers: 50 }, result: '₽2 000' },
   },
   {
-    key: 'ltv', name: 'LTV', fullName: 'Lifetime Value', icon: '💎',
+    key: 'ltv', name: 'LTV', fullName: 'Lifetime Value — пожизненная ценность клиента', icon: '💎',
     formula: 'LTV = ARPU × Средний срок жизни клиента (мес.)',
     description: 'Сколько денег клиент принесёт за всё время использования продукта.',
     goodRange: 'LTV/CAC > 3 — здоровый бизнес',
     example: { values: { arpu: 500, lifetime: 18 }, result: '₽9 000' },
   },
   {
-    key: 'roi', name: 'ROI', fullName: 'Return on Investment', icon: '📈',
+    key: 'roi', name: 'ROI', fullName: 'Return on Investment — возврат инвестиций', icon: '📈',
     formula: 'ROI = (Доход - Затраты) / Затраты × 100%',
     description: 'Окупаемость инвестиций в маркетинг. Показывает эффективность вложений.',
     goodRange: '> 100% — окупается, > 300% — отлично',
     example: { values: { revenue: 500000, cost: 100000 }, result: '400%' },
   },
   {
-    key: 'roas', name: 'ROAS', fullName: 'Return on Ad Spend', icon: '🎯',
+    key: 'roas', name: 'ROAS', fullName: 'Return on Ad Spend — рентабельность рекламных расходов', icon: '🎯',
     formula: 'ROAS = Доход от рекламы / Расходы на рекламу',
     description: 'Сколько рублей возвращается на каждый рубль рекламы. В отличие от ROI учитывает только рекламные расходы.',
     goodRange: '> 3x — хорошо, > 5x — отлично',
     example: { values: { adRevenue: 300000, adSpend: 50000 }, result: '6x' },
   },
   {
-    key: 'cr', name: 'CR', fullName: 'Conversion Rate', icon: '🔄',
+    key: 'cr', name: 'CR', fullName: 'Conversion Rate — коэффициент конверсии', icon: '🔄',
     formula: 'CR = Конверсии / Посетители × 100%',
     description: 'Процент посетителей, совершивших целевое действие (покупка, регистрация, подписка).',
     goodRange: 'Лендинг: 2-5%, E-commerce: 1-3%, SaaS trial: 5-15%',
     example: { values: { conversions: 150, visitors: 5000 }, result: '3%' },
   },
   {
-    key: 'ctr', name: 'CTR', fullName: 'Click-Through Rate', icon: '👆',
+    key: 'ctr', name: 'CTR', fullName: 'Click-Through Rate — кликабельность', icon: '👆',
     formula: 'CTR = Клики / Показы × 100%',
     description: 'Процент людей, кликнувших по рекламе или ссылке. Показывает привлекательность креатива.',
     goodRange: 'Search ads: 3-5%, Display: 0.5-1%, Email: 2-5%',
@@ -121,9 +121,9 @@ export default function Metrics() {
         </p>
         <div className="info-box">
           <div className="info-box-content">
-            <strong>💡 North Star для маркетинга</strong>: Выберите одну ключевую метрику на квартал. 
-            Для B2C это часто CAC или CR воронки. Для B2B — количество MQL (Marketing Qualified Leads) 
-            или стоимость SQL (Sales Qualified Lead). Остальные метрики — поддерживающие.
+            <strong>💡 North Star (путеводная метрика) для маркетинга</strong>: Выберите одну ключевую метрику на квартал. 
+            Для B2C это часто CAC или CR воронки. Для B2B — количество MQL (Marketing Qualified Leads — маркетингово квалифицированные лиды) 
+            или стоимость SQL (Sales Qualified Lead — лиды, готовые к передаче в продажи). Остальные метрики — поддерживающие.
           </div>
         </div>
       </div>
@@ -218,6 +218,19 @@ export default function Metrics() {
               <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{z.desc}</div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Resources */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Пожизненная_ценность_клиента" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 LTV — Википедия
+          </a>
+          <a href="https://ru.wikipedia.org/wiki/Рентабельность_инвестиций" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 ROI — Википедия
+          </a>
         </div>
       </div>
     </div>

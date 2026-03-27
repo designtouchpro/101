@@ -118,7 +118,7 @@ export default function Estimation() {
         <div className="card">
           <h3>👕 T-Shirt Sizing</h3>
           <p style={{ marginBottom: 16 }}>
-            Быстрый способ оценки: XS, S, M, L, XL. Хорош для первичной оценки бэклога или story mapping.
+            Быстрый способ оценки: XS, S, M, L, XL. Хорош для первичной оценки бэклога или story mapping (карта пользовательских историй).
           </p>
 
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
@@ -165,7 +165,7 @@ export default function Estimation() {
           <h3>🃏 Planning Poker</h3>
           <p style={{ marginBottom: 16 }}>
             Команда одновременно показывает карты с оценкой. Если оценки сильно расходятся — обсуждают.
-            Это предотвращает <strong>anchoring bias</strong> (когда первый голос влияет на остальных).
+            Это предотвращает <strong>anchoring bias</strong> (эффект привязки — когда первый голос влияет на остальных).
           </p>
 
           <div style={{ marginBottom: 16 }}>
@@ -304,6 +304,16 @@ export default function Estimation() {
           </div>
         </div>
       )}
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Покер_планирования" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Planning Poker — Википедия
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

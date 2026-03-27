@@ -71,9 +71,9 @@ export default function LeadCycleTime() {
           это время ожидания в очереди (queue time), часто самый большой источник потерь.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          Эти метрики входят в <strong>DORA metrics</strong> (DevOps Research and Assessment) — 
+          Эти метрики входят в <strong>DORA metrics</strong> (DevOps Research and Assessment — метрики эффективности IT-команд) — 
           четыре ключевых показателя эффективности IT-команд. Lead Time for Changes — один из них. 
-          Цель не в том, чтобы «гнать быстрее», а в том, чтобы находить bottleneck'и: 
+          Цель не в том, чтобы «гнать быстрее», а в том, чтобы находить bottleneck'и (узкие места): 
           если Cycle Time 2 дня, а Lead Time 10 дней — проблема не в разработке, а в очереди или процессе review.
         </p>
         <div className="info-box">
@@ -196,15 +196,15 @@ export default function LeadCycleTime() {
         <div className="grid-3">
           <div className="score-display">
             <div className="score-number" style={{ color: '#3b82f6' }}>{stats.avgLead}d</div>
-            <div className="score-label">Avg Lead Time</div>
+            <div className="score-label">Avg Lead Time (ср. время выполнения)</div>
           </div>
           <div className="score-display">
             <div className="score-number" style={{ color: '#22c55e' }}>{stats.avgCycle}d</div>
-            <div className="score-label">Avg Cycle Time</div>
+            <div className="score-label">Avg Cycle Time (ср. время цикла)</div>
           </div>
           <div className="score-display">
             <div className="score-number" style={{ color: '#f59e0b' }}>{stats.avgWait}d</div>
-            <div className="score-label">Avg Wait Time</div>
+            <div className="score-label">Avg Wait Time (ср. время ожидания)</div>
           </div>
         </div>
 
@@ -213,7 +213,7 @@ export default function LeadCycleTime() {
           <div className="info-box-content">
             <div className="info-box-title">85-й перцентиль (SLA)</div>
             Lead Time P85 = <strong>{stats.p85Lead}d</strong>, Cycle Time P85 = <strong>{stats.p85Cycle}d</strong>.
-            P85 часто используют для SLA: «85% задач выполняются за N дней».
+            P85 часто используют для SLA (Service Level Agreement — соглашение об уровне сервиса): «85% задач выполняются за N дней».
             Это честнее, чем среднее, т.к. выбросы не искажают картину.
           </div>
         </div>

@@ -21,12 +21,12 @@ const roadmapTypes: RoadmapInfo[] = [
     key: 'timeline', name: 'Timeline (Gantt)',
     when: 'Когда есть чёткие дедлайны и зависимости.',
     pros: ['Чёткие даты', 'Видны зависимости', 'Удобно для менеджмента'],
-    cons: ['Rigid — сложно менять', 'Создаёт ложное ощущение точности', 'Команда начинает «гнать фичи»'],
+    cons: ['Жёсткий (rigid) — сложно менять', 'Создаёт ложное ощущение точности', 'Команда начинает «гнать фичи»'],
   },
   {
     key: 'okr', name: 'OKR-based',
-    when: 'Когда фокус на outcomes, а не outputs.',
-    pros: ['Фокус на результатах', 'Команда автономна в решениях', 'Алигнмент со стратегией'],
+    when: 'Когда фокус на результатах (outcomes), а не на выпуске фич (outputs).',
+    pros: ['Фокус на результатах', 'Команда автономна в решениях', 'Согласованность (alignment) со стратегией'],
     cons: ['Сложнее для неподготовленных стейкхолдеров', 'Требует зрелости команды'],
   },
   {
@@ -78,7 +78,7 @@ export default function Roadmapping() {
     { title: 'Roadmap = Список фич', desc: 'Roadmap — это стратегия, а не backlog. Не каждая фича должна быть там.', icon: '📜' },
     { title: 'Точные даты', desc: 'Через 3 месяца оценка бесполезна. Используйте горизонты: Now/Next/Later.', icon: '📅' },
     { title: 'Roadmap написан камнем', desc: 'Обновляйте каждые 2-4 недели. Рынок и данные меняются.', icon: '🪨' },
-    { title: 'Roadmap от стейкхолдеров', desc: 'PM определяет roadmap на основе данных, а не по запросам HiPPO.', icon: '🦛' },
+    { title: 'Roadmap от стейкхолдеров', desc: 'PM определяет roadmap на основе данных, а не по запросам HiPPO (мнению самого высокооплачиваемого).', icon: '🦱' },
   ]
 
   return (
@@ -95,7 +95,7 @@ export default function Roadmapping() {
           Ключевая ошибка начинающих PM — превращать roadmap в Gantt-чарт с точными датами.
         </p>
         <p style={{ fontSize: '0.95rem', lineHeight: 1.7, marginBottom: 12 }}>
-          Современный подход — <strong>outcome-based roadmap</strong>: вместо «Добавить dark mode в Q3» пишут
+          Современный подход — <strong>roadmap, ориентированный на результат (outcome-based)</strong>: вместо «Добавить dark mode в Q3» пишут
           «Увеличить время сессии на 15%». Это даёт команде свободу в выборе решения
           и фокусирует на результате, а не на фичах.
         </p>
@@ -207,6 +207,16 @@ export default function Roadmapping() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Материалы */}
+      <div className="card">
+        <h3>📚 Материалы для изучения</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a href="https://ru.wikipedia.org/wiki/Продуктовая_дорожная_карта" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-main)', fontSize: '0.9rem' }}>
+            📖 Дорожная карта продукта — Википедия
+          </a>
         </div>
       </div>
     </div>
