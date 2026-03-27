@@ -8,7 +8,7 @@ const Router = import.meta.env.VITE_DEPLOY_TARGET === 'github-pages' ? HashRoute
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router basename={import.meta.env.VITE_DEPLOY_TARGET === 'github-pages' ? '/' : import.meta.env.BASE_URL}>
       <App />
     </Router>
   </StrictMode>,
