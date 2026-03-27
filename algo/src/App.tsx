@@ -61,7 +61,7 @@ export default function App() {
         >
           {mobileMenuOpen ? '✕' : '☰'}
         </button>
-        <h1><img src="/logo.svg" alt="" width="28" height="28" style={{ marginRight: '8px' }} /> Algo 101</h1>
+        <h1>🧮 Algo 101</h1>
       </header>
 
       {/* Mobile Menu Overlay */}
@@ -73,7 +73,7 @@ export default function App() {
         <aside className={`sidebar ${mobileMenuOpen ? 'sidebar-open' : ''} ${sidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
           <div className="sidebar-header">
             <div className="sidebar-header-top">
-              <h1><img src="/logo.svg" alt="" width="28" height="28" style={{ marginRight: '8px' }} /> Algo 101</h1>
+              <h1>🧮 Algo 101</h1>
               <ThemeToggle />
             </div>
             <p>Алгоритмы и структуры данных</p>
