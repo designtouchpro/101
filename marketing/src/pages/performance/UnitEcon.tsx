@@ -305,15 +305,12 @@ export default function UnitEcon() {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'flex-end', gap: 3, height: 100 }}>
                     {months.map((count, i) => (
-                      <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <div style={{
-                          width: '100%',
-                          height: `${(count / 1000) * 100}%`,
-                          background: `${scenario.color}${i < 3 ? '90' : i < 6 ? '70' : i < 9 ? '50' : '30'}`,
-                          borderRadius: '3px 3px 0 0',
-                          minHeight: 2,
-                        }} />
-                      </div>
+                      <div key={i} style={{
+                        flex: 1,
+                        height: `${Math.max(2, (count / 1000) * 100)}px`,
+                        background: `${scenario.color}${i < 3 ? '90' : i < 6 ? '70' : i < 9 ? '50' : '30'}`,
+                        borderRadius: '3px 3px 0 0',
+                      }} />
                     ))}
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: 4 }}>
@@ -589,22 +586,21 @@ export default function UnitEcon() {
           marginBottom: 20, border: '1px solid var(--border-color)',
         }}>
           <div style={{ fontSize: '0.88rem', fontWeight: 700, marginBottom: 12 }}>📉 Кривая удержания (Retention Curve)</div>
-          <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, height: 120 }}>
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, height: 120, paddingBottom: 20 }}>
             {cohortData.map(d => {
               const pct = (d.retained / cohortSize) * 100
               return (
-                <div key={d.month} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div key={d.month} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%', justifyContent: 'flex-end' }}>
                   <div style={{ fontSize: '0.65rem', marginBottom: 4, color: 'var(--text-muted)', fontWeight: 600 }}>
                     {pct.toFixed(0)}%
                   </div>
                   <div style={{
                     width: '100%',
-                    height: `${pct}%`,
+                    height: `${Math.max(2, pct * 0.75)}px`,
                     background: d.profit > 0
                       ? 'linear-gradient(to top, #22c55e, #22c55e88)'
                       : 'linear-gradient(to top, #6366f1, #6366f188)',
                     borderRadius: '4px 4px 0 0',
-                    minHeight: 2,
                     transition: 'height 0.3s ease',
                   }} />
                   <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: 4 }}>{d.month}</div>
