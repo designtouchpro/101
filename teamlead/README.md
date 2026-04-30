@@ -101,7 +101,7 @@
 cd playgrounds/teamlead
 npm install
 npm run dev
-# → http://localhost:3251
+# → http://localhost:3161
 ```
 
 ## 📁 Структура

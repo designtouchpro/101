@@ -125,7 +125,7 @@
 cd playgrounds/css
 npm install
 npm run dev
-# → http://localhost:3213
+# → http://localhost:3122
 ```
 
 ## 📁 Структура

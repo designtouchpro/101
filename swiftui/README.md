@@ -102,7 +102,7 @@
 cd playgrounds/swiftui
 npm install
 npm run dev
-# → http://localhost:3235
+# → http://localhost:3152
 ```
 
 ## 📁 Структура

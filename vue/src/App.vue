@@ -7,7 +7,7 @@ const mobileMenuOpen = ref(false)
 const sidebarCollapsed = ref(localStorage.getItem('vue-sidebar-collapsed') === 'true')
 const indexHref = import.meta.env.VITE_DEPLOY_TARGET === 'github-pages'
   ? new URL('..', window.location.origin + import.meta.env.BASE_URL).toString()
-  : 'http://localhost:3200'
+  : 'http://localhost:3101'
 const route = useRoute()
 
 const handleNavClick = () => {

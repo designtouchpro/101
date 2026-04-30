@@ -13,19 +13,19 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3202',
+        target: 'http://localhost:3112',
         changeOrigin: true,
       },
       '/graphql': {
-        target: 'http://localhost:3202',
+        target: 'http://localhost:3112',
         changeOrigin: true,
       },
       '/rpc': {
-        target: 'http://localhost:3202',
+        target: 'http://localhost:3112',
         changeOrigin: true,
       },
       '/ws': {
-        target: 'ws://localhost:3202',
+        target: 'ws://localhost:3112',
         ws: true,
       },
     },

@@ -9,21 +9,21 @@
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  Browser (клиент)                                           │
-│  http://localhost:3201                                      │
+│  http://localhost:3111                                      │
 └──────────────┬──────────────────────────────────────────────┘
-               │  Все запросы уходят на :3201
+               │  Все запросы уходят на :3111
                ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  Vite Dev Server (:3201)                                    │
+│  Vite Dev Server (:3111)                                    │
 │                                                             │
 │  • Отдаёт SPA (React)                                      │
 │  • HMR для фронтенда                                       │
-│  • Proxy: /api/* /graphql /rpc /ws → :3202                  │
+│  • Proxy: /api/* /graphql /rpc /ws → :3112                  │
 └──────────────┬──────────────────────────────────────────────┘
                │  proxy (changeOrigin: true)
                ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  Express + Apollo + WS Server (:3202)                       │
+│  Express + Apollo + WS Server (:3112)                       │
 │                                                             │
 │  REST      /api/users, /api/posts, /api/cache-demo,        │
 │            /api/status/:code, /api/demo/no-cors             │
@@ -38,8 +38,8 @@
 
 | Процесс        | Порт | Назначение                            |
 |-----------------|------|---------------------------------------|
-| Vite (клиент)   | 3201 | SPA + dev proxy                       |
-| Express (сервер) | 3202 | REST, GraphQL, JSON-RPC, WebSocket   |
+| Vite (клиент)   | 3111 | SPA + dev proxy                       |
+| Express (сервер) | 3112 | REST, GraphQL, JSON-RPC, WebSocket   |
 
 ### Роли Frontend и Backend
 
@@ -60,29 +60,29 @@ npm run dev --workspace=net-playground
 
 # Или из папки net/
 npm run dev            # запускает и клиент, и сервер
-npm run dev:client     # только Vite (порт 3201)
-npm run dev:server     # только Express (порт 3202, tsx watch)
+npm run dev:client     # только Vite (порт 3111)
+npm run dev:server     # только Express (порт 3112, tsx watch)
 ```
 
 ## Путь запроса (Request Flow)
 
 Ниже — пошаговый путь типичного REST-запроса при локальной разработке.
 
-### 1. Пользователь открывает `http://localhost:3201`
+### 1. Пользователь открывает `http://localhost:3111`
 
 Vite Dev Server отдаёт `index.html` → React монтирует SPA → React Router отрисовывает `<Home />`.
 
 ### 2. SPA выполняет `fetch('/api/users')`
 
-Запрос попадает на **Vite Dev Server** (порт 3201). Vite видит правило proxy в `vite.config.ts`:
+Запрос попадает на **Vite Dev Server** (порт 3111). Vite видит правило proxy в `vite.config.ts`:
 
 ```ts
 proxy: {
-  '/api': { target: 'http://localhost:3202', changeOrigin: true }
+  '/api': { target: 'http://localhost:3112', changeOrigin: true }
 }
 ```
 
-Vite перенаправляет запрос на Express-сервер (**порт 3202**), подменяя заголовок `Host`.
+Vite перенаправляет запрос на Express-сервер (**порт 3112**), подменяя заголовок `Host`.
 
 ### 3. Express обрабатывает запрос
 
@@ -93,11 +93,11 @@ Vite перенаправляет запрос на Express-сервер (**по
 
 ### 4. Ответ возвращается обратно
 
-Express → Vite proxy → Browser. Для браузера запрос «не покидал» порт 3201 — нет проблем с CORS.
+Express → Vite proxy → Browser. Для браузера запрос «не покидал» порт 3111 — нет проблем с CORS.
 
 ### 5. Почему proxy нужен
 
-Без proxy браузер увидит запрос на другой origin (`localhost:3201` → `localhost:3202`). Сработает Same-Origin Policy, и запрос без CORS-заголовков будет заблокирован. Маршрут `/api/demo/no-cors` специально определён _до_ middleware `cors()`, чтобы продемонстрировать эту ошибку.
+Без proxy браузер увидит запрос на другой origin (`localhost:3111` → `localhost:3112`). Сработает Same-Origin Policy, и запрос без CORS-заголовков будет заблокирован. Маршрут `/api/demo/no-cors` специально определён _до_ middleware `cors()`, чтобы продемонстрировать эту ошибку.
 
 ### Потоки по протоколам
 

@@ -93,7 +93,7 @@
 cd playgrounds/swift
 npm install
 npm run dev
-# → http://localhost:3215
+# → http://localhost:3151
 ```
 
 ## 📁 Структура

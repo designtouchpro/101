@@ -97,7 +97,7 @@ export default function App() {
               <ThemeToggle />
             </div>
             <p>Интерактивный курс</p>
-            <a href={import.meta.env.VITE_DEPLOY_TARGET === 'github-pages' ? new URL('..', window.location.origin + import.meta.env.BASE_URL).toString() : 'http://localhost:3200'} className="back-to-index">← Все курсы</a>
+            <a href={import.meta.env.VITE_DEPLOY_TARGET === 'github-pages' ? new URL('..', window.location.origin + import.meta.env.BASE_URL).toString() : 'http://localhost:3101'} className="back-to-index">← Все курсы</a>
           </div>
 
           <div className="nav-section">

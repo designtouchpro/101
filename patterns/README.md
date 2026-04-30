@@ -114,7 +114,7 @@
 cd playgrounds/patterns
 npm install
 npm run dev
-# → http://localhost:3242
+# → http://localhost:3142
 ```
 
 ## 📁 Структура

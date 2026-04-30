@@ -87,7 +87,7 @@
 cd playgrounds/marketing
 npm install
 npm run dev
-# → http://localhost:3254
+# → http://localhost:3164
 ```
 
 ## 📁 Структура

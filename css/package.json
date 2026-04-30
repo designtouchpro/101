@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3213",
+    "dev": "vite --port 3122",
     "build": "tsc -b && vite build",
-    "preview": "vite preview --port 3213"
+    "preview": "vite preview --port 3122"
   },
   "dependencies": {
     "highlight.js": "^11.11.1",

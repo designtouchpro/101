@@ -110,7 +110,7 @@
 cd playgrounds/project
 npm install
 npm run dev
-# → http://localhost:3253
+# → http://localhost:3163
 ```
 
 ## 📁 Структура

@@ -3,6 +3,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: process.env.VITE_BASE_PATH || '/',
   server: {
-    port: 3200,
+    port: 3101,
   },
 })

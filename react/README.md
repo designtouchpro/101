@@ -134,7 +134,7 @@
 cd playgrounds/react
 npm install
 npm run dev
-# → http://localhost:3231
+# → http://localhost:3131
 ```
 
 ## 📁 Структура

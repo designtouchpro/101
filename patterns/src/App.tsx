@@ -79,7 +79,7 @@ export default function App() {
               <ThemeToggle />
             </div>
             <p>Паттерны и архитектура</p>
-            <a href={import.meta.env.VITE_DEPLOY_TARGET === 'github-pages' ? new URL('..', window.location.origin + import.meta.env.BASE_URL).toString() : 'http://localhost:3200'} className="back-to-index">← Все плейграунды</a>
+            <a href={import.meta.env.VITE_DEPLOY_TARGET === 'github-pages' ? new URL('..', window.location.origin + import.meta.env.BASE_URL).toString() : 'http://localhost:3101'} className="back-to-index">← Все плейграунды</a>
           </div>
 
           <nav className="nav-section">

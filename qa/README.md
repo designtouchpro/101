@@ -97,7 +97,7 @@
 cd playgrounds/qa
 npm install
 npm run dev
-# → http://localhost:3255
+# → http://localhost:3165
 ```
 
 ## 📁 Структура

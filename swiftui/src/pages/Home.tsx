@@ -125,7 +125,7 @@ export default function Home() {
           }}>
             🚀 Начать обучение
           </Link>
-          <a href="http://localhost:3215" style={{
+          <a href="http://localhost:3151" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '10px 24px', borderRadius: 10,
             background: 'var(--bg-secondary)', color: 'var(--text-primary)',
@@ -420,7 +420,7 @@ function UserCard({ name, avatar }: Props) {
               background: 'var(--bg-secondary)', padding: '2px 6px', borderRadius: 4,
               fontFamily: 'JetBrains Mono, monospace', fontSize: '0.82rem',
             }}>.modifier()</code>.
-            Сначала изучи <a href="http://localhost:3215" style={{ color: 'var(--accent-blue)' }}>Swift 101</a> если не знаком с языком.
+            Сначала изучи <a href="http://localhost:3151" style={{ color: 'var(--accent-blue)' }}>Swift 101</a> если не знаком с языком.
           </p>
         </div>
       </div>
@@ -729,7 +729,7 @@ function UserCard({ name, avatar }: Props) {
           <h3>🔗 Связанные ресурсы</h3>
           <div style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 10 }}>
             {[
-              { icon: '🐦', label: 'Swift 101 — основы языка', href: 'http://localhost:3215', desc: 'Обязательно перед SwiftUI' },
+              { icon: '🐦', label: 'Swift 101 — основы языка', href: 'http://localhost:3151', desc: 'Обязательно перед SwiftUI' },
               { icon: '📖', label: 'Apple SwiftUI Tutorials', href: 'https://developer.apple.com/tutorials/swiftui', desc: 'Официальный туториал' },
               { icon: '📚', label: 'SwiftUI Documentation', href: 'https://developer.apple.com/documentation/swiftui', desc: 'Полная документация API' },
               { icon: '🎬', label: 'WWDC Sessions', href: 'https://developer.apple.com/videos/swiftui', desc: 'Видео от Apple' },

@@ -133,7 +133,7 @@
 cd playgrounds/vue
 npm install
 npm run dev
-# → http://localhost:3232
+# → http://localhost:3132
 ```
 
 ## 📁 Структура

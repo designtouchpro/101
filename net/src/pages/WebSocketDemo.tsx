@@ -42,7 +42,7 @@ export default function WebSocketDemo() {
     addConnectionEvent('connecting', 'Установка соединения...')
     
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
-    const wsUrl = `${protocol}//${window.location.hostname}:3206/ws`
+    const wsUrl = `${protocol}//${window.location.hostname}:3112/ws`
     
     const ws = new WebSocket(wsUrl)
     wsRef.current = ws
@@ -395,7 +395,7 @@ Sec-WebSocket-Version: 13`}
             <h4>Базовое подключение</h4>
             <CodeBlock
               language="javascript"
-              code={`const ws = new WebSocket('ws://localhost:3206/ws');
+              code={`const ws = new WebSocket('ws://localhost:3112/ws');
 
 ws.onopen = () => {
   console.log('Connected!');

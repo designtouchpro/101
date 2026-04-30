@@ -107,7 +107,7 @@
 cd playgrounds/algo
 npm install
 npm run dev
-# → http://localhost:3241
+# → http://localhost:3141
 ```
 
 ## 📁 Структура

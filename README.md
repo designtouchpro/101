@@ -78,21 +78,21 @@ PAGES_REPO_NAME=my-repo npm run build:pages
 
 | Папка | Порт | Стек | Описание |
 |-------|------|------|----------|
-| **[html](./html)** | `3211` | React + TS | **HTML 101**. Современный HTML5+: input types, dialog, popover, meta tags, script loading, web components. |
-| **[js](./js)** | `3212` | React + TS | **JS 101**. Визуализатор Event Loop. Интерактивный учебник по асинхронности (Call Stack, Web API, Queues). |
-| **[css](./css)** | `3213` | React + TS | **CSS 101**. Современный CSS для разработчика из 2012. Flexbox, Grid, :has(), Container Queries, oklch(). |
-| **[react](./react)** | `3231` | React + TS | **React 101**. Примеры хуков, рендеринга и роутинга. |
-| **[vue](./vue)** | `3232` | Vue 3 + TS | **Vue 101**. Pinia, Vue Router, Composition API. |
-| **[net](./net)** | `3201` | Node, React | **Net 101**. Express, GraphQL, WebSockets, CORS, HTTP concepts. |
-| **[algo](./algo)** | `3241` | React + TS | **Algo 101**. Алгоритмы и структуры данных. |
-| **[patterns](./patterns)** | `3242` | React + TS | **Patterns 101**. Design patterns и архитектурные паттерны. |
-| **[swift](./swift)** | `3215` | Swift | **Swift 101**. Основы языка Swift. |
-| **[swiftui](./swiftui)** | `3235` | SwiftUI | **SwiftUI 101**. Декларативный UI framework для Apple. |
-| **[teamlead](./teamlead)** | `3251` | React + TS | **TeamLead 101**. Best practices для управления командой. |
-| **[product](./product)** | `3252` | React + TS | **Product 101**. Основы product management. |
-| **[project](./project)** | `3253` | React + TS | **Project 101**. Project management tools и методологии. |
-| **[marketing](./marketing)** | `3254` | React + TS | **Marketing 101**. Digital marketing и growth. |
-| **[qa](./qa)** | `3255` | React + TS | **QA 101**. Testing, test automation, quality assurance. |
+| **[html](./html)** | `3121` | React + TS | **HTML 101**. Современный HTML5+: input types, dialog, popover, meta tags, script loading, web components. |
+| **[js](./js)** | `3123` | React + TS | **JS 101**. Визуализатор Event Loop. Интерактивный учебник по асинхронности (Call Stack, Web API, Queues). |
+| **[css](./css)** | `3122` | React + TS | **CSS 101**. Современный CSS для разработчика из 2012. Flexbox, Grid, :has(), Container Queries, oklch(). |
+| **[react](./react)** | `3131` | React + TS | **React 101**. Примеры хуков, рендеринга и роутинга. |
+| **[vue](./vue)** | `3132` | Vue 3 + TS | **Vue 101**. Pinia, Vue Router, Composition API. |
+| **[net](./net)** | `3111` | Node, React | **Net 101**. Express, GraphQL, WebSockets, CORS, HTTP concepts. |
+| **[algo](./algo)** | `3141` | React + TS | **Algo 101**. Алгоритмы и структуры данных. |
+| **[patterns](./patterns)** | `3142` | React + TS | **Patterns 101**. Design patterns и архитектурные паттерны. |
+| **[swift](./swift)** | `3151` | Swift | **Swift 101**. Основы языка Swift. |
+| **[swiftui](./swiftui)** | `3152` | SwiftUI | **SwiftUI 101**. Декларативный UI framework для Apple. |
+| **[teamlead](./teamlead)** | `3161` | React + TS | **TeamLead 101**. Best practices для управления командой. |
+| **[product](./product)** | `3162` | React + TS | **Product 101**. Основы product management. |
+| **[project](./project)** | `3163` | React + TS | **Project 101**. Project management tools и методологии. |
+| **[marketing](./marketing)** | `3164` | React + TS | **Marketing 101**. Digital marketing и growth. |
+| **[qa](./qa)** | `3165` | React + TS | **QA 101**. Testing, test automation, quality assurance. |
 
 ## 🛠 Общие особенности
 - **npm workspaces**: Один `node_modules` на все проекты (экономия ~400 МБ).

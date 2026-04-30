@@ -10,7 +10,7 @@ import { PubSub } from 'graphql-subscriptions';
 import bodyParser from 'body-parser';
 const app = express();
 const httpServer = createServer(app);
-const PORT = 3202;
+const PORT = 3112;
 // PubSub для GraphQL subscriptions
 const pubsub = new PubSub();
 let users = [
